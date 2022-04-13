@@ -1,0 +1,1524 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type='text/xsl' href='report-stylesheet-2parts.xsl'?>
+<test_report format-version="1">
+  <head>
+    <product name="IL4 PG24A" code="N/A" sf-code="PG24A" family="IL4" sn="N/A" sf-sn="21340030" sf-id-string="PG24ANV21340030" hw-version="N/A" />
+    <result value="FAIL" fail-test-name="PowerGen L1" fail-group-name="AC230Power" />
+    <upload-state value="none" />
+    <test-total-time value="413.78" />
+    <security-check value="PASS" />
+    <tester-info value="UniTesterApp_IL4-part1 1.0.0.14" />
+    <user-name value="4" />
+    <dmm-info value="KEITHLEY INSTRUMENTS INC.,MODEL 2000,1331855,A20  /A02  " />
+    <timestamp value="2021-10-14 15:06:59.8" />
+    <ini-security value="37A26696617E2AAED66DB816226A70EF" />
+    <component-versions>
+      <version name="IL4-AMF9-RX65-HWTEST" version-number="1.0.0.2" />
+      <version name="IL4-AMF25-RX65-HWTEST" version-number="1.0.0.5" />
+      <version name="InteliATS2-HWTEST" version-number="1.0.0.2" />
+      <version name="IG200-HWTEST" version-number="1.0.0.9" />
+    </component-versions>
+  </head>
+  <test_set>
+    <group title="NA" group-id="0" group-sequence-number="1" retest="false" result="PASS" />
+    <group title="FW" group-id="1" group-sequence-number="2" retest="false" result="PASS">
+      <test title="ResId" checked="true" test-class="AOutResistanceTest" test-id="1" retest="false" test-sequence-number="1" test-group-sequence-number="1" result="PASS">
+        <config>
+          <value name="ROUTE_SWITCH_EN">FALSE</value>
+          <value name="RESISTANCE_1">10300+-5%</value>
+          <value name="CHANNEL_1">6/3/3</value>
+          <value name="MEASUREMENTS_COUNT">1</value>
+          <value name="U_BAT">24</value>
+        </config>
+        <operations>
+          <check name="Analog value Ch1 (ohm)" value="10342.7304" value-type="double" expected="10300+-5%" expected-type="intervalwithnominal" expected-low="9785" expected-high="10815" extended-info="false" result="OK" side="product">Analog value Ch1 (ohm) (9785 &gt; 10342.7304 &lt; 10815)  10300+-5%</check>
+        </operations>
+      </test>
+      <test title="Flash FW w/ key" checked="true" test-class="WriteHwTestPreserveFwKey" test-id="2" retest="false" test-sequence-number="2" test-group-sequence-number="2" result="PASS">
+        <config>
+          <value name="CONTROLLER_PID">0x011F</value>
+          <value name="FW_NAME">HWTest_il4amf25.bin</value>
+          <value name="FW_PATH">FW\HWTest</value>
+        </config>
+        <operations>
+          <info text="No HID device found" extended-info="False">No HID device found</info>
+          <info text="Product does not contain FW key, continuing with normal procedure." extended-info="False">Product does not contain FW key, continuing with normal procedure.</info>
+        </operations>
+      </test>
+      <test title="Flash FW" checked="true" test-class="FlashRenesas" test-id="3" retest="false" test-sequence-number="3" test-group-sequence-number="3" result="PASS">
+        <config>
+          <value name="DEL_FW_AFTER_DOWNLOAD">FALSE</value>
+          <value name="SHOW_FLASHING_SPLASH">TRUE</value>
+          <value name="LOG_PATH">FW\HWTest\RFPProject-CD\log.txt</value>
+          <value name="FW_PATH">FW\HWTest\HWTest_il4amf25_all_in_one.mot</value>
+          <value name="FW_NAME_SHOW">FALSE</value>
+          <value name="RFP_PROJECT_PATH">FW\HWTest\RFPProject-CD\RX651.rpj</value>
+        </config>
+        <operations>
+          <info text="Format processor" extended-info="False">Format processor</info>
+          <info text="Renesas Flash Programmer CLI V1.01" extended-info="False">Renesas Flash Programmer CLI V1.01</info>
+          <info text="Module Version: V3.08.02.000" extended-info="False">Module Version: V3.08.02.000</info>
+          <info text="" extended-info="False"></info>
+          <info text="Connecting the tool (COM port)" extended-info="False">Connecting the tool (COM port)</info>
+          <info text="Tool: COM10" extended-info="False">Tool: COM10</info>
+          <info text="Interface: 2 wire UART" extended-info="False">Interface: 2 wire UART</info>
+          <info text="" extended-info="False"></info>
+          <info text="Connecting the target device" extended-info="False">Connecting the target device</info>
+          <info text="Main Clock: 12 MHz" extended-info="False">Main Clock: 12 MHz</info>
+          <info text="Speed: 115,200 bps" extended-info="False">Speed: 115,200 bps</info>
+          <info text="" extended-info="False"></info>
+          <info text="   0% [                                                            ]" extended-info="False">   0% [                                                            ]</info>
+          <info text="                                                                                " extended-info="False"></info>
+          <info text="" extended-info="False"></info>
+          <info text="   0% [                                                            ]" extended-info="False">   0% [                                                            ]</info>
+          <info text="                                                                                " extended-info="False"></info>
+          <info text="" extended-info="False"></info>
+          <info text="   0% [                                                            ]" extended-info="False">   0% [                                                            ]</info>
+          <info text="                                                                                " extended-info="False"></info>
+          <info text="" extended-info="False"></info>
+          <info text="   0% [                                                            ]" extended-info="False">   0% [                                                            ]</info>
+          <info text="                                                                                " extended-info="False"></info>
+          <info text="" extended-info="False"></info>
+          <info text="   0% [                                                            ]" extended-info="False">   0% [                                                            ]</info>
+          <info text="                                                                                " extended-info="False"></info>
+          <info text="" extended-info="False"></info>
+          <info text="   0% [                                                            ]" extended-info="False">   0% [                                                            ]</info>
+          <info text="                                                                                " extended-info="False"></info>
+          <info text="" extended-info="False"></info>
+          <info text="   0% [                                                            ]" extended-info="False">   0% [                                                            ]</info>
+          <info text="                                                                                " extended-info="False"></info>
+          <info text="" extended-info="False"></info>
+          <info text="   0% [                                                            ]" extended-info="False">   0% [                                                            ]</info>
+          <info text="                                                                                " extended-info="False"></info>
+          <info text="" extended-info="False"></info>
+          <info text="   0% [                                                            ]" extended-info="False">   0% [                                                            ]</info>
+          <info text="                                                                                " extended-info="False"></info>
+          <info text="" extended-info="False"></info>
+          <info text="   0% [                                                            ]" extended-info="False">   0% [                                                            ]</info>
+          <info text="                                                                                " extended-info="False"></info>
+          <info text="" extended-info="False"></info>
+          <info text="MCU Formatted" extended-info="False">MCU Formatted</info>
+          <info text="Disconnecting the tool" extended-info="False">Disconnecting the tool</info>
+          <info text="" extended-info="False"></info>
+          <info text="" extended-info="False"></info>
+          <info text="Processor formatted" extended-info="False">Processor formatted</info>
+          <info text="======================================================================" extended-info="False">======================================================================</info>
+          <info text="[2021-10-14 15:07:14.653] Log Start" extended-info="False">[2021-10-14 15:07:14.653] Log Start</info>
+          <info text="Renesas Flash Programmer V3.08.03 [1 July 2021]  (Free-of-charge Edition)" extended-info="False">Renesas Flash Programmer V3.08.03 [1 July 2021]  (Free-of-charge Edition)</info>
+          <info text="Loading Project (C:\PFP testy\FW\HWTest\RFPProject-CD\RX651.rpj)" extended-info="False">Loading Project (C:\PFP testy\FW\HWTest\RFPProject-CD\RX651.rpj)</info>
+          <info text="Loading File (C:\PFP testy\FW\HWTest\HWTest_il4amf25_all_in_one.mot) CRC-32 : ECA01DA1" extended-info="False">Loading File (C:\PFP testy\FW\HWTest\HWTest_il4amf25_all_in_one.mot) CRC-32 : ECA01DA1</info>
+          <info text="" extended-info="False"></info>
+          <info text="Target device : RX Group" extended-info="False">Target device : RX Group</info>
+          <info text="" extended-info="False"></info>
+          <info text="Connecting the tool" extended-info="False">Connecting the tool</info>
+          <info text="Tool : COM port (COM10), Interface : 2 wire UART" extended-info="False">Tool : COM port (COM10), Interface : 2 wire UART</info>
+          <info text="Connecting to the target device" extended-info="False">Connecting to the target device</info>
+          <info text="Main Clock : 12,000000MHz" extended-info="False">Main Clock : 12,000000MHz</info>
+          <info text="Setting the target device" extended-info="False">Setting the target device</info>
+          <info text="Communication speed : 115200bps" extended-info="False">Communication speed : 115200bps</info>
+          <info text="Setting the target device" extended-info="False">Setting the target device</info>
+          <info text="" extended-info="False"></info>
+          <info text="Erasing the selected blocks" extended-info="False">Erasing the selected blocks</info>
+          <info text="  [Data Flash 1] 0x00100000 - 0x00107FFF     size : 32 K" extended-info="False">  [Data Flash 1] 0x00100000 - 0x00107FFF     size : 32 K</info>
+          <info text="  [Code Flash 1] 0xFFE00000 - 0xFFFFFFFF     size : 2,0 M" extended-info="False">  [Code Flash 1] 0xFFE00000 - 0xFFFFFFFF     size : 2,0 M</info>
+          <info text="" extended-info="False"></info>
+          <info text="Erasing the selected blocks" extended-info="False">Erasing the selected blocks</info>
+          <info text="  [Config Area] " extended-info="False">  [Config Area] </info>
+          <info text="" extended-info="False"></info>
+          <info text="Writing data to the target device" extended-info="False">Writing data to the target device</info>
+          <info text="  [Code Flash 1] 0xFFE00000 - 0xFFE41E7F     size : 263,6 K" extended-info="False">  [Code Flash 1] 0xFFE00000 - 0xFFE41E7F     size : 263,6 K</info>
+          <info text="  [Code Flash 1] 0xFFFF8000 - 0xFFFFF4FF     size : 29,3 K" extended-info="False">  [Code Flash 1] 0xFFFF8000 - 0xFFFFF4FF     size : 29,3 K</info>
+          <info text="  [Code Flash 1] 0xFFFFFF80 - 0xFFFFFFFF     size : 128" extended-info="False">  [Code Flash 1] 0xFFFFFF80 - 0xFFFFFFFF     size : 128</info>
+          <info text="" extended-info="False"></info>
+          <info text="Verifying data" extended-info="False">Verifying data</info>
+          <info text="  [Code Flash 1] 0xFFE00000 - 0xFFE41E7F     size : 263,6 K" extended-info="False">  [Code Flash 1] 0xFFE00000 - 0xFFE41E7F     size : 263,6 K</info>
+          <info text="  [Code Flash 1] 0xFFFF8000 - 0xFFFFF4FF     size : 29,3 K" extended-info="False">  [Code Flash 1] 0xFFFF8000 - 0xFFFFF4FF     size : 29,3 K</info>
+          <info text="  [Code Flash 1] 0xFFFFFF80 - 0xFFFFFFFF     size : 128" extended-info="False">  [Code Flash 1] 0xFFFFFF80 - 0xFFFFFFFF     size : 128</info>
+          <info text="" extended-info="False"></info>
+          <info text="Writing data to the target device" extended-info="False">Writing data to the target device</info>
+          <info text="  [Config Area] 0xFE7F5D00 - 0xFE7F5D0F     size : 16" extended-info="False">  [Config Area] 0xFE7F5D00 - 0xFE7F5D0F     size : 16</info>
+          <info text="" extended-info="False"></info>
+          <info text="Verifying data" extended-info="False">Verifying data</info>
+          <info text="  [Config Area] 0xFE7F5D00 - 0xFE7F5D0F     size : 16" extended-info="False">  [Config Area] 0xFE7F5D00 - 0xFE7F5D0F     size : 16</info>
+          <info text="" extended-info="False"></info>
+          <info text="Disconnecting the tool" extended-info="False">Disconnecting the tool</info>
+          <info text="Operation completed." extended-info="False">Operation completed.</info>
+          <info text="" extended-info="False"></info>
+          <check name="Flashing HW test" extended-info="false" result="OK" side="product">Flashing HW test</check>
+        </operations>
+      </test>
+    </group>
+    <group title="START" group-id="2" group-sequence-number="3" retest="false" result="PASS">
+      <test title="Start" checked="true" test-class="StartSequenceTest" test-id="1" retest="false" test-sequence-number="4" test-group-sequence-number="1" result="PASS">
+        <config />
+        <operations>
+          <info text="COM port open" extended-info="False">COM port open</info>
+          <check name="Communication with product ok." extended-info="false" result="OK" side="product">Communication with product ok.</check>
+          <check name="Set controller's RTC time: 15:07:22" extended-info="false" result="OK" side="product">Set controller's RTC time: 15:07:22</check>
+          <check name="Set controller's RTC date: 14.10.2021" extended-info="false" result="OK" side="product">Set controller's RTC date: 14.10.2021</check>
+        </operations>
+      </test>
+      <test title="Consumption" checked="true" test-class="PowerDrawTest" test-id="2" retest="false" test-sequence-number="5" test-group-sequence-number="2" result="PASS">
+        <config>
+          <value name="U_INTERVAL_1">8+-10%</value>
+          <value name="I_INTERVAL_1">90+-30</value>
+          <value name="U_INTERVAL_3">30+-10%</value>
+          <value name="LCD_BACKLIGHT_ENABLED">false</value>
+          <value name="I_INTERVAL_2">30+-20</value>
+          <value name="TEST_NUM">3</value>
+          <value name="USB_HOST_ENABLED">false</value>
+          <value name="U_INTERVAL_2">24+-10%</value>
+          <value name="I_INTERVAL_3">30+-20</value>
+        </config>
+        <operations>
+          <check name="Set LCD backlight False" extended-info="false" result="OK" side="product">Set LCD backlight False</check>
+          <check name="Voltage1 set" value="8.17798844" value-type="double" expected="8+-10%" expected-type="intervalwithnominal" expected-low="7.2" expected-high="8.8" extended-info="false" result="OK" side="unitester">Voltage1 set (7.2 &gt; 8.17798844 &lt; 8.8)  8+-10%</check>
+          <check name="Current1 consumption (mA)" value="64" value-type="double" expected="90+-30" expected-type="intervalwithnominal" expected-low="60" expected-high="120" extended-info="false" result="OK" side="product">Current1 consumption (mA) (60 &gt; 64 &lt; 120)  90+-30</check>
+          <check name="Voltage2 set" value="23.9092422" value-type="double" expected="24+-10%" expected-type="intervalwithnominal" expected-low="21.6" expected-high="26.4" extended-info="false" result="OK" side="unitester">Voltage2 set (21.6 &gt; 23.9092422 &lt; 26.4)  24+-10%</check>
+          <check name="Current2 consumption (mA)" value="32" value-type="double" expected="30+-20" expected-type="intervalwithnominal" expected-low="10" expected-high="50" extended-info="false" result="OK" side="product">Current2 consumption (mA) (10 &gt; 32 &lt; 50)  30+-20</check>
+          <check name="Voltage3 set" value="29.7866309" value-type="double" expected="30+-10%" expected-type="intervalwithnominal" expected-low="27" expected-high="33" extended-info="false" result="OK" side="unitester">Voltage3 set (27 &gt; 29.7866309 &lt; 33)  30+-10%</check>
+          <check name="Current3 consumption (mA)" value="31" value-type="double" expected="30+-20" expected-type="intervalwithnominal" expected-low="10" expected-high="50" extended-info="false" result="OK" side="product">Current3 consumption (mA) (10 &gt; 31 &lt; 50)  30+-20</check>
+          <check name="Set LCD backlight True" extended-info="false" result="OK" side="product">Set LCD backlight True</check>
+        </operations>
+      </test>
+      <test title="Prep. IDChip" checked="true" test-class="IdChipPreparation" test-id="3" retest="false" test-sequence-number="6" test-group-sequence-number="3" result="PASS">
+        <config />
+        <operations>
+          <info text="Controller has default SF order code." extended-info="False">Controller has default SF order code.</info>
+          <info text="Controller has default SF serial number (&quot;C999990000&quot;)." extended-info="False">Controller has default SF serial number ("C999990000").</info>
+          <info text="Session with security server initialized." extended-info="False">Session with security server initialized.</info>
+          <info text="Using existing PCB ID." extended-info="False">Using existing PCB ID.</info>
+          <info text="PCB configuration downloaded." extended-info="False">PCB configuration downloaded.</info>
+          <info text="Using existing PCB Configuration." extended-info="False">Using existing PCB Configuration.</info>
+          <info text="ID chip generated." extended-info="False">ID chip generated.</info>
+          <info text="ID chip written to controller." extended-info="False">ID chip written to controller.</info>
+          <check name="Start flashing ID chip." extended-info="false" result="OK" side="product">Start flashing ID chip.</check>
+          <info text="Controller reconnected." extended-info="False">Controller reconnected.</info>
+          <check name="Read flashing result." extended-info="false" result="OK" side="product">Read flashing result.</check>
+          <check name="Check ID chip is flashed." value="3" value-type="byte" expected="3" expected-type="byte" extended-info="false" result="OK" side="product">Check ID chip is flashed. 3==3</check>
+        </operations>
+      </test>
+    </group>
+    <group title="REF" group-id="3" group-sequence-number="4" retest="false" result="PASS">
+      <test title="1V5REF" checked="true" test-class="AOutVoltageTest" test-id="1" retest="false" test-sequence-number="7" test-group-sequence-number="1" result="PASS">
+        <config>
+          <value name="CHANNEL_1">6/3/4</value>
+          <value name="VOLTAGE_1">1.5+-0.075</value>
+          <value name="MEASUREMENTS_COUNT">1</value>
+          <value name="U_BAT">12</value>
+        </config>
+        <operations>
+          <check name="Analog value Ch1 (V)" value="1.50032801" value-type="double" expected="1.5+-0.075" expected-type="intervalwithnominal" expected-low="1.425" expected-high="1.575" extended-info="false" result="OK" side="product">Analog value Ch1 (V) (1.425 &gt; 1.50032801 &lt; 1.575)  1.5+-0.075</check>
+        </operations>
+      </test>
+      <test title="3VREF" checked="true" test-class="AOutVoltageTest" test-id="2" retest="false" test-sequence-number="8" test-group-sequence-number="2" result="PASS">
+        <config>
+          <value name="CHANNEL_1">6/3/5</value>
+          <value name="VOLTAGE_1">3+-0.025</value>
+          <value name="MEASUREMENTS_COUNT">1</value>
+          <value name="U_BAT">12</value>
+        </config>
+        <operations>
+          <check name="Analog value Ch1 (V)" value="3.00874334" value-type="double" expected="3+-0.025" expected-type="intervalwithnominal" expected-low="2.975" expected-high="3.025" extended-info="false" result="OK" side="product">Analog value Ch1 (V) (2.975 &gt; 3.00874334 &lt; 3.025)  3+-0.025</check>
+        </operations>
+      </test>
+      <test title="VCC" checked="true" test-class="AOutVoltageTest" test-id="3" retest="false" test-sequence-number="9" test-group-sequence-number="3" result="PASS">
+        <config>
+          <value name="CHANNEL_1">6/3/6</value>
+          <value name="MEASUREMENTS_COUNT">1</value>
+          <value name="VOLTAGE_1">5+-0.1</value>
+          <value name="U_BAT">12</value>
+        </config>
+        <operations>
+          <check name="Analog value Ch1 (V)" value="5.0054486" value-type="double" expected="5+-0.1" expected-type="intervalwithnominal" expected-low="4.9" expected-high="5.1" extended-info="false" result="OK" side="product">Analog value Ch1 (V) (4.9 &gt; 5.0054486 &lt; 5.1)  5+-0.1</check>
+        </operations>
+      </test>
+      <test title="3V3" checked="true" test-class="AOutVoltageTest" test-id="4" retest="false" test-sequence-number="10" test-group-sequence-number="4" result="PASS">
+        <config>
+          <value name="CHANNEL_1">6/3/7</value>
+          <value name="VOLTAGE_1">3.25+-0.1</value>
+          <value name="MEASUREMENTS_COUNT">1</value>
+          <value name="U_BAT">12</value>
+        </config>
+        <operations>
+          <check name="Analog value Ch1 (V)" value="3.28556023" value-type="double" expected="3.25+-0.1" expected-type="intervalwithnominal" expected-low="3.15" expected-high="3.35" extended-info="false" result="OK" side="product">Analog value Ch1 (V) (3.15 &gt; 3.28556023 &lt; 3.35)  3.25+-0.1</check>
+        </operations>
+      </test>
+      <test title="-0V2" checked="true" test-class="AOutVoltageTest" test-id="6" retest="false" test-sequence-number="11" test-group-sequence-number="5" result="PASS">
+        <config>
+          <value name="CHANNEL_1">6/3/12</value>
+          <value name="VOLTAGE_1">-0.2+-0.05</value>
+          <value name="MEASUREMENTS_COUNT">1</value>
+          <value name="U_BAT">12</value>
+        </config>
+        <operations>
+          <check name="Analog value Ch1 (V)" value="-0.231023859" value-type="double" expected="-0.2+-0.05" expected-type="intervalwithnominal" expected-low="-0.25" expected-high="-0.15" extended-info="false" result="OK" side="product">Analog value Ch1 (V) (-0.25 &gt; -0.231023859 &lt; -0.15)  -0.2+-0.05</check>
+        </operations>
+      </test>
+      <test title="UBAT+cal." checked="true" test-class="UBatCalibration" test-id="7" retest="false" test-sequence-number="12" test-group-sequence-number="6" result="PASS">
+        <config>
+          <value name="ALLOWED_OFFSET_RANGE">0+-0.1</value>
+          <value name="UBAT_TESTS_COUNT">3</value>
+          <value name="CALIB_VOLTAGE_HIGH">28+-0.25</value>
+          <value name="UBAT_TEST_3">30+-0.5</value>
+          <value name="UBAT_TEST_1">10+-0.5</value>
+          <value name="ALLOWED_GAIN_RANGE">1+-5%</value>
+          <value name="CALIB_VOLTAGE_LOW">8+-0.25</value>
+          <value name="VOLTAGE_TEST_MAX_DEVIATION_PERCENT">0.6</value>
+          <value name="UBAT_TEST_2">20+-0.5</value>
+          <value name="U_BAT">12</value>
+        </config>
+        <operations>
+          <info text="Calibration values set to default: Gain = 1, offset = 0" extended-info="False">Calibration values set to default: Gain = 1, offset = 0</info>
+          <check name="LOW voltage for calibration in interval" value="7.99424753" value-type="double" expected="8+-0.25" expected-type="intervalwithnominal" expected-low="7.75" expected-high="8.25" extended-info="false" result="OK" side="product">LOW voltage for calibration in interval (7.75 &gt; 7.99424753 &lt; 8.25)  8+-0.25</check>
+          <value name="Value measured by product [V]: " type="Single" value="7.946667" extended-info="False">Value measured by product [V] = 7.946667</value>
+          <check name="HIGH voltage for calibration in interval" value="28.0008119" value-type="double" expected="28+-0.25" expected-type="intervalwithnominal" expected-low="27.75" expected-high="28.25" extended-info="false" result="OK" side="product">HIGH voltage for calibration in interval (27.75 &gt; 28.0008119 &lt; 28.25)  28+-0.25</check>
+          <value name="Value measured by product [V]: " type="Single" value="27.87556" extended-info="False">Value measured by product [V] = 27.87556</value>
+          <check name="Ubat gain in interval" value="1.00389754772186" value-type="double" expected="1+-5%" expected-type="intervalwithnominal" expected-low="0.95" expected-high="1.05" extended-info="false" result="OK" side="product">Ubat gain in interval (0.95 &gt; 1.00389754772186 &lt; 1.05)  1+-5%</check>
+          <check name="Ubat offset in interval" value="0.0166078209877014" value-type="double" expected="0+-0.1" expected-type="intervalwithnominal" expected-low="-0.1" expected-high="0.1" extended-info="false" result="OK" side="product">Ubat offset in interval (-0.1 &gt; 0.0166078209877014 &lt; 0.1)  0+-0.1</check>
+          <check name="Voltage1 set in interval [V]" value="10.0027761" value-type="double" expected="10+-0.5" expected-type="intervalwithnominal" expected-low="9.5" expected-high="10.5" extended-info="false" result="OK" side="product">Voltage1 set in interval [V] (9.5 &gt; 10.0027761 &lt; 10.5)  10+-0.5</check>
+          <check name="Voltage1 measured by product in interval [V]" value="10.0020437240601" value-type="double" expected="10.0027761+-0.6%" expected-type="intervalwithnominal" expected-low="9.9427594434" expected-high="10.0627927566" extended-info="false" result="OK" side="product">Voltage1 measured by product in interval [V] (9.9427594434 &gt; 10.0020437240601 &lt; 10.0627927566)  10.0027761+-0.6%</check>
+          <check name="Voltage2 set in interval [V]" value="20.0054455" value-type="double" expected="20+-0.5" expected-type="intervalwithnominal" expected-low="19.5" expected-high="20.5" extended-info="false" result="OK" side="product">Voltage2 set in interval [V] (19.5 &gt; 20.0054455 &lt; 20.5)  20+-0.5</check>
+          <check name="Voltage2 measured by product in interval [V]" value="20.0053253173828" value-type="double" expected="20.0054455+-0.6%" expected-type="intervalwithnominal" expected-low="19.885412827" expected-high="20.125478173" extended-info="false" result="OK" side="product">Voltage2 measured by product in interval [V] (19.885412827 &gt; 20.0053253173828 &lt; 20.125478173)  20.0054455+-0.6%</check>
+          <check name="Voltage3 set in interval [V]" value="30.0002216" value-type="double" expected="30+-0.5" expected-type="intervalwithnominal" expected-low="29.5" expected-high="30.5" extended-info="false" result="OK" side="product">Voltage3 set in interval [V] (29.5 &gt; 30.0002216 &lt; 30.5)  30+-0.5</check>
+          <check name="Voltage3 measured by product in interval [V]" value="29.999683380127" value-type="double" expected="30.0002216+-0.6%" expected-type="intervalwithnominal" expected-low="29.8202202704" expected-high="30.1802229296" extended-info="false" result="OK" side="product">Voltage3 measured by product in interval [V] (29.8202202704 &gt; 29.999683380127 &lt; 30.1802229296)  30.0002216+-0.6%</check>
+          <value name="Calibration constant (gain): " type="Single" value="1.003898" extended-info="False">Calibration constant (gain) = 1.003898</value>
+          <value name="Calibration constant (offset): " type="Single" value="0.01660782" extended-info="False">Calibration constant (offset) = 0.01660782</value>
+        </operations>
+      </test>
+      <test title="PowerFail" checked="true" test-class="PowerFailTest" test-id="8" retest="false" test-sequence-number="13" test-group-sequence-number="7" result="PASS">
+        <config>
+          <value name="VOLTAGE_PF_LOG_0">7.8+-0.1</value>
+          <value name="VOLTAGE_PF_LOG_1">6.7+-0.1</value>
+          <value name="GPIO_PIN">0/4/4</value>
+          <value name="U_BAT">12</value>
+        </config>
+        <operations>
+          <check name="Voltage1 set" value="6.69611912" value-type="double" expected="6.7+-0.1" expected-type="intervalwithnominal" expected-low="6.6" expected-high="6.8" extended-info="false" result="OK" side="unitester">Voltage1 set (6.6 &gt; 6.69611912 &lt; 6.8)  6.7+-0.1</check>
+          <check name="Check power fail is active" extended-info="false" result="OK" side="product">Check power fail is active</check>
+          <check name="Voltage2 set" value="7.80417499" value-type="double" expected="7.8+-0.1" expected-type="intervalwithnominal" expected-low="7.7" expected-high="7.9" extended-info="false" result="OK" side="unitester">Voltage2 set (7.7 &gt; 7.80417499 &lt; 7.9)  7.8+-0.1</check>
+          <check name="Check  power fail is not active" extended-info="false" result="OK" side="product">Check  power fail is not active</check>
+        </operations>
+      </test>
+      <test title="TempCPU+cal" checked="true" test-class="TempCpuCalibTest" test-id="9" retest="false" test-sequence-number="14" test-group-sequence-number="8" result="PASS">
+        <config>
+          <value name="CHANNEL_DIFFERENTIAL_B">6/2/4</value>
+          <value name="TEMP_INTERVAL">(15,35)</value>
+          <value name="TEMP_TOLERANCE">+-1</value>
+          <value name="ALLOWED_OFFSET_RANGE">0+-30</value>
+          <value name="CHANNEL_DIFFERENTIAL_A">6/2/3</value>
+          <value name="U_BAT">12</value>
+        </config>
+        <operations>
+          <info text="Calibaration set to default value. Offset = 0." extended-info="False">Calibaration set to default value. Offset = 0.</info>
+          <info text="Before calibration:" extended-info="False">Before calibration:</info>
+          <check name="Reference temperature [°C]" value="24.8389506" value-type="double" expected="(15,35)" expected-type="interval" expected-low="15" expected-high="35" extended-info="false" result="OK" side="product">Reference temperature [°C] (15 &gt; 24.8389506 &lt; 35)  (15,35)</check>
+          <value name="Temperature CPU[°C]: " type="Double" value="20.4450378417969" extended-info="False">Temperature CPU[°C] = 20.4450378417969</value>
+          <check name="Temperature offset [°C] " value="4.39391275820313" value-type="double" expected="0+-30" expected-type="intervalwithnominal" expected-low="-30" expected-high="30" extended-info="false" result="OK" side="product">Temperature offset [°C]  (-30 &gt; 4.39391275820313 &lt; 30)  0+-30</check>
+          <value name="Calibration constant (offset): " type="Single" value="4.393913" extended-info="False">Calibration constant (offset) = 4.393913</value>
+          <info text="After calibration:" extended-info="False">After calibration:</info>
+          <check name="Temperature CPU [°C]" value="24.8389511108398" value-type="double" expected="24.8389506+-0%+-1" expected-type="intervalwithnominal" expected-low="23.8389506" expected-high="25.8389506" extended-info="false" result="OK" side="product">Temperature CPU [°C] (23.8389506 &gt; 24.8389511108398 &lt; 25.8389506) 24.8389506+-0%+-1</check>
+        </operations>
+      </test>
+      <test title="Temp Board" checked="true" test-class="TempBoardTest" test-id="10" retest="false" test-sequence-number="15" test-group-sequence-number="9" result="PASS">
+        <config>
+          <value name="TEMP_TOLERANCE">+-5</value>
+          <value name="CHANNEL_DIFFERENTIAL_A">6/2/3</value>
+          <value name="CHANNEL_DIFFERENTIAL_B">6/2/4</value>
+          <value name="TEMP_INTERVAL">(25,35)</value>
+          <value name="U_BAT">12</value>
+        </config>
+        <operations>
+          <check name="Reference temperature [°C]" value="24.7751039" value-type="double" expected="(10,45)" expected-type="interval" expected-low="10" expected-high="45" extended-info="false" result="OK" side="product">Reference temperature [°C] (10 &gt; 24.7751039 &lt; 45)  (10,45)</check>
+          <check name="Board temperature [°C]" value="24.2305755615234" value-type="double" expected="24.7751039+-0%+-5" expected-type="intervalwithnominal" expected-low="19.7751039" expected-high="29.7751039" extended-info="false" result="OK" side="product">Board temperature [°C] (19.7751039 &gt; 24.2305755615234 &lt; 29.7751039) 24.7751039+-0%+-5</check>
+        </operations>
+      </test>
+      <test title="5V-RS485" checked="true" test-class="AOutVoltageTest" test-id="11" retest="false" test-sequence-number="16" test-group-sequence-number="10" result="PASS">
+        <config>
+          <value name="CHANNEL_DIFFERENTIAL_A_1">6/1/7</value>
+          <value name="VOLTAGE_1">5.25+-0.45</value>
+          <value name="CHANNEL_DIFFERENTIAL_B_1">6/1/8</value>
+          <value name="MEASUREMENTS_COUNT">1</value>
+          <value name="U_BAT">12</value>
+        </config>
+        <operations>
+          <check name="Analog value Ch1 (V)" value="5.32314079" value-type="double" expected="5.25+-0.45" expected-type="intervalwithnominal" expected-low="4.8" expected-high="5.7" extended-info="false" result="OK" side="product">Analog value Ch1 (V) (4.8 &gt; 5.32314079 &lt; 5.7)  5.25+-0.45</check>
+        </operations>
+      </test>
+    </group>
+    <group title="BIN" group-id="4" group-sequence-number="5" retest="false" result="PASS">
+      <test title="All BINs" checked="true" test-class="BinAllTest" test-id="1" retest="false" test-sequence-number="17" test-group-sequence-number="1" result="PASS">
+        <config>
+          <value name="PRODUCT_BINS">BIN1,BIN2,BIN3,BIN4,BIN5,BIN6,BIN7,BIN8</value>
+          <value name="TEST_ACTIVE_HIGH">FALSE</value>
+          <value name="TEST_ACTIVE_LOW">TRUE</value>
+          <value name="U_BAT">24+-5%</value>
+          <value name="VOLTAGE_HIGH">0</value>
+          <value name="VOLTAGE_LOW">2.3</value>
+        </config>
+        <operations>
+          <check name="Set voltage UBat problem" extended-info="true" result="OK" side="unitester">Set voltage UBat problem</check>
+          <check name="Set voltage UBat" value="24" value-type="double" expected="24+-5%" expected-type="intervalwithnominal" expected-low="22.8" expected-high="25.2" extended-info="false" result="OK" side="unitester">Set voltage UBat (22.8 &gt; 24 &lt; 25.2)  24+-5%</check>
+          <info text="Check BINary inputs in ActiveLow configuration" extended-info="False">Check BINary inputs in ActiveLow configuration</info>
+          <info text="UniTester test voltage: 2.29V" extended-info="False">UniTester test voltage: 2.29V</info>
+          <check name="All BIN read as inactive" extended-info="false" result="OK" side="product">All BIN read as inactive</check>
+          <check name="BIN1 is active" extended-info="false" result="OK" side="product">BIN1 is active</check>
+          <check name="Other BINs than BIN1 are inactive" extended-info="false" result="OK" side="product">Other BINs than BIN1 are inactive</check>
+          <check name="BIN2 is active" extended-info="false" result="OK" side="product">BIN2 is active</check>
+          <check name="Other BINs than BIN2 are inactive" extended-info="false" result="OK" side="product">Other BINs than BIN2 are inactive</check>
+          <check name="BIN3 is active" extended-info="false" result="OK" side="product">BIN3 is active</check>
+          <check name="Other BINs than BIN3 are inactive" extended-info="false" result="OK" side="product">Other BINs than BIN3 are inactive</check>
+          <check name="BIN4 is active" extended-info="false" result="OK" side="product">BIN4 is active</check>
+          <check name="Other BINs than BIN4 are inactive" extended-info="false" result="OK" side="product">Other BINs than BIN4 are inactive</check>
+          <check name="BIN5 is active" extended-info="false" result="OK" side="product">BIN5 is active</check>
+          <check name="Other BINs than BIN5 are inactive" extended-info="false" result="OK" side="product">Other BINs than BIN5 are inactive</check>
+          <check name="BIN6 is active" extended-info="false" result="OK" side="product">BIN6 is active</check>
+          <check name="Other BINs than BIN6 are inactive" extended-info="false" result="OK" side="product">Other BINs than BIN6 are inactive</check>
+          <check name="BIN7 is active" extended-info="false" result="OK" side="product">BIN7 is active</check>
+          <check name="Other BINs than BIN7 are inactive" extended-info="false" result="OK" side="product">Other BINs than BIN7 are inactive</check>
+          <check name="BIN8 is active" extended-info="false" result="OK" side="product">BIN8 is active</check>
+          <check name="Other BINs than BIN8 are inactive" extended-info="false" result="OK" side="product">Other BINs than BIN8 are inactive</check>
+        </operations>
+      </test>
+    </group>
+    <group title="RPM+PWM" group-id="5" group-sequence-number="6" retest="false" result="PASS">
+      <test title="RPM" checked="true" test-class="RpmTest" test-id="1" retest="false" test-sequence-number="18" test-group-sequence-number="1" result="PASS">
+        <config>
+          <value name="RPM_TEST_1">5000+-0.5%</value>
+          <value name="RPM_TEST_2">200+-0.5%</value>
+          <value name="RPM_TEST_COUNT">2</value>
+          <value name="AOUT_CHANNEL">6/1/3+6/1/4</value>
+          <value name="U_BAT">24+-5%</value>
+          <value name="RPM_ERROR_PERCENT">0.1</value>
+          <value name="RPM_SIGNAL_VOLTAGE">12</value>
+        </config>
+        <operations>
+          <check name="Set voltage Ubat (V) = " value="24.01" value-type="double" expected="24+-5%" expected-type="intervalwithnominal" expected-low="22.8" expected-high="25.2" extended-info="false" result="OK" side="unitester">Set voltage Ubat (V) =  (22.8 &gt; 24.01 &lt; 25.2)  24+-5%</check>
+          <value name="RPM signal voltage set [V]: " type="Double" value="12" extended-info="False">RPM signal voltage set [V] = 12</value>
+          <check name="RPM test1 (DMM) [Hz]" value="5009.02338" value-type="double" expected="5000+-0.5%" expected-type="intervalwithnominal" expected-low="4975" expected-high="5025" extended-info="false" result="OK" side="unitester">RPM test1 (DMM) [Hz] (4975 &gt; 5009.02338 &lt; 5025)  5000+-0.5%</check>
+          <check name="RPM test1 (product) [Hz]" value="5009" value-type="double" expected="5009.02338+-0.1%" expected-type="intervalwithnominal" expected-low="5004.01435662" expected-high="5014.03240338" extended-info="false" result="OK" side="product">RPM test1 (product) [Hz] (5004.01435662 &gt; 5009 &lt; 5014.03240338)  5009.02338+-0.1%</check>
+          <check name="RPM test2 (DMM) [Hz]" value="200.099823" value-type="double" expected="200+-0.5%" expected-type="intervalwithnominal" expected-low="199" expected-high="201" extended-info="false" result="OK" side="unitester">RPM test2 (DMM) [Hz] (199 &gt; 200.099823 &lt; 201)  200+-0.5%</check>
+          <check name="RPM test2 (product) [Hz]" value="200" value-type="double" expected="200.099823+-0.1%" expected-type="intervalwithnominal" expected-low="199.899723177" expected-high="200.299922823" extended-info="false" result="OK" side="product">RPM test2 (product) [Hz] (199.899723177 &gt; 200 &lt; 200.299922823)  200.099823+-0.1%</check>
+        </operations>
+      </test>
+    </group>
+    <group title="BOUT" group-id="6" group-sequence-number="7" retest="false" result="PASS">
+      <test title="BOUT zkrat" checked="true" test-class="BoutsShortTest" test-id="1" retest="false" test-sequence-number="19" test-group-sequence-number="1" result="PASS">
+        <config>
+          <value name="BATT_CURRENT">(0,100)</value>
+          <value name="BOUT_CURRENT_SET_MA">900</value>
+          <value name="BOUT_OFF_CURRENT_REQUIRED_MA">(0,1)</value>
+          <value name="REQUIRED_BOUT_OFF_VOLTAGE">(22,26)</value>
+          <value name="REQUIRED_BOUT_ON_VOLTAGE">(0,1.6)</value>
+          <value name="U_BAT">24+-5%</value>
+          <value name="VOLTAGE_COMPENSATION">-0.1</value>
+          <value name="LOW_SIDE">FALSE</value>
+          <value name="REQUIRED_BOUT_CURRENT_MA">900+-50</value>
+        </config>
+        <operations>
+          <check name="Set voltage UBat problem" extended-info="true" result="OK" side="unitester">Set voltage UBat problem</check>
+          <check name="Set voltage UBat" value="24.01" value-type="double" expected="24+-5%" expected-type="intervalwithnominal" expected-low="22.8" expected-high="25.2" extended-info="false" result="OK" side="unitester">Set voltage UBat (22.8 &gt; 24.01 &lt; 25.2)  24+-5%</check>
+          <value name="Current request by tester (mA): " type="UInt16" value="900" extended-info="False">Current request by tester (mA) = 900</value>
+          <check name="Binary output short detection, off current (mA)" value="0" value-type="double" expected="(0,1)" expected-type="interval" expected-low="0" expected-high="1" extended-info="false" result="OK" side="product">Binary output short detection, off current (mA) (0 &gt; 0 &lt; 1)  (0,1)</check>
+        </operations>
+      </test>
+      <test title="BO1" checked="true" test-class="BoutTestSimple" test-id="2" retest="false" test-sequence-number="20" test-group-sequence-number="2" result="PASS">
+        <config>
+          <value name="BOUT_NAME">BOUT1</value>
+          <value name="REQUIRED_BOUT_OFF_VOLTAGE">(22,26)</value>
+          <value name="REQUIRED_BOUT_ON_VOLTAGE">(0,1.6)</value>
+          <value name="U_BAT">24+-5%</value>
+          <value name="VOLTAGE_COMPENSATION">-0.1</value>
+          <value name="LOW_SIDE">FALSE</value>
+          <value name="REQUIRED_BOUT_CURRENT_MA">900+-50</value>
+        </config>
+        <operations>
+          <check name="Set voltage UBat problem" extended-info="true" result="OK" side="unitester">Set voltage UBat problem</check>
+          <check name="Set voltage UBat" value="24.01" value-type="double" expected="24+-5%" expected-type="intervalwithnominal" expected-low="22.8" expected-high="25.2" extended-info="false" result="OK" side="product">Set voltage UBat (22.8 &gt; 24.01 &lt; 25.2)  24+-5%</check>
+          <info text="BOUT1 set to OFF. All other set to ON." extended-info="False">BOUT1 set to OFF. All other set to ON.</info>
+          <check name="BOUT1 OFF Voltage (V)" value="22.73" value-type="double" expected="(22,26)" expected-type="interval" expected-low="22" expected-high="26" extended-info="false" result="OK" side="product">BOUT1 OFF Voltage (V) (22 &gt; 22.73 &lt; 26)  (22,26)</check>
+          <check name="BOUT1 OFF: Current other BOUTs (mA)" value="904" value-type="double" expected="900+-50" expected-type="intervalwithnominal" expected-low="850" expected-high="950" extended-info="false" result="OK" side="product">BOUT1 OFF: Current other BOUTs (mA) (850 &gt; 904 &lt; 950)  900+-50</check>
+          <info text="BOUT1 set to ON. All others set to OFF." extended-info="False">BOUT1 set to ON. All others set to OFF.</info>
+          <value name="ON: Measured voltage U (V): " type="Double" value="0.43" extended-info="False">ON: Measured voltage U (V) = 0.43</value>
+          <value name="ON: Voltage compensation (V): " type="Double" value="-0.1" extended-info="False">ON: Voltage compensation (V) = -0.1</value>
+          <check name="BOUT1 ON Voltage (V)" value="0.33" value-type="double" expected="(0,1.6)" expected-type="interval" expected-low="0" expected-high="1.6" extended-info="false" result="OK" side="product">BOUT1 ON Voltage (V) (0 &gt; 0.33 &lt; 1.6)  (0,1.6)</check>
+          <check name="BOUT1 ON Current (mA)" value="905" value-type="double" expected="900+-50" expected-type="intervalwithnominal" expected-low="850" expected-high="950" extended-info="false" result="OK" side="product">BOUT1 ON Current (mA) (850 &gt; 905 &lt; 950)  900+-50</check>
+        </operations>
+      </test>
+      <test title="BO2" checked="true" test-class="BoutTestSimple" test-id="3" retest="false" test-sequence-number="21" test-group-sequence-number="3" result="PASS">
+        <config>
+          <value name="BOUT_NAME">BOUT2</value>
+          <value name="REQUIRED_BOUT_OFF_VOLTAGE">(22,26)</value>
+          <value name="REQUIRED_BOUT_ON_VOLTAGE">(0,1.6)</value>
+          <value name="U_BAT">24+-5%</value>
+          <value name="VOLTAGE_COMPENSATION">-0.1</value>
+          <value name="LOW_SIDE">FALSE</value>
+          <value name="REQUIRED_BOUT_CURRENT_MA">900+-50</value>
+        </config>
+        <operations>
+          <check name="Set voltage UBat problem" extended-info="true" result="OK" side="unitester">Set voltage UBat problem</check>
+          <check name="Set voltage UBat" value="24.01" value-type="double" expected="24+-5%" expected-type="intervalwithnominal" expected-low="22.8" expected-high="25.2" extended-info="false" result="OK" side="product">Set voltage UBat (22.8 &gt; 24.01 &lt; 25.2)  24+-5%</check>
+          <info text="BOUT2 set to OFF. All other set to ON." extended-info="False">BOUT2 set to OFF. All other set to ON.</info>
+          <check name="BOUT2 OFF Voltage (V)" value="22.74" value-type="double" expected="(22,26)" expected-type="interval" expected-low="22" expected-high="26" extended-info="false" result="OK" side="product">BOUT2 OFF Voltage (V) (22 &gt; 22.74 &lt; 26)  (22,26)</check>
+          <check name="BOUT2 OFF: Current other BOUTs (mA)" value="905" value-type="double" expected="900+-50" expected-type="intervalwithnominal" expected-low="850" expected-high="950" extended-info="false" result="OK" side="product">BOUT2 OFF: Current other BOUTs (mA) (850 &gt; 905 &lt; 950)  900+-50</check>
+          <info text="BOUT2 set to ON. All others set to OFF." extended-info="False">BOUT2 set to ON. All others set to OFF.</info>
+          <value name="ON: Measured voltage U (V): " type="Double" value="0.43" extended-info="False">ON: Measured voltage U (V) = 0.43</value>
+          <value name="ON: Voltage compensation (V): " type="Double" value="-0.1" extended-info="False">ON: Voltage compensation (V) = -0.1</value>
+          <check name="BOUT2 ON Voltage (V)" value="0.33" value-type="double" expected="(0,1.6)" expected-type="interval" expected-low="0" expected-high="1.6" extended-info="false" result="OK" side="product">BOUT2 ON Voltage (V) (0 &gt; 0.33 &lt; 1.6)  (0,1.6)</check>
+          <check name="BOUT2 ON Current (mA)" value="904" value-type="double" expected="900+-50" expected-type="intervalwithnominal" expected-low="850" expected-high="950" extended-info="false" result="OK" side="product">BOUT2 ON Current (mA) (850 &gt; 904 &lt; 950)  900+-50</check>
+        </operations>
+      </test>
+      <test title="BO3" checked="true" test-class="BoutTestSimple" test-id="4" retest="false" test-sequence-number="22" test-group-sequence-number="4" result="PASS">
+        <config>
+          <value name="BOUT_NAME">BOUT3</value>
+          <value name="REQUIRED_BOUT_OFF_VOLTAGE">(22,26)</value>
+          <value name="REQUIRED_BOUT_ON_VOLTAGE">(0,1.6)</value>
+          <value name="U_BAT">24+-5%</value>
+          <value name="VOLTAGE_COMPENSATION">-0.1</value>
+          <value name="LOW_SIDE">FALSE</value>
+          <value name="REQUIRED_BOUT_CURRENT_MA">900+-50</value>
+        </config>
+        <operations>
+          <check name="Set voltage UBat problem" extended-info="true" result="OK" side="unitester">Set voltage UBat problem</check>
+          <check name="Set voltage UBat" value="24.01" value-type="double" expected="24+-5%" expected-type="intervalwithnominal" expected-low="22.8" expected-high="25.2" extended-info="false" result="OK" side="product">Set voltage UBat (22.8 &gt; 24.01 &lt; 25.2)  24+-5%</check>
+          <info text="BOUT3 set to OFF. All other set to ON." extended-info="False">BOUT3 set to OFF. All other set to ON.</info>
+          <check name="BOUT3 OFF Voltage (V)" value="22.61" value-type="double" expected="(22,26)" expected-type="interval" expected-low="22" expected-high="26" extended-info="false" result="OK" side="product">BOUT3 OFF Voltage (V) (22 &gt; 22.61 &lt; 26)  (22,26)</check>
+          <check name="BOUT3 OFF: Current other BOUTs (mA)" value="905" value-type="double" expected="900+-50" expected-type="intervalwithnominal" expected-low="850" expected-high="950" extended-info="false" result="OK" side="product">BOUT3 OFF: Current other BOUTs (mA) (850 &gt; 905 &lt; 950)  900+-50</check>
+          <info text="BOUT3 set to ON. All others set to OFF." extended-info="False">BOUT3 set to ON. All others set to OFF.</info>
+          <value name="ON: Measured voltage U (V): " type="Double" value="0.5" extended-info="False">ON: Measured voltage U (V) = 0.5</value>
+          <value name="ON: Voltage compensation (V): " type="Double" value="-0.1" extended-info="False">ON: Voltage compensation (V) = -0.1</value>
+          <check name="BOUT3 ON Voltage (V)" value="0.4" value-type="double" expected="(0,1.6)" expected-type="interval" expected-low="0" expected-high="1.6" extended-info="false" result="OK" side="product">BOUT3 ON Voltage (V) (0 &gt; 0.4 &lt; 1.6)  (0,1.6)</check>
+          <check name="BOUT3 ON Current (mA)" value="904" value-type="double" expected="900+-50" expected-type="intervalwithnominal" expected-low="850" expected-high="950" extended-info="false" result="OK" side="product">BOUT3 ON Current (mA) (850 &gt; 904 &lt; 950)  900+-50</check>
+        </operations>
+      </test>
+      <test title="BO4" checked="true" test-class="BoutTestSimple" test-id="5" retest="false" test-sequence-number="23" test-group-sequence-number="5" result="PASS">
+        <config>
+          <value name="BOUT_NAME">BOUT4</value>
+          <value name="REQUIRED_BOUT_OFF_VOLTAGE">(22,26)</value>
+          <value name="REQUIRED_BOUT_ON_VOLTAGE">(0,1.6)</value>
+          <value name="U_BAT">24+-5%</value>
+          <value name="VOLTAGE_COMPENSATION">-0.1</value>
+          <value name="LOW_SIDE">FALSE</value>
+          <value name="REQUIRED_BOUT_CURRENT_MA">900+-50</value>
+        </config>
+        <operations>
+          <check name="Set voltage UBat problem" extended-info="true" result="OK" side="unitester">Set voltage UBat problem</check>
+          <check name="Set voltage UBat" value="24.01" value-type="double" expected="24+-5%" expected-type="intervalwithnominal" expected-low="22.8" expected-high="25.2" extended-info="false" result="OK" side="product">Set voltage UBat (22.8 &gt; 24.01 &lt; 25.2)  24+-5%</check>
+          <info text="BOUT4 set to OFF. All other set to ON." extended-info="False">BOUT4 set to OFF. All other set to ON.</info>
+          <check name="BOUT4 OFF Voltage (V)" value="22.7" value-type="double" expected="(22,26)" expected-type="interval" expected-low="22" expected-high="26" extended-info="false" result="OK" side="product">BOUT4 OFF Voltage (V) (22 &gt; 22.7 &lt; 26)  (22,26)</check>
+          <check name="BOUT4 OFF: Current other BOUTs (mA)" value="905" value-type="double" expected="900+-50" expected-type="intervalwithnominal" expected-low="850" expected-high="950" extended-info="false" result="OK" side="product">BOUT4 OFF: Current other BOUTs (mA) (850 &gt; 905 &lt; 950)  900+-50</check>
+          <info text="BOUT4 set to ON. All others set to OFF." extended-info="False">BOUT4 set to ON. All others set to OFF.</info>
+          <value name="ON: Measured voltage U (V): " type="Double" value="0.5" extended-info="False">ON: Measured voltage U (V) = 0.5</value>
+          <value name="ON: Voltage compensation (V): " type="Double" value="-0.1" extended-info="False">ON: Voltage compensation (V) = -0.1</value>
+          <check name="BOUT4 ON Voltage (V)" value="0.4" value-type="double" expected="(0,1.6)" expected-type="interval" expected-low="0" expected-high="1.6" extended-info="false" result="OK" side="product">BOUT4 ON Voltage (V) (0 &gt; 0.4 &lt; 1.6)  (0,1.6)</check>
+          <check name="BOUT4 ON Current (mA)" value="904" value-type="double" expected="900+-50" expected-type="intervalwithnominal" expected-low="850" expected-high="950" extended-info="false" result="OK" side="product">BOUT4 ON Current (mA) (850 &gt; 904 &lt; 950)  900+-50</check>
+        </operations>
+      </test>
+      <test title="BO5" checked="true" test-class="BoutTestSimple" test-id="6" retest="false" test-sequence-number="24" test-group-sequence-number="6" result="PASS">
+        <config>
+          <value name="BOUT_NAME">BOUT5</value>
+          <value name="REQUIRED_BOUT_OFF_VOLTAGE">(22,26)</value>
+          <value name="REQUIRED_BOUT_ON_VOLTAGE">(0,1.6)</value>
+          <value name="U_BAT">24+-5%</value>
+          <value name="VOLTAGE_COMPENSATION">-0.1</value>
+          <value name="LOW_SIDE">FALSE</value>
+          <value name="REQUIRED_BOUT_CURRENT_MA">900+-50</value>
+        </config>
+        <operations>
+          <check name="Set voltage UBat problem" extended-info="true" result="OK" side="unitester">Set voltage UBat problem</check>
+          <check name="Set voltage UBat" value="24.01" value-type="double" expected="24+-5%" expected-type="intervalwithnominal" expected-low="22.8" expected-high="25.2" extended-info="false" result="OK" side="product">Set voltage UBat (22.8 &gt; 24.01 &lt; 25.2)  24+-5%</check>
+          <info text="BOUT5 set to OFF. All other set to ON." extended-info="False">BOUT5 set to OFF. All other set to ON.</info>
+          <check name="BOUT5 OFF Voltage (V)" value="22.7" value-type="double" expected="(22,26)" expected-type="interval" expected-low="22" expected-high="26" extended-info="false" result="OK" side="product">BOUT5 OFF Voltage (V) (22 &gt; 22.7 &lt; 26)  (22,26)</check>
+          <check name="BOUT5 OFF: Current other BOUTs (mA)" value="904" value-type="double" expected="900+-50" expected-type="intervalwithnominal" expected-low="850" expected-high="950" extended-info="false" result="OK" side="product">BOUT5 OFF: Current other BOUTs (mA) (850 &gt; 904 &lt; 950)  900+-50</check>
+          <info text="BOUT5 set to ON. All others set to OFF." extended-info="False">BOUT5 set to ON. All others set to OFF.</info>
+          <value name="ON: Measured voltage U (V): " type="Double" value="0.5" extended-info="False">ON: Measured voltage U (V) = 0.5</value>
+          <value name="ON: Voltage compensation (V): " type="Double" value="-0.1" extended-info="False">ON: Voltage compensation (V) = -0.1</value>
+          <check name="BOUT5 ON Voltage (V)" value="0.4" value-type="double" expected="(0,1.6)" expected-type="interval" expected-low="0" expected-high="1.6" extended-info="false" result="OK" side="product">BOUT5 ON Voltage (V) (0 &gt; 0.4 &lt; 1.6)  (0,1.6)</check>
+          <check name="BOUT5 ON Current (mA)" value="904" value-type="double" expected="900+-50" expected-type="intervalwithnominal" expected-low="850" expected-high="950" extended-info="false" result="OK" side="product">BOUT5 ON Current (mA) (850 &gt; 904 &lt; 950)  900+-50</check>
+        </operations>
+      </test>
+      <test title="BO6" checked="true" test-class="BoutTestSimple" test-id="7" retest="false" test-sequence-number="25" test-group-sequence-number="7" result="PASS">
+        <config>
+          <value name="BOUT_NAME">BOUT6</value>
+          <value name="REQUIRED_BOUT_OFF_VOLTAGE">(22,26)</value>
+          <value name="REQUIRED_BOUT_ON_VOLTAGE">(0,1.6)</value>
+          <value name="U_BAT">24+-5%</value>
+          <value name="VOLTAGE_COMPENSATION">-0.1</value>
+          <value name="LOW_SIDE">FALSE</value>
+          <value name="REQUIRED_BOUT_CURRENT_MA">900+-50</value>
+        </config>
+        <operations>
+          <check name="Set voltage UBat problem" extended-info="true" result="OK" side="unitester">Set voltage UBat problem</check>
+          <check name="Set voltage UBat" value="24.01" value-type="double" expected="24+-5%" expected-type="intervalwithnominal" expected-low="22.8" expected-high="25.2" extended-info="false" result="OK" side="product">Set voltage UBat (22.8 &gt; 24.01 &lt; 25.2)  24+-5%</check>
+          <info text="BOUT6 set to OFF. All other set to ON." extended-info="False">BOUT6 set to OFF. All other set to ON.</info>
+          <check name="BOUT6 OFF Voltage (V)" value="22.71" value-type="double" expected="(22,26)" expected-type="interval" expected-low="22" expected-high="26" extended-info="false" result="OK" side="product">BOUT6 OFF Voltage (V) (22 &gt; 22.71 &lt; 26)  (22,26)</check>
+          <check name="BOUT6 OFF: Current other BOUTs (mA)" value="904" value-type="double" expected="900+-50" expected-type="intervalwithnominal" expected-low="850" expected-high="950" extended-info="false" result="OK" side="product">BOUT6 OFF: Current other BOUTs (mA) (850 &gt; 904 &lt; 950)  900+-50</check>
+          <info text="BOUT6 set to ON. All others set to OFF." extended-info="False">BOUT6 set to ON. All others set to OFF.</info>
+          <value name="ON: Measured voltage U (V): " type="Double" value="0.5" extended-info="False">ON: Measured voltage U (V) = 0.5</value>
+          <value name="ON: Voltage compensation (V): " type="Double" value="-0.1" extended-info="False">ON: Voltage compensation (V) = -0.1</value>
+          <check name="BOUT6 ON Voltage (V)" value="0.4" value-type="double" expected="(0,1.6)" expected-type="interval" expected-low="0" expected-high="1.6" extended-info="false" result="OK" side="product">BOUT6 ON Voltage (V) (0 &gt; 0.4 &lt; 1.6)  (0,1.6)</check>
+          <check name="BOUT6 ON Current (mA)" value="904" value-type="double" expected="900+-50" expected-type="intervalwithnominal" expected-low="850" expected-high="950" extended-info="false" result="OK" side="product">BOUT6 ON Current (mA) (850 &gt; 904 &lt; 950)  900+-50</check>
+        </operations>
+      </test>
+      <test title="BO7" checked="true" test-class="BoutTestSimple" test-id="8" retest="false" test-sequence-number="26" test-group-sequence-number="8" result="PASS">
+        <config>
+          <value name="BOUT_NAME">BOUT7</value>
+          <value name="REQUIRED_BOUT_OFF_VOLTAGE">(22,26)</value>
+          <value name="REQUIRED_BOUT_ON_VOLTAGE">(0,1.6)</value>
+          <value name="U_BAT">24+-5%</value>
+          <value name="VOLTAGE_COMPENSATION">-0.1</value>
+          <value name="LOW_SIDE">FALSE</value>
+          <value name="REQUIRED_BOUT_CURRENT_MA">900+-50</value>
+        </config>
+        <operations>
+          <check name="Set voltage UBat problem" extended-info="true" result="OK" side="unitester">Set voltage UBat problem</check>
+          <check name="Set voltage UBat" value="24.01" value-type="double" expected="24+-5%" expected-type="intervalwithnominal" expected-low="22.8" expected-high="25.2" extended-info="false" result="OK" side="product">Set voltage UBat (22.8 &gt; 24.01 &lt; 25.2)  24+-5%</check>
+          <info text="BOUT7 set to OFF. All other set to ON." extended-info="False">BOUT7 set to OFF. All other set to ON.</info>
+          <check name="BOUT7 OFF Voltage (V)" value="22.7" value-type="double" expected="(22,26)" expected-type="interval" expected-low="22" expected-high="26" extended-info="false" result="OK" side="product">BOUT7 OFF Voltage (V) (22 &gt; 22.7 &lt; 26)  (22,26)</check>
+          <check name="BOUT7 OFF: Current other BOUTs (mA)" value="905" value-type="double" expected="900+-50" expected-type="intervalwithnominal" expected-low="850" expected-high="950" extended-info="false" result="OK" side="product">BOUT7 OFF: Current other BOUTs (mA) (850 &gt; 905 &lt; 950)  900+-50</check>
+          <info text="BOUT7 set to ON. All others set to OFF." extended-info="False">BOUT7 set to ON. All others set to OFF.</info>
+          <value name="ON: Measured voltage U (V): " type="Double" value="0.5" extended-info="False">ON: Measured voltage U (V) = 0.5</value>
+          <value name="ON: Voltage compensation (V): " type="Double" value="-0.1" extended-info="False">ON: Voltage compensation (V) = -0.1</value>
+          <check name="BOUT7 ON Voltage (V)" value="0.4" value-type="double" expected="(0,1.6)" expected-type="interval" expected-low="0" expected-high="1.6" extended-info="false" result="OK" side="product">BOUT7 ON Voltage (V) (0 &gt; 0.4 &lt; 1.6)  (0,1.6)</check>
+          <check name="BOUT7 ON Current (mA)" value="904" value-type="double" expected="900+-50" expected-type="intervalwithnominal" expected-low="850" expected-high="950" extended-info="false" result="OK" side="product">BOUT7 ON Current (mA) (850 &gt; 904 &lt; 950)  900+-50</check>
+        </operations>
+      </test>
+      <test title="BO8" checked="true" test-class="BoutTestSimple" test-id="9" retest="false" test-sequence-number="27" test-group-sequence-number="9" result="PASS">
+        <config>
+          <value name="BOUT_NAME">BOUT8</value>
+          <value name="REQUIRED_BOUT_OFF_VOLTAGE">(22,26)</value>
+          <value name="REQUIRED_BOUT_ON_VOLTAGE">(0,1.6)</value>
+          <value name="U_BAT">24+-5%</value>
+          <value name="VOLTAGE_COMPENSATION">-0.1</value>
+          <value name="LOW_SIDE">FALSE</value>
+          <value name="REQUIRED_BOUT_CURRENT_MA">900+-50</value>
+        </config>
+        <operations>
+          <check name="Set voltage UBat problem" extended-info="true" result="OK" side="unitester">Set voltage UBat problem</check>
+          <check name="Set voltage UBat" value="24.01" value-type="double" expected="24+-5%" expected-type="intervalwithnominal" expected-low="22.8" expected-high="25.2" extended-info="false" result="OK" side="product">Set voltage UBat (22.8 &gt; 24.01 &lt; 25.2)  24+-5%</check>
+          <info text="BOUT8 set to OFF. All other set to ON." extended-info="False">BOUT8 set to OFF. All other set to ON.</info>
+          <check name="BOUT8 OFF Voltage (V)" value="22.7" value-type="double" expected="(22,26)" expected-type="interval" expected-low="22" expected-high="26" extended-info="false" result="OK" side="product">BOUT8 OFF Voltage (V) (22 &gt; 22.7 &lt; 26)  (22,26)</check>
+          <check name="BOUT8 OFF: Current other BOUTs (mA)" value="905" value-type="double" expected="900+-50" expected-type="intervalwithnominal" expected-low="850" expected-high="950" extended-info="false" result="OK" side="product">BOUT8 OFF: Current other BOUTs (mA) (850 &gt; 905 &lt; 950)  900+-50</check>
+          <info text="BOUT8 set to ON. All others set to OFF." extended-info="False">BOUT8 set to ON. All others set to OFF.</info>
+          <value name="ON: Measured voltage U (V): " type="Double" value="0.5" extended-info="False">ON: Measured voltage U (V) = 0.5</value>
+          <value name="ON: Voltage compensation (V): " type="Double" value="-0.1" extended-info="False">ON: Voltage compensation (V) = -0.1</value>
+          <check name="BOUT8 ON Voltage (V)" value="0.4" value-type="double" expected="(0,1.6)" expected-type="interval" expected-low="0" expected-high="1.6" extended-info="false" result="OK" side="product">BOUT8 ON Voltage (V) (0 &gt; 0.4 &lt; 1.6)  (0,1.6)</check>
+          <check name="BOUT8 ON Current (mA)" value="904" value-type="double" expected="900+-50" expected-type="intervalwithnominal" expected-low="850" expected-high="950" extended-info="false" result="OK" side="product">BOUT8 ON Current (mA) (850 &gt; 904 &lt; 950)  900+-50</check>
+        </operations>
+      </test>
+      <test title="ESTOP" checked="true" test-class="EStopTestAnalog" test-id="10" retest="false" test-sequence-number="28" test-group-sequence-number="10" result="PASS">
+        <config>
+          <value name="VOLTAGE_ESTOP_HIGH_TOLERANCE">0.5</value>
+          <value name="VOLTAGE_ESTOP_HIGH">24+-5%</value>
+          <value name="VOLTAGE_ESTOP_LOW_TOLERANCE">0.5</value>
+          <value name="VOLTAGE_ESTOP_LOW">12+-5%</value>
+          <value name="REQUIRED_BOUT_OFF_VOLTAGE">(22,26)</value>
+          <value name="REQUIRED_BOUT_ON_VOLTAGE">(0,1.6)</value>
+          <value name="U_BAT">24+-5%</value>
+          <value name="VOLTAGE_COMPENSATION">-0.1</value>
+          <value name="LOW_SIDE">FALSE</value>
+          <value name="REQUIRED_BOUT_CURRENT_MA">900+-50</value>
+        </config>
+        <operations>
+          <check name="Set UBAT high" value="24.01" value-type="double" expected="24+-5%" expected-type="intervalwithnominal" expected-low="22.8" expected-high="25.2" extended-info="false" result="OK" side="unitester">Set UBAT high (22.8 &gt; 24.01 &lt; 25.2)  24+-5%</check>
+          <check name="Read ESTOP value (V)" value="23.7866687774658" value-type="double" expected="24.01+-0.5" expected-type="intervalwithnominal" expected-low="23.51" expected-high="24.51" extended-info="false" result="OK" side="product">Read ESTOP value (V) (23.51 &gt; 23.7866687774658 &lt; 24.51)  24.01+-0.5</check>
+          <check name="Set UBAT low" value="12.17" value-type="double" expected="12+-5%" expected-type="intervalwithnominal" expected-low="11.4" expected-high="12.6" extended-info="false" result="OK" side="unitester">Set UBAT low (11.4 &gt; 12.17 &lt; 12.6)  12+-5%</check>
+          <check name="Read ESTOP value (V)" value="12.0888900756836" value-type="double" expected="12.17+-0.5" expected-type="intervalwithnominal" expected-low="11.67" expected-high="12.67" extended-info="false" result="OK" side="product">Read ESTOP value (V) (11.67 &gt; 12.0888900756836 &lt; 12.67)  12.17+-0.5</check>
+        </operations>
+      </test>
+    </group>
+    <group title="DPlus" group-id="7" group-sequence-number="8" retest="false" result="PASS">
+      <test title="D+ IN" checked="true" test-class="DPlusInTest" test-id="1" retest="false" test-sequence-number="29" test-group-sequence-number="1" result="PASS">
+        <config>
+          <value name="VOLTAGE_2">17+-0.5</value>
+          <value name="VOLTAGE_2_TOLERANCE">+-1%+-0.2</value>
+          <value name="VOLTAGE_1">10+-0.5</value>
+          <value name="VOLTAGE_1_TOLERANCE">+-1%+-0.2</value>
+          <value name="U_BAT">24+-5%</value>
+          <value name="BIN_PIN">1/4/1</value>
+        </config>
+        <operations>
+          <check name="Set voltage UBat problem" extended-info="true" result="OK" side="unitester">Set voltage UBat problem</check>
+          <check name="Set voltage UBat" value="24.02" value-type="double" expected="24+-5%" expected-type="intervalwithnominal" expected-low="22.8" expected-high="25.2" extended-info="false" result="OK" side="unitester">Set voltage UBat (22.8 &gt; 24.02 &lt; 25.2)  24+-5%</check>
+          <value name="D+ set to state: " type="Boolean" value="False" extended-info="False">D+ set to state = False</value>
+          <check name="Voltage1 D+ set by UniTester (V)" value="10.07" value-type="double" expected="10+-0.5" expected-type="intervalwithnominal" expected-low="9.5" expected-high="10.5" extended-info="false" result="OK" side="product">Voltage1 D+ set by UniTester (V) (9.5 &gt; 10.07 &lt; 10.5)  10+-0.5</check>
+          <check name="Voltage1 D+ measured by product (V)" value="10.0444450378418" value-type="double" expected="10.07+-1%+-0.2" expected-type="intervalwithnominal" expected-low="9.7693" expected-high="10.3707" extended-info="false" result="OK" side="product">Voltage1 D+ measured by product (V) (9.7693 &gt; 10.0444450378418 &lt; 10.3707) 10.07+-1%+-0.2</check>
+          <check name="Voltage2 D+ set by UniTester (V)" value="17.08" value-type="double" expected="17+-0.5" expected-type="intervalwithnominal" expected-low="16.5" expected-high="17.5" extended-info="false" result="OK" side="product">Voltage2 D+ set by UniTester (V) (16.5 &gt; 17.08 &lt; 17.5)  17+-0.5</check>
+          <check name="Voltage2 D+ measured by product (V)" value="17.013334274292" value-type="double" expected="17.08+-1%+-0.2" expected-type="intervalwithnominal" expected-low="16.7092" expected-high="17.4508" extended-info="false" result="OK" side="product">Voltage2 D+ measured by product (V) (16.7092 &gt; 17.013334274292 &lt; 17.4508) 17.08+-1%+-0.2</check>
+        </operations>
+      </test>
+      <test title="D+ OUT" checked="true" test-class="DPlusOutTest" test-id="2" retest="false" test-sequence-number="30" test-group-sequence-number="2" result="PASS">
+        <config>
+          <value name="U_BAT">12+-5%</value>
+          <value name="CURRENT">0.27+-0.03</value>
+          <value name="A_OUT_PIN">6/3/10</value>
+        </config>
+        <operations>
+          <check name="Set voltage UBat problem" extended-info="true" result="OK" side="unitester">Set voltage UBat problem</check>
+          <check name="Set voltage UBat" value="12.17" value-type="double" expected="12+-5%" expected-type="intervalwithnominal" expected-low="11.4" expected-high="12.6" extended-info="false" result="OK" side="unitester">Set voltage UBat (11.4 &gt; 12.17 &lt; 12.6)  12+-5%</check>
+          <info text="D+ output enabled" extended-info="False">D+ output enabled</info>
+          <check name="D+ current (DMM) [A]" value="0.267190329" value-type="double" expected="0.27+-0.03" expected-type="intervalwithnominal" expected-low="0.24" expected-high="0.3" extended-info="false" result="OK" side="product">D+ current (DMM) [A] (0.24 &gt; 0.267190329 &lt; 0.3)  0.27+-0.03</check>
+        </operations>
+      </test>
+    </group>
+    <group title="Comm" group-id="8" group-sequence-number="9" retest="false" result="PASS">
+      <test title="CanTerminator" checked="true" test-class="CanTerminatorFixedTest" test-id="1" retest="false" test-sequence-number="31" test-group-sequence-number="1" result="PASS">
+        <config>
+          <value name="AOUT_PIN_B">6/1/6</value>
+          <value name="AOUT_PIN_A">6/1/5</value>
+          <value name="MANUAL_SWITCH_NAMES">SW16</value>
+          <value name="CHECK_OFF_STATE_WITH_MANUAL_ON">true</value>
+          <value name="RESISTANCE_OFF">120+-10</value>
+          <value name="RESISTANCE">60+-10</value>
+        </config>
+        <operations>
+          <check name="All terminators OFF resistance in interval" value="120.082817" value-type="double" expected="120+-10" expected-type="intervalwithnominal" expected-low="110" expected-high="130" extended-info="false" result="OK" side="product">All terminators OFF resistance in interval (110 &gt; 120.082817 &lt; 130)  120+-10</check>
+          <check name="All terminators ON resistance in interval" value="60.6823063" value-type="double" expected="60+-10" expected-type="intervalwithnominal" expected-low="50" expected-high="70" extended-info="false" result="OK" side="product">All terminators ON resistance in interval (50 &gt; 60.6823063 &lt; 70)  60+-10</check>
+        </operations>
+      </test>
+      <test title="Can" checked="true" test-class="CanBusTest" test-id="2" retest="false" test-sequence-number="32" test-group-sequence-number="2" result="PASS">
+        <config />
+        <operations>
+          <info text="Unitester -&gt; Board CAN1" extended-info="False">Unitester -&gt; Board CAN1</info>
+          <info text="Write data: 00 00 00 00 01 00 08 F0 11 34 59 80 A9 D4 01 00" extended-info="False">Write data: 00 00 00 00 01 00 08 F0 11 34 59 80 A9 D4 01 00</info>
+          <check name="Přijato 16B: " value="16" value-type="int32" expected="16" expected-type="int32" extended-info="false" result="OK" side="product">Přijato 16B:  16==16</check>
+          <info text="Read data: 00 00 00 00 01 00 08 F0 11 34 59 80 A9 D4 01 00" extended-info="False">Read data: 00 00 00 00 01 00 08 F0 11 34 59 80 A9 D4 01 00</info>
+          <check name="Přijatá data OK" extended-info="false" result="OK" side="product">Přijatá data OK</check>
+          <info text="Board CAN1 -&gt; Unitester" extended-info="False">Board CAN1 -&gt; Unitester</info>
+          <info text="Write data: 00 00 00 00 01 00 08 E0 22 68 B2 00 52 A8 02 00" extended-info="False">Write data: 00 00 00 00 01 00 08 E0 22 68 B2 00 52 A8 02 00</info>
+          <check name="Přečtena neplatná délka dat" extended-info="true" result="OK" side="unitester">Přečtena neplatná délka dat</check>
+          <check name="Přijato 16B: " value="16" value-type="int32" expected="16" expected-type="int32" extended-info="false" result="OK" side="product">Přijato 16B:  16==16</check>
+          <info text="Read data: 00 00 00 00 01 00 08 E0 22 68 B2 00 52 A8 02 00" extended-info="False">Read data: 00 00 00 00 01 00 08 E0 22 68 B2 00 52 A8 02 00</info>
+          <check name="Přijatá data OK" extended-info="false" result="OK" side="product">Přijatá data OK</check>
+        </operations>
+      </test>
+      <test title="CAN-PTC" checked="true" test-class="AOutResistanceTest" test-id="3" retest="false" test-sequence-number="33" test-group-sequence-number="3" result="PASS">
+        <config>
+          <value name="ROUTE_SWITCH_EN">false</value>
+          <value name="U_BAT">24</value>
+          <value name="RESISTANCE_1">(2,50)</value>
+          <value name="MEASUREMENTS_COUNT">1</value>
+          <value name="CHANNEL_DIFFERENTIAL_B_1">6/1/10</value>
+          <value name="CHANNEL_DIFFERENTIAL_A_1">6/1/9</value>
+        </config>
+        <operations>
+          <check name="Analog value Ch1 (ohm)" value="17.30569" value-type="double" expected="(2,50)" expected-type="interval" expected-low="2" expected-high="50" extended-info="false" result="OK" side="product">Analog value Ch1 (ohm) (2 &gt; 17.30569 &lt; 50)  (2,50)</check>
+        </operations>
+      </test>
+      <test title="RS485Comm" checked="true" test-class="RS485CommTest" test-id="4" retest="false" test-sequence-number="34" test-group-sequence-number="4" result="PASS">
+        <config>
+          <value name="ROUTE_SWITCH_EN">false</value>
+        </config>
+        <operations>
+          <check name="Communication" extended-info="false" result="OK" side="product">Communication</check>
+          <info text="Read: IL4AMF25-HWTEST-1.0.0.5" extended-info="False">Read: IL4AMF25-HWTEST-1.0.0.5</info>
+        </operations>
+      </test>
+      <test title="RS485-Term." checked="true" test-class="RS485TerminatorFixedTest" test-id="5" retest="false" test-sequence-number="35" test-group-sequence-number="5" result="PASS">
+        <config>
+          <value name="GND_SWITCH_NAME">SW15</value>
+          <value name="U_ALL_ON">0.439+-5%</value>
+          <value name="ROUTE_SWITCH_EN">FALSE</value>
+          <value name="AOUT_PIN_B">6/2/6</value>
+          <value name="AOUT_PIN_A">6/2/5</value>
+          <value name="VCC_SWITCH_NAME">SW13</value>
+          <value name="SHOW_SWITCH_ON_MESSAGE">TRUE</value>
+          <value name="R120_SWITCH_NAME">SW14</value>
+        </config>
+        <operations>
+          <check name="Voltage divider - all ON" value="0.435022415" value-type="double" expected="0.439+-5%" expected-type="intervalwithnominal" expected-low="0.41705" expected-high="0.46095" extended-info="false" result="OK" side="product">Voltage divider - all ON (0.41705 &gt; 0.435022415 &lt; 0.46095)  0.439+-5%</check>
+        </operations>
+      </test>
+      <test title="RS485-PTC" checked="true" test-class="AOutResistanceTest" test-id="6" retest="false" test-sequence-number="36" test-group-sequence-number="6" result="PASS">
+        <config>
+          <value name="U_BAT">24</value>
+          <value name="MEASUREMENTS_COUNT">1</value>
+          <value name="RESISTANCE_1">(2,50)</value>
+          <value name="CHANNEL_DIFFERENTIAL_B_1">6/2/10</value>
+          <value name="CHANNEL_DIFFERENTIAL_A_1">6/2/9</value>
+          <value name="ROUTE_SWITCH_EN">false</value>
+        </config>
+        <operations>
+          <check name="Analog value Ch1 (ohm)" value="18.831492" value-type="double" expected="(2,50)" expected-type="interval" expected-low="2" expected-high="50" extended-info="false" result="OK" side="product">Analog value Ch1 (ohm) (2 &gt; 18.831492 &lt; 50)  (2,50)</check>
+        </operations>
+      </test>
+    </group>
+    <group title="EXT" group-id="9" group-sequence-number="10" retest="false" result="PASS">
+      <test title="5V AUX" checked="true" test-class="AOutVoltageTest" test-id="1" retest="false" test-sequence-number="37" test-group-sequence-number="1" result="PASS">
+        <config>
+          <value name="VOLTAGE_1">5+-0.1</value>
+          <value name="MEASUREMENTS_COUNT">1</value>
+          <value name="CHANNEL_1">6/3/11</value>
+          <value name="U_BAT">12</value>
+        </config>
+        <operations>
+          <check name="Analog value Ch1 (V)" value="5.00571647" value-type="double" expected="5+-0.1" expected-type="intervalwithnominal" expected-low="4.9" expected-high="5.1" extended-info="false" result="OK" side="product">Analog value Ch1 (V) (4.9 &gt; 5.00571647 &lt; 5.1)  5+-0.1</check>
+        </operations>
+      </test>
+      <test title="ILMO A" checked="true" test-class="GPIOAllTest" test-id="2" retest="false" test-sequence-number="38" test-group-sequence-number="2" result="PASS">
+        <config>
+          <value name="PRODUCT_GPIOS">EM_ANS_REQ,EM_PERIPH_REQ,EM_READY,EM_RST,EM_CS,EM_SCK,EM_MOSI,EM_MISO</value>
+          <value name="GPIO_OUT_INTERFACE">ILMO_A</value>
+          <value name="U_BAT">12</value>
+        </config>
+        <operations>
+          <check name="Select GPIO out interface." extended-info="false" result="OK" side="product">Select GPIO out interface.</check>
+          <check name="Set GPIO out value." extended-info="false" result="OK" side="product">Set GPIO out value.</check>
+          <info text="EM_ANS_REQ set to Low in product. Others set to High." extended-info="False">EM_ANS_REQ set to Low in product. Others set to High.</info>
+          <check name="EM_ANS_REQ read Low by UniTester." extended-info="false" result="OK" side="product">EM_ANS_REQ read Low by UniTester.</check>
+          <check name="EM_PERIPH_REQ EM_READY EM_RST EM_CS EM_SCK EM_MOSI EM_MISO read High by UniTester." extended-info="false" result="OK" side="product">EM_PERIPH_REQ EM_READY EM_RST EM_CS EM_SCK EM_MOSI EM_MISO read High by UniTester.</check>
+          <check name="Set GPIO out value." extended-info="false" result="OK" side="product">Set GPIO out value.</check>
+          <info text="EM_PERIPH_REQ set to Low in product. Others set to High." extended-info="False">EM_PERIPH_REQ set to Low in product. Others set to High.</info>
+          <check name="EM_PERIPH_REQ read Low by UniTester." extended-info="false" result="OK" side="product">EM_PERIPH_REQ read Low by UniTester.</check>
+          <check name="EM_ANS_REQ EM_READY EM_RST EM_CS EM_SCK EM_MOSI EM_MISO read High by UniTester." extended-info="false" result="OK" side="product">EM_ANS_REQ EM_READY EM_RST EM_CS EM_SCK EM_MOSI EM_MISO read High by UniTester.</check>
+          <check name="Set GPIO out value." extended-info="false" result="OK" side="product">Set GPIO out value.</check>
+          <info text="EM_READY set to Low in product. Others set to High." extended-info="False">EM_READY set to Low in product. Others set to High.</info>
+          <check name="EM_READY read Low by UniTester." extended-info="false" result="OK" side="product">EM_READY read Low by UniTester.</check>
+          <check name="EM_ANS_REQ EM_PERIPH_REQ EM_RST EM_CS EM_SCK EM_MOSI EM_MISO read High by UniTester." extended-info="false" result="OK" side="product">EM_ANS_REQ EM_PERIPH_REQ EM_RST EM_CS EM_SCK EM_MOSI EM_MISO read High by UniTester.</check>
+          <check name="Set GPIO out value." extended-info="false" result="OK" side="product">Set GPIO out value.</check>
+          <info text="EM_RST set to Low in product. Others set to High." extended-info="False">EM_RST set to Low in product. Others set to High.</info>
+          <check name="EM_RST read Low by UniTester." extended-info="false" result="OK" side="product">EM_RST read Low by UniTester.</check>
+          <check name="EM_ANS_REQ EM_PERIPH_REQ EM_READY EM_CS EM_SCK EM_MOSI EM_MISO read High by UniTester." extended-info="false" result="OK" side="product">EM_ANS_REQ EM_PERIPH_REQ EM_READY EM_CS EM_SCK EM_MOSI EM_MISO read High by UniTester.</check>
+          <check name="Set GPIO out value." extended-info="false" result="OK" side="product">Set GPIO out value.</check>
+          <info text="EM_CS set to Low in product. Others set to High." extended-info="False">EM_CS set to Low in product. Others set to High.</info>
+          <check name="EM_CS read Low by UniTester." extended-info="false" result="OK" side="product">EM_CS read Low by UniTester.</check>
+          <check name="EM_ANS_REQ EM_PERIPH_REQ EM_READY EM_RST EM_SCK EM_MOSI EM_MISO read High by UniTester." extended-info="false" result="OK" side="product">EM_ANS_REQ EM_PERIPH_REQ EM_READY EM_RST EM_SCK EM_MOSI EM_MISO read High by UniTester.</check>
+          <check name="Set GPIO out value." extended-info="false" result="OK" side="product">Set GPIO out value.</check>
+          <info text="EM_SCK set to Low in product. Others set to High." extended-info="False">EM_SCK set to Low in product. Others set to High.</info>
+          <check name="EM_SCK read Low by UniTester." extended-info="false" result="OK" side="product">EM_SCK read Low by UniTester.</check>
+          <check name="EM_ANS_REQ EM_PERIPH_REQ EM_READY EM_RST EM_CS EM_MOSI EM_MISO read High by UniTester." extended-info="false" result="OK" side="product">EM_ANS_REQ EM_PERIPH_REQ EM_READY EM_RST EM_CS EM_MOSI EM_MISO read High by UniTester.</check>
+          <check name="Set GPIO out value." extended-info="false" result="OK" side="product">Set GPIO out value.</check>
+          <info text="EM_MOSI set to Low in product. Others set to High." extended-info="False">EM_MOSI set to Low in product. Others set to High.</info>
+          <check name="EM_MOSI read Low by UniTester." extended-info="false" result="OK" side="product">EM_MOSI read Low by UniTester.</check>
+          <check name="EM_ANS_REQ EM_PERIPH_REQ EM_READY EM_RST EM_CS EM_SCK EM_MISO read High by UniTester." extended-info="false" result="OK" side="product">EM_ANS_REQ EM_PERIPH_REQ EM_READY EM_RST EM_CS EM_SCK EM_MISO read High by UniTester.</check>
+          <check name="Set GPIO out value." extended-info="false" result="OK" side="product">Set GPIO out value.</check>
+          <info text="EM_MISO set to Low in product. Others set to High." extended-info="False">EM_MISO set to Low in product. Others set to High.</info>
+          <check name="EM_MISO read Low by UniTester." extended-info="false" result="OK" side="product">EM_MISO read Low by UniTester.</check>
+          <check name="EM_ANS_REQ EM_PERIPH_REQ EM_READY EM_RST EM_CS EM_SCK EM_MOSI read High by UniTester." extended-info="false" result="OK" side="product">EM_ANS_REQ EM_PERIPH_REQ EM_READY EM_RST EM_CS EM_SCK EM_MOSI read High by UniTester.</check>
+        </operations>
+      </test>
+      <test title="ILMO B" checked="true" test-class="GPIOAllTest" test-id="3" retest="false" test-sequence-number="39" test-group-sequence-number="3" result="PASS">
+        <config>
+          <value name="GPIO_OUT_INTERFACE">ILMO_B</value>
+          <value name="PRODUCT_GPIOS">EM_ANS_REQ,EM_PERIPH_REQ,EM_READY,EM_RST,EM_CS,EM_SCK,EM_MOSI,EM_MISO</value>
+          <value name="U_BAT">12</value>
+        </config>
+        <operations>
+          <check name="Select GPIO out interface." extended-info="false" result="OK" side="product">Select GPIO out interface.</check>
+          <check name="Set GPIO out value." extended-info="false" result="OK" side="product">Set GPIO out value.</check>
+          <info text="EM_ANS_REQ set to Low in product. Others set to High." extended-info="False">EM_ANS_REQ set to Low in product. Others set to High.</info>
+          <check name="EM_ANS_REQ read Low by UniTester." extended-info="false" result="OK" side="product">EM_ANS_REQ read Low by UniTester.</check>
+          <check name="EM_PERIPH_REQ EM_READY EM_RST EM_CS EM_SCK EM_MOSI EM_MISO read High by UniTester." extended-info="false" result="OK" side="product">EM_PERIPH_REQ EM_READY EM_RST EM_CS EM_SCK EM_MOSI EM_MISO read High by UniTester.</check>
+          <check name="Set GPIO out value." extended-info="false" result="OK" side="product">Set GPIO out value.</check>
+          <info text="EM_PERIPH_REQ set to Low in product. Others set to High." extended-info="False">EM_PERIPH_REQ set to Low in product. Others set to High.</info>
+          <check name="EM_PERIPH_REQ read Low by UniTester." extended-info="false" result="OK" side="product">EM_PERIPH_REQ read Low by UniTester.</check>
+          <check name="EM_ANS_REQ EM_READY EM_RST EM_CS EM_SCK EM_MOSI EM_MISO read High by UniTester." extended-info="false" result="OK" side="product">EM_ANS_REQ EM_READY EM_RST EM_CS EM_SCK EM_MOSI EM_MISO read High by UniTester.</check>
+          <check name="Set GPIO out value." extended-info="false" result="OK" side="product">Set GPIO out value.</check>
+          <info text="EM_READY set to Low in product. Others set to High." extended-info="False">EM_READY set to Low in product. Others set to High.</info>
+          <check name="EM_READY read Low by UniTester." extended-info="false" result="OK" side="product">EM_READY read Low by UniTester.</check>
+          <check name="EM_ANS_REQ EM_PERIPH_REQ EM_RST EM_CS EM_SCK EM_MOSI EM_MISO read High by UniTester." extended-info="false" result="OK" side="product">EM_ANS_REQ EM_PERIPH_REQ EM_RST EM_CS EM_SCK EM_MOSI EM_MISO read High by UniTester.</check>
+          <check name="Set GPIO out value." extended-info="false" result="OK" side="product">Set GPIO out value.</check>
+          <info text="EM_RST set to Low in product. Others set to High." extended-info="False">EM_RST set to Low in product. Others set to High.</info>
+          <check name="EM_RST read Low by UniTester." extended-info="false" result="OK" side="product">EM_RST read Low by UniTester.</check>
+          <check name="EM_ANS_REQ EM_PERIPH_REQ EM_READY EM_CS EM_SCK EM_MOSI EM_MISO read High by UniTester." extended-info="false" result="OK" side="product">EM_ANS_REQ EM_PERIPH_REQ EM_READY EM_CS EM_SCK EM_MOSI EM_MISO read High by UniTester.</check>
+          <check name="Set GPIO out value." extended-info="false" result="OK" side="product">Set GPIO out value.</check>
+          <info text="EM_CS set to Low in product. Others set to High." extended-info="False">EM_CS set to Low in product. Others set to High.</info>
+          <check name="EM_CS read Low by UniTester." extended-info="false" result="OK" side="product">EM_CS read Low by UniTester.</check>
+          <check name="EM_ANS_REQ EM_PERIPH_REQ EM_READY EM_RST EM_SCK EM_MOSI EM_MISO read High by UniTester." extended-info="false" result="OK" side="product">EM_ANS_REQ EM_PERIPH_REQ EM_READY EM_RST EM_SCK EM_MOSI EM_MISO read High by UniTester.</check>
+          <check name="Set GPIO out value." extended-info="false" result="OK" side="product">Set GPIO out value.</check>
+          <info text="EM_SCK set to Low in product. Others set to High." extended-info="False">EM_SCK set to Low in product. Others set to High.</info>
+          <check name="EM_SCK read Low by UniTester." extended-info="false" result="OK" side="product">EM_SCK read Low by UniTester.</check>
+          <check name="EM_ANS_REQ EM_PERIPH_REQ EM_READY EM_RST EM_CS EM_MOSI EM_MISO read High by UniTester." extended-info="false" result="OK" side="product">EM_ANS_REQ EM_PERIPH_REQ EM_READY EM_RST EM_CS EM_MOSI EM_MISO read High by UniTester.</check>
+          <check name="Set GPIO out value." extended-info="false" result="OK" side="product">Set GPIO out value.</check>
+          <info text="EM_MOSI set to Low in product. Others set to High." extended-info="False">EM_MOSI set to Low in product. Others set to High.</info>
+          <check name="EM_MOSI read Low by UniTester." extended-info="false" result="OK" side="product">EM_MOSI read Low by UniTester.</check>
+          <check name="EM_ANS_REQ EM_PERIPH_REQ EM_READY EM_RST EM_CS EM_SCK EM_MISO read High by UniTester." extended-info="false" result="OK" side="product">EM_ANS_REQ EM_PERIPH_REQ EM_READY EM_RST EM_CS EM_SCK EM_MISO read High by UniTester.</check>
+          <check name="Set GPIO out value." extended-info="false" result="OK" side="product">Set GPIO out value.</check>
+          <info text="EM_MISO set to Low in product. Others set to High." extended-info="False">EM_MISO set to Low in product. Others set to High.</info>
+          <check name="EM_MISO read Low by UniTester." extended-info="false" result="OK" side="product">EM_MISO read Low by UniTester.</check>
+          <check name="EM_ANS_REQ EM_PERIPH_REQ EM_READY EM_RST EM_CS EM_SCK EM_MOSI read High by UniTester." extended-info="false" result="OK" side="product">EM_ANS_REQ EM_PERIPH_REQ EM_READY EM_RST EM_CS EM_SCK EM_MOSI read High by UniTester.</check>
+        </operations>
+      </test>
+      <test title="HSS" checked="true" test-class="AOutVoltageHSSTest" test-id="4" retest="false" test-sequence-number="40" test-group-sequence-number="4" result="PASS">
+        <config>
+          <value name="TOLERANCE_1">+-0.05</value>
+          <value name="MEAS_UBAT_VOLTAGE">FALSE</value>
+          <value name="MEASUREMENTS_COUNT">1</value>
+          <value name="CHANNEL_1">6/3/8</value>
+          <value name="U_BAT">12</value>
+        </config>
+        <operations>
+          <value name="Set voltage Ubat [V]: " type="Double" value="12.0006366" extended-info="False">Set voltage Ubat [V] = 12.0006366</value>
+          <check name="HSS value1 [V]" value="11.9964523" value-type="double" expected="12.0006366+-0%+-0.05" expected-type="intervalwithnominal" expected-low="11.9506366" expected-high="12.0506366" extended-info="false" result="OK" side="product">HSS value1 [V] (11.9506366 &gt; 11.9964523 &lt; 12.0506366) 12.0006366+-0%+-0.05</check>
+        </operations>
+      </test>
+      <test title="VCC" checked="true" test-class="AOutVoltageTest" test-id="5" retest="false" test-sequence-number="41" test-group-sequence-number="5" result="PASS">
+        <config>
+          <value name="VOLTAGE_1">5+-0.1</value>
+          <value name="MEASUREMENTS_COUNT">1</value>
+          <value name="CHANNEL_1">6/3/9</value>
+          <value name="U_BAT">12</value>
+        </config>
+        <operations>
+          <check name="Analog value Ch1 (V)" value="5.0057822" value-type="double" expected="5+-0.1" expected-type="intervalwithnominal" expected-low="4.9" expected-high="5.1" extended-info="false" result="OK" side="product">Analog value Ch1 (V) (4.9 &gt; 5.0057822 &lt; 5.1)  5+-0.1</check>
+        </operations>
+      </test>
+    </group>
+    <group title="AIN" group-id="10" group-sequence-number="11" retest="false" result="PASS">
+      <test title="AIN CAL R" checked="true" test-class="DcAinResistanceCalib" test-id="1" retest="false" test-sequence-number="42" test-group-sequence-number="1" result="PASS">
+        <config>
+          <value name="VERBOSE">FALSE</value>
+          <value name="U_BAT">24+-1</value>
+          <value name="RESISTANCE_2">R2</value>
+          <value name="OFFSET_RANGE">0+-5</value>
+          <value name="RESISTANCE_1">R1</value>
+          <value name="MAX_RESISTANCE_PERCENT_ERROR">1.5</value>
+          <value name="MAX_RESISTANCE_OFFSET_ERROR">1.5</value>
+          <value name="IGNORE_MEAS_COUNT">0</value>
+          <value name="IGNORE_DELAY">500</value>
+          <value name="GAIN_RANGE">1+-0.05</value>
+          <value name="EXTRA_DELAY">200</value>
+          <value name="AVERAGE_MEAS_COUNT">5</value>
+          <value name="UNITESTER_AIN_PINS">5/3/1,5/3/3,5/3/5,5/3/7</value>
+          <value name="PRODUCT_AINS">AIN1,AIN2,AIN3,AIN4</value>
+        </config>
+        <operations>
+          <check name="Set voltage UBat" extended-info="true" result="OK" side="unitester">Set voltage UBat</check>
+          <check name="Set voltage UBat" value="24.02" value-type="double" expected="24+-1" expected-type="intervalwithnominal" expected-low="23" expected-high="25" extended-info="false" result="OK" side="unitester">Set voltage UBat (23 &gt; 24.02 &lt; 25)  24+-1</check>
+          <value name="R1 DMM measured reference resistance (in UniTester): " type="Double" value="241.932626" extended-info="False">R1 DMM measured reference resistance (in UniTester) = 241.932626</value>
+          <value name="R2 DMM measured reference resistance (in UniTester): " type="Double" value="999.428952" extended-info="False">R2 DMM measured reference resistance (in UniTester) = 999.428952</value>
+          <info text="AIN1 Calibration set to default values. Gain = 1, offset = 0" extended-info="False">AIN1 Calibration set to default values. Gain = 1, offset = 0</info>
+          <check name="AIN1 Resistance R1 (ohm)" value="241.2" value-type="double" expected="241.932626+-1.5%+-1.5" expected-type="intervalwithnominal" expected-low="236.80363661" expected-high="247.06161539" extended-info="false" result="OK" side="product">AIN1 Resistance R1 (ohm) (236.80363661 &gt; 241.2 &lt; 247.06161539)  241.932626+-1.5%+-1.5</check>
+          <check name="AIN1 Resistance R2 (ohm)" value="998.2" value-type="double" expected="999.428952+-1.5%+-1.5" expected-type="intervalwithnominal" expected-low="982.93751772" expected-high="1015.92038628" extended-info="false" result="OK" side="product">AIN1 Resistance R2 (ohm) (982.93751772 &gt; 998.2 &lt; 1015.92038628)  999.428952+-1.5%+-1.5</check>
+          <check name="AIN1 Gain" value="1.00065565109253" value-type="double" expected="1+-0.05" expected-type="intervalwithnominal" expected-low="0.95" expected-high="1.05" extended-info="false" result="OK" side="product">AIN1 Gain (0.95 &gt; 1.00065565109253 &lt; 1.05)  1+-0.05</check>
+          <check name="AIN1 Offset" value="0.574482977390289" value-type="double" expected="0+-5" expected-type="intervalwithnominal" expected-low="-5" expected-high="5" extended-info="false" result="OK" side="product">AIN1 Offset (-5 &gt; 0.574482977390289 &lt; 5)  0+-5</check>
+          <info text="AIN2 Calibration set to default values. Gain = 1, offset = 0" extended-info="False">AIN2 Calibration set to default values. Gain = 1, offset = 0</info>
+          <check name="AIN2 Resistance R1 (ohm)" value="241.3" value-type="double" expected="241.932626+-1.5%+-1.5" expected-type="intervalwithnominal" expected-low="236.80363661" expected-high="247.06161539" extended-info="false" result="OK" side="product">AIN2 Resistance R1 (ohm) (236.80363661 &gt; 241.3 &lt; 247.06161539)  241.932626+-1.5%+-1.5</check>
+          <check name="AIN2 Resistance R2 (ohm)" value="998.2" value-type="double" expected="999.428952+-1.5%+-1.5" expected-type="intervalwithnominal" expected-low="982.93751772" expected-high="1015.92038628" extended-info="false" result="OK" side="product">AIN2 Resistance R2 (ohm) (982.93751772 &gt; 998.2 &lt; 1015.92038628)  999.428952+-1.5%+-1.5</check>
+          <check name="AIN2 Gain" value="1.00078785419464" value-type="double" expected="1+-0.05" expected-type="intervalwithnominal" expected-low="0.95" expected-high="1.05" extended-info="false" result="OK" side="product">AIN2 Gain (0.95 &gt; 1.00078785419464 &lt; 1.05)  1+-0.05</check>
+          <check name="AIN2 Offset" value="0.442516773939133" value-type="double" expected="0+-5" expected-type="intervalwithnominal" expected-low="-5" expected-high="5" extended-info="false" result="OK" side="product">AIN2 Offset (-5 &gt; 0.442516773939133 &lt; 5)  0+-5</check>
+          <info text="AIN3 Calibration set to default values. Gain = 1, offset = 0" extended-info="False">AIN3 Calibration set to default values. Gain = 1, offset = 0</info>
+          <check name="AIN3 Resistance R1 (ohm)" value="241.3" value-type="double" expected="241.932626+-1.5%+-1.5" expected-type="intervalwithnominal" expected-low="236.80363661" expected-high="247.06161539" extended-info="false" result="OK" side="product">AIN3 Resistance R1 (ohm) (236.80363661 &gt; 241.3 &lt; 247.06161539)  241.932626+-1.5%+-1.5</check>
+          <check name="AIN3 Resistance R2 (ohm)" value="997.8" value-type="double" expected="999.428952+-1.5%+-1.5" expected-type="intervalwithnominal" expected-low="982.93751772" expected-high="1015.92038628" extended-info="false" result="OK" side="product">AIN3 Resistance R2 (ohm) (982.93751772 &gt; 997.8 &lt; 1015.92038628)  999.428952+-1.5%+-1.5</check>
+          <check name="AIN3 Gain" value="1.00131702423096" value-type="double" expected="1+-0.05" expected-type="intervalwithnominal" expected-low="0.95" expected-high="1.05" extended-info="false" result="OK" side="product">AIN3 Gain (0.95 &gt; 1.00131702423096 &lt; 1.05)  1+-0.05</check>
+          <check name="AIN3 Offset" value="0.314828038215637" value-type="double" expected="0+-5" expected-type="intervalwithnominal" expected-low="-5" expected-high="5" extended-info="false" result="OK" side="product">AIN3 Offset (-5 &gt; 0.314828038215637 &lt; 5)  0+-5</check>
+          <info text="AIN4 Calibration set to default values. Gain = 1, offset = 0" extended-info="False">AIN4 Calibration set to default values. Gain = 1, offset = 0</info>
+          <check name="AIN4 Resistance R1 (ohm)" value="241.5" value-type="double" expected="241.932626+-1.5%+-1.5" expected-type="intervalwithnominal" expected-low="236.80363661" expected-high="247.06161539" extended-info="false" result="OK" side="product">AIN4 Resistance R1 (ohm) (236.80363661 &gt; 241.5 &lt; 247.06161539)  241.932626+-1.5%+-1.5</check>
+          <check name="AIN4 Resistance R2 (ohm)" value="1000" value-type="double" expected="999.428952+-1.5%+-1.5" expected-type="intervalwithnominal" expected-low="982.93751772" expected-high="1015.92038628" extended-info="false" result="OK" side="product">AIN4 Resistance R2 (ohm) (982.93751772 &gt; 1000 &lt; 1015.92038628)  999.428952+-1.5%+-1.5</check>
+          <check name="AIN4 Gain" value="0.998676776885986" value-type="double" expected="1+-0.05" expected-type="intervalwithnominal" expected-low="0.95" expected-high="1.05" extended-info="false" result="OK" side="product">AIN4 Gain (0.95 &gt; 0.998676776885986 &lt; 1.05)  1+-0.05</check>
+          <check name="AIN4 Offset" value="0.752184391021729" value-type="double" expected="0+-5" expected-type="intervalwithnominal" expected-low="-5" expected-high="5" extended-info="false" result="OK" side="product">AIN4 Offset (-5 &gt; 0.752184391021729 &lt; 5)  0+-5</check>
+        </operations>
+      </test>
+      <test title="AIN CAL U" checked="true" test-class="DcAinVoltageCalib" test-id="2" retest="false" test-sequence-number="43" test-group-sequence-number="2" result="PASS">
+        <config>
+          <value name="VOLTAGE_2">9.5+-0.1</value>
+          <value name="VERBOSE">FALSE</value>
+          <value name="U_BAT">24+-1</value>
+          <value name="OFFSET_RANGE">0+-0.025</value>
+          <value name="IGNORE_MEAS_COUNT">0</value>
+          <value name="IGNORE_DELAY">1000</value>
+          <value name="GAIN_RANGE">1+-0.05</value>
+          <value name="EXTRA_DELAY">200</value>
+          <value name="AVERAGE_MEAS_COUNT">5</value>
+          <value name="VOLTAGE_1">0.5+-0.1</value>
+          <value name="UNITESTER_AIN_PINS">5/3/1,5/3/3,5/3/5,5/3/7</value>
+          <value name="PRODUCT_AINS">AIN1,AIN2,AIN3,AIN4</value>
+        </config>
+        <operations>
+          <check name="Set voltage UBat" extended-info="true" result="OK" side="unitester">Set voltage UBat</check>
+          <check name="Set voltage UBat" value="24.02" value-type="double" expected="24+-1" expected-type="intervalwithnominal" expected-low="23" expected-high="25" extended-info="false" result="OK" side="unitester">Set voltage UBat (23 &gt; 24.02 &lt; 25)  24+-1</check>
+          <info text="AIN1 Calibration set to default values. Gain = 1, offset = 0" extended-info="False">AIN1 Calibration set to default values. Gain = 1, offset = 0</info>
+          <check name="AIN1 Set UniTester voltage U1 (DMM) (V)" value="0.497454867" value-type="double" expected="0.5+-0.1" expected-type="intervalwithnominal" expected-low="0.4" expected-high="0.6" extended-info="false" result="OK" side="product">AIN1 Set UniTester voltage U1 (DMM) (V) (0.4 &gt; 0.497454867 &lt; 0.6)  0.5+-0.1</check>
+          <value name="AIN1 Read voltage U1 by product (V): " type="Double" value="0.4858" extended-info="False">AIN1 Read voltage U1 by product (V) = 0.4858</value>
+          <check name="AIN1 Set UniTester voltage U2 (DMM) (V)" value="9.48524142" value-type="double" expected="9.5+-0.1" expected-type="intervalwithnominal" expected-low="9.4" expected-high="9.6" extended-info="false" result="OK" side="product">AIN1 Set UniTester voltage U2 (DMM) (V) (9.4 &gt; 9.48524142 &lt; 9.6)  9.5+-0.1</check>
+          <value name="AIN1 Read voltage U2 by product (V): " type="Double" value="9.446" extended-info="False">AIN1 Read voltage U2 by product (V) = 9.446</value>
+          <check name="AIN1 Gain" value="1.00307881832123" value-type="double" expected="1+-0.05" expected-type="intervalwithnominal" expected-low="0.95" expected-high="1.05" extended-info="false" result="OK" side="product">AIN1 Gain (0.95 &gt; 1.00307881832123 &lt; 1.05)  1+-0.05</check>
+          <check name="AIN1 Offset" value="0.010159176774323" value-type="double" expected="0+-0.025" expected-type="intervalwithnominal" expected-low="-0.025" expected-high="0.025" extended-info="false" result="OK" side="product">AIN1 Offset (-0.025 &gt; 0.010159176774323 &lt; 0.025)  0+-0.025</check>
+          <info text="AIN2 Calibration set to default values. Gain = 1, offset = 0" extended-info="False">AIN2 Calibration set to default values. Gain = 1, offset = 0</info>
+          <check name="AIN2 Set UniTester voltage U1 (DMM) (V)" value="0.500476471" value-type="double" expected="0.5+-0.1" expected-type="intervalwithnominal" expected-low="0.4" expected-high="0.6" extended-info="false" result="OK" side="product">AIN2 Set UniTester voltage U1 (DMM) (V) (0.4 &gt; 0.500476471 &lt; 0.6)  0.5+-0.1</check>
+          <value name="AIN2 Read voltage U1 by product (V): " type="Double" value="0.4864" extended-info="False">AIN2 Read voltage U1 by product (V) = 0.4864</value>
+          <check name="AIN2 Set UniTester voltage U2 (DMM) (V)" value="9.48453152" value-type="double" expected="9.5+-0.1" expected-type="intervalwithnominal" expected-low="9.4" expected-high="9.6" extended-info="false" result="OK" side="product">AIN2 Set UniTester voltage U2 (DMM) (V) (9.4 &gt; 9.48453152 &lt; 9.6)  9.5+-0.1</check>
+          <value name="AIN2 Read voltage U2 by product (V): " type="Double" value="9.453" extended-info="False">AIN2 Read voltage U2 by product (V) = 9.453</value>
+          <check name="AIN2 Gain" value="1.00194668769836" value-type="double" expected="1+-0.05" expected-type="intervalwithnominal" expected-low="0.95" expected-high="1.05" extended-info="false" result="OK" side="product">AIN2 Gain (0.95 &gt; 1.00194668769836 &lt; 1.05)  1+-0.05</check>
+          <check name="AIN2 Offset" value="0.0131296021863818" value-type="double" expected="0+-0.025" expected-type="intervalwithnominal" expected-low="-0.025" expected-high="0.025" extended-info="false" result="OK" side="product">AIN2 Offset (-0.025 &gt; 0.0131296021863818 &lt; 0.025)  0+-0.025</check>
+          <info text="AIN3 Calibration set to default values. Gain = 1, offset = 0" extended-info="False">AIN3 Calibration set to default values. Gain = 1, offset = 0</info>
+          <check name="AIN3 Set UniTester voltage U1 (DMM) (V)" value="0.500182577" value-type="double" expected="0.5+-0.1" expected-type="intervalwithnominal" expected-low="0.4" expected-high="0.6" extended-info="false" result="OK" side="product">AIN3 Set UniTester voltage U1 (DMM) (V) (0.4 &gt; 0.500182577 &lt; 0.6)  0.5+-0.1</check>
+          <value name="AIN3 Read voltage U1 by product (V): " type="Double" value="0.4845" extended-info="False">AIN3 Read voltage U1 by product (V) = 0.4845</value>
+          <check name="AIN3 Set UniTester voltage U2 (DMM) (V)" value="9.488365" value-type="double" expected="9.5+-0.1" expected-type="intervalwithnominal" expected-low="9.4" expected-high="9.6" extended-info="false" result="OK" side="product">AIN3 Set UniTester voltage U2 (DMM) (V) (9.4 &gt; 9.488365 &lt; 9.6)  9.5+-0.1</check>
+          <value name="AIN3 Read voltage U2 by product (V): " type="Double" value="9.448" extended-info="False">AIN3 Read voltage U2 by product (V) = 9.448</value>
+          <check name="AIN3 Gain" value="1.00275361537933" value-type="double" expected="1+-0.05" expected-type="intervalwithnominal" expected-low="0.95" expected-high="1.05" extended-info="false" result="OK" side="product">AIN3 Gain (0.95 &gt; 1.00275361537933 &lt; 1.05)  1+-0.05</check>
+          <check name="AIN3 Offset" value="0.0143484501168132" value-type="double" expected="0+-0.025" expected-type="intervalwithnominal" expected-low="-0.025" expected-high="0.025" extended-info="false" result="OK" side="product">AIN3 Offset (-0.025 &gt; 0.0143484501168132 &lt; 0.025)  0+-0.025</check>
+          <info text="AIN4 Calibration set to default values. Gain = 1, offset = 0" extended-info="False">AIN4 Calibration set to default values. Gain = 1, offset = 0</info>
+          <check name="AIN4 Set UniTester voltage U1 (DMM) (V)" value="0.498633651" value-type="double" expected="0.5+-0.1" expected-type="intervalwithnominal" expected-low="0.4" expected-high="0.6" extended-info="false" result="OK" side="product">AIN4 Set UniTester voltage U1 (DMM) (V) (0.4 &gt; 0.498633651 &lt; 0.6)  0.5+-0.1</check>
+          <value name="AIN4 Read voltage U1 by product (V): " type="Double" value="0.4921" extended-info="False">AIN4 Read voltage U1 by product (V) = 0.4921</value>
+          <check name="AIN4 Set UniTester voltage U2 (DMM) (V)" value="9.49260759" value-type="double" expected="9.5+-0.1" expected-type="intervalwithnominal" expected-low="9.4" expected-high="9.6" extended-info="false" result="OK" side="product">AIN4 Set UniTester voltage U2 (DMM) (V) (9.4 &gt; 9.49260759 &lt; 9.6)  9.5+-0.1</check>
+          <value name="AIN4 Read voltage U2 by product (V): " type="Double" value="9.454" extended-info="False">AIN4 Read voltage U2 by product (V) = 9.454</value>
+          <check name="AIN4 Gain" value="1.00357890129089" value-type="double" expected="1+-0.05" expected-type="intervalwithnominal" expected-low="0.95" expected-high="1.05" extended-info="false" result="OK" side="product">AIN4 Gain (0.95 &gt; 1.00357890129089 &lt; 1.05)  1+-0.05</check>
+          <check name="AIN4 Offset" value="0.00477247359231114" value-type="double" expected="0+-0.025" expected-type="intervalwithnominal" expected-low="-0.025" expected-high="0.025" extended-info="false" result="OK" side="product">AIN4 Offset (-0.025 &gt; 0.00477247359231114 &lt; 0.025)  0+-0.025</check>
+        </operations>
+      </test>
+      <test title="AIN CAL I" checked="true" test-class="DcAinCurrentCalib" test-id="3" retest="false" test-sequence-number="44" test-group-sequence-number="3" result="PASS">
+        <config>
+          <value name="GAIN_RANGE">1+-0.05</value>
+          <value name="CURRENT_2">19+-0.2</value>
+          <value name="EXTRA_DELAY">200</value>
+          <value name="CURRENT_1">1+-0.2</value>
+          <value name="AVERAGE_MEAS_COUNT">5</value>
+          <value name="VERBOSE">FALSE</value>
+          <value name="U_BAT">24+-1</value>
+          <value name="OFFSET_RANGE">0+-0.05</value>
+          <value name="IGNORE_MEAS_COUNT">0</value>
+          <value name="IGNORE_DELAY">1000</value>
+          <value name="UNITESTER_AIN_PINS">5/3/1,5/3/3,5/3/5,5/3/7</value>
+          <value name="PRODUCT_AINS">AIN1,AIN2,AIN3,AIN4</value>
+        </config>
+        <operations>
+          <check name="Set voltage UBat" extended-info="true" result="OK" side="unitester">Set voltage UBat</check>
+          <check name="Set voltage UBat" value="24" value-type="double" expected="24+-1" expected-type="intervalwithnominal" expected-low="23" expected-high="25" extended-info="false" result="OK" side="unitester">Set voltage UBat (23 &gt; 24 &lt; 25)  24+-1</check>
+          <info text="AIN1 Calibration set to default values. Gain = 1, offset = 0" extended-info="False">AIN1 Calibration set to default values. Gain = 1, offset = 0</info>
+          <check name="AIN1 Set UniTester current I1 (DMM) (mA)" value="0.932260965" value-type="double" expected="1+-0.2" expected-type="intervalwithnominal" expected-low="0.8" expected-high="1.2" extended-info="false" result="OK" side="product">AIN1 Set UniTester current I1 (DMM) (mA) (0.8 &gt; 0.932260965 &lt; 1.2)  1+-0.2</check>
+          <value name="AIN1 Read current I1 by product (mA): " type="Double" value="0.9084" extended-info="False">AIN1 Read current I1 by product (mA) = 0.9084</value>
+          <check name="AIN1 Set UniTester current I2 (DMM) (mA)" value="18.9481515" value-type="double" expected="19+-0.2" expected-type="intervalwithnominal" expected-low="18.8" expected-high="19.2" extended-info="false" result="OK" side="product">AIN1 Set UniTester current I2 (DMM) (mA) (18.8 &gt; 18.9481515 &lt; 19.2)  19+-0.2</check>
+          <value name="AIN1 Read current I2 by product (mA): " type="Double" value="18.93" extended-info="False">AIN1 Read current I2 by product (mA) = 18.93</value>
+          <check name="AIN1 Gain" value="0.999683201313019" value-type="double" expected="1+-0.05" expected-type="intervalwithnominal" expected-low="0.95" expected-high="1.05" extended-info="false" result="OK" side="product">AIN1 Gain (0.95 &gt; 0.999683201313019 &lt; 1.05)  1+-0.05</check>
+          <check name="AIN1 Offset" value="2.41487450693967E-05" value-type="double" expected="0+-0.05" expected-type="intervalwithnominal" expected-low="-0.05" expected-high="0.05" extended-info="false" result="OK" side="product">AIN1 Offset (-0.05 &gt; 2.41487450693967E-05 &lt; 0.05)  0+-0.05</check>
+          <info text="AIN2 Calibration set to default values. Gain = 1, offset = 0" extended-info="False">AIN2 Calibration set to default values. Gain = 1, offset = 0</info>
+          <check name="AIN2 Set UniTester current I1 (DMM) (mA)" value="0.927701102" value-type="double" expected="1+-0.2" expected-type="intervalwithnominal" expected-low="0.8" expected-high="1.2" extended-info="false" result="OK" side="product">AIN2 Set UniTester current I1 (DMM) (mA) (0.8 &gt; 0.927701102 &lt; 1.2)  1+-0.2</check>
+          <value name="AIN2 Read current I1 by product (mA): " type="Double" value="0.9145" extended-info="False">AIN2 Read current I1 by product (mA) = 0.9145</value>
+          <check name="AIN2 Set UniTester current I2 (DMM) (mA)" value="18.9478674" value-type="double" expected="19+-0.2" expected-type="intervalwithnominal" expected-low="18.8" expected-high="19.2" extended-info="false" result="OK" side="product">AIN2 Set UniTester current I2 (DMM) (mA) (18.8 &gt; 18.9478674 &lt; 19.2)  19+-0.2</check>
+          <value name="AIN2 Read current I2 by product (mA): " type="Double" value="18.92" extended-info="False">AIN2 Read current I2 by product (mA) = 18.92</value>
+          <check name="AIN2 Gain" value="1.0008145570755" value-type="double" expected="1+-0.05" expected-type="intervalwithnominal" expected-low="0.95" expected-high="1.05" extended-info="false" result="OK" side="product">AIN2 Gain (0.95 &gt; 1.0008145570755 &lt; 1.05)  1+-0.05</check>
+          <check name="AIN2 Offset" value="1.2456189324439E-05" value-type="double" expected="0+-0.05" expected-type="intervalwithnominal" expected-low="-0.05" expected-high="0.05" extended-info="false" result="OK" side="product">AIN2 Offset (-0.05 &gt; 1.2456189324439E-05 &lt; 0.05)  0+-0.05</check>
+          <info text="AIN3 Calibration set to default values. Gain = 1, offset = 0" extended-info="False">AIN3 Calibration set to default values. Gain = 1, offset = 0</info>
+          <check name="AIN3 Set UniTester current I1 (DMM) (mA)" value="0.925350301" value-type="double" expected="1+-0.2" expected-type="intervalwithnominal" expected-low="0.8" expected-high="1.2" extended-info="false" result="OK" side="product">AIN3 Set UniTester current I1 (DMM) (mA) (0.8 &gt; 0.925350301 &lt; 1.2)  1+-0.2</check>
+          <value name="AIN3 Read current I1 by product (mA): " type="Double" value="0.9096" extended-info="False">AIN3 Read current I1 by product (mA) = 0.9096</value>
+          <check name="AIN3 Set UniTester current I2 (DMM) (mA)" value="18.9489551" value-type="double" expected="19+-0.2" expected-type="intervalwithnominal" expected-low="18.8" expected-high="19.2" extended-info="false" result="OK" side="product">AIN3 Set UniTester current I2 (DMM) (mA) (18.8 &gt; 18.9489551 &lt; 19.2)  19+-0.2</check>
+          <value name="AIN3 Read current I2 by product (mA): " type="Double" value="18.92" extended-info="False">AIN3 Read current I2 by product (mA) = 18.92</value>
+          <check name="AIN3 Gain" value="1.00073313713074" value-type="double" expected="1+-0.05" expected-type="intervalwithnominal" expected-low="0.95" expected-high="1.05" extended-info="false" result="OK" side="product">AIN3 Gain (0.95 &gt; 1.00073313713074 &lt; 1.05)  1+-0.05</check>
+          <check name="AIN3 Offset" value="1.50834393934929E-05" value-type="double" expected="0+-0.05" expected-type="intervalwithnominal" expected-low="-0.05" expected-high="0.05" extended-info="false" result="OK" side="product">AIN3 Offset (-0.05 &gt; 1.50834393934929E-05 &lt; 0.05)  0+-0.05</check>
+          <info text="AIN4 Calibration set to default values. Gain = 1, offset = 0" extended-info="False">AIN4 Calibration set to default values. Gain = 1, offset = 0</info>
+          <check name="AIN4 Set UniTester current I1 (DMM) (mA)" value="0.932085252" value-type="double" expected="1+-0.2" expected-type="intervalwithnominal" expected-low="0.8" expected-high="1.2" extended-info="false" result="OK" side="product">AIN4 Set UniTester current I1 (DMM) (mA) (0.8 &gt; 0.932085252 &lt; 1.2)  1+-0.2</check>
+          <value name="AIN4 Read current I1 by product (mA): " type="Double" value="0.9243" extended-info="False">AIN4 Read current I1 by product (mA) = 0.9243</value>
+          <check name="AIN4 Set UniTester current I2 (DMM) (mA)" value="18.9418799" value-type="double" expected="19+-0.2" expected-type="intervalwithnominal" expected-low="18.8" expected-high="19.2" extended-info="false" result="OK" side="product">AIN4 Set UniTester current I2 (DMM) (mA) (18.8 &gt; 18.9418799 &lt; 19.2)  19+-0.2</check>
+          <value name="AIN4 Read current I2 by product (mA): " type="Double" value="18.93" extended-info="False">AIN4 Read current I2 by product (mA) = 18.93</value>
+          <check name="AIN4 Gain" value="1.00022745132446" value-type="double" expected="1+-0.05" expected-type="intervalwithnominal" expected-low="0.95" expected-high="1.05" extended-info="false" result="OK" side="product">AIN4 Gain (0.95 &gt; 1.00022745132446 &lt; 1.05)  1+-0.05</check>
+          <check name="AIN4 Offset" value="7.5750185715151E-06" value-type="double" expected="0+-0.05" expected-type="intervalwithnominal" expected-low="-0.05" expected-high="0.05" extended-info="false" result="OK" side="product">AIN4 Offset (-0.05 &gt; 7.5750185715151E-06 &lt; 0.05)  0+-0.05</check>
+        </operations>
+      </test>
+      <test title="AIN_COM" checked="true" test-class="AComTest" test-id="4" retest="false" test-sequence-number="45" test-group-sequence-number="4" result="PASS">
+        <config>
+          <value name="RANGE_FLOAT">(0.996,1.0)</value>
+          <value name="GROUND_SWITCH_PIN_B">7/3/10</value>
+          <value name="GROUND_SWITCH_PIN_A">7/3/9</value>
+          <value name="U_BATT">24+-1</value>
+          <value name="RANGE_GROUNDED">(0.498,0.502)</value>
+          <value name="UNITESTER_AIN_PINS">5/3/1,5/3/3,5/3/5,5/3/7</value>
+          <value name="PRODUCT_AINS">AIN1,AIN2,AIN3,AIN4</value>
+        </config>
+        <operations>
+          <check name="Set voltage UBat problem" extended-info="true" result="OK" side="unitester">Set voltage UBat problem</check>
+          <check name="Set voltage UBat" value="24.01" value-type="double" expected="24+-1" expected-type="intervalwithnominal" expected-low="23" expected-high="25" extended-info="false" result="OK" side="unitester">Set voltage UBat (23 &gt; 24.01 &lt; 25)  24+-1</check>
+          <check name="A_COM (grounded) Aref ratio in interval" value="0.499633699655533" value-type="double" expected="(0.498,0.502)" expected-type="interval" expected-low="0.498" expected-high="0.502" extended-info="false" result="OK" side="product">A_COM (grounded) Aref ratio in interval (0.498 &gt; 0.499633699655533 &lt; 0.502)  (0.498,0.502)</check>
+          <check name="A_COM (floating) Aref ratio in interval" value="0.998046398162842" value-type="double" expected="(0.996,1.0)" expected-type="interval" expected-low="0.996" expected-high="1" extended-info="false" result="OK" side="product">A_COM (floating) Aref ratio in interval (0.996 &gt; 0.998046398162842 &lt; 1)  (0.996,1.0)</check>
+        </operations>
+      </test>
+      <test title="R-AIN TEST" checked="true" test-class="DcAinResistanceTest" test-id="5" retest="false" test-sequence-number="46" test-group-sequence-number="5" result="PASS">
+        <config>
+          <value name="MAX_RESISTANCE_OFFSET_ERROR">1</value>
+          <value name="MAX_RESISTANCE_PERCENT_ERROR">1</value>
+          <value name="IGNORE_MEAS_COUNT">0</value>
+          <value name="IGNORE_DELAY">500</value>
+          <value name="EXTRA_DELAY">200</value>
+          <value name="AVERAGE_MEAS_COUNT">5</value>
+          <value name="VERBOSE">FALSE</value>
+          <value name="U_BAT">24+-1</value>
+          <value name="REFERENCE_RESISTANCES_TESTED">R1,R2</value>
+          <value name="UNITESTER_AIN_PINS">5/3/1,5/3/3,5/3/5,5/3/7</value>
+          <value name="PRODUCT_AINS">AIN1,AIN2,AIN3,AIN4</value>
+        </config>
+        <operations>
+          <check name="Set voltage UBat problem" extended-info="true" result="OK" side="unitester">Set voltage UBat problem</check>
+          <check name="Set voltage UBat" value="24" value-type="double" expected="24+-1" expected-type="intervalwithnominal" expected-low="23" expected-high="25" extended-info="false" result="OK" side="unitester">Set voltage UBat (23 &gt; 24 &lt; 25)  24+-1</check>
+          <value name="R1 DMM measured reference resistance (in UniTester): " type="Double" value="241.932626" extended-info="False">R1 DMM measured reference resistance (in UniTester) = 241.932626</value>
+          <check name="AIN1: R1 Measured reference resistance by product (ohm)" value="241.5" value-type="double" expected="241.932626+-1%+-1" expected-type="intervalwithnominal" expected-low="238.51329974" expected-high="245.35195226" extended-info="false" result="OK" side="product">AIN1: R1 Measured reference resistance by product (ohm) (238.51329974 &gt; 241.5 &lt; 245.35195226)  241.932626+-1%+-1</check>
+          <value name="R2 DMM measured reference resistance (in UniTester): " type="Double" value="999.428952" extended-info="False">R2 DMM measured reference resistance (in UniTester) = 999.428952</value>
+          <check name="AIN1: R2 Measured reference resistance by product (ohm)" value="993" value-type="double" expected="999.428952+-1%+-1" expected-type="intervalwithnominal" expected-low="988.43466248" expected-high="1010.42324152" extended-info="false" result="OK" side="product">AIN1: R2 Measured reference resistance by product (ohm) (988.43466248 &gt; 993 &lt; 1010.42324152)  999.428952+-1%+-1</check>
+          <value name="R1 DMM measured reference resistance (in UniTester): " type="Double" value="241.932626" extended-info="False">R1 DMM measured reference resistance (in UniTester) = 241.932626</value>
+          <check name="AIN2: R1 Measured reference resistance by product (ohm)" value="241.8" value-type="double" expected="241.932626+-1%+-1" expected-type="intervalwithnominal" expected-low="238.51329974" expected-high="245.35195226" extended-info="false" result="OK" side="product">AIN2: R1 Measured reference resistance by product (ohm) (238.51329974 &gt; 241.8 &lt; 245.35195226)  241.932626+-1%+-1</check>
+          <value name="R2 DMM measured reference resistance (in UniTester): " type="Double" value="999.428952" extended-info="False">R2 DMM measured reference resistance (in UniTester) = 999.428952</value>
+          <check name="AIN2: R2 Measured reference resistance by product (ohm)" value="995.9" value-type="double" expected="999.428952+-1%+-1" expected-type="intervalwithnominal" expected-low="988.43466248" expected-high="1010.42324152" extended-info="false" result="OK" side="product">AIN2: R2 Measured reference resistance by product (ohm) (988.43466248 &gt; 995.9 &lt; 1010.42324152)  999.428952+-1%+-1</check>
+          <value name="R1 DMM measured reference resistance (in UniTester): " type="Double" value="241.932626" extended-info="False">R1 DMM measured reference resistance (in UniTester) = 241.932626</value>
+          <check name="AIN3: R1 Measured reference resistance by product (ohm)" value="241.8" value-type="double" expected="241.932626+-1%+-1" expected-type="intervalwithnominal" expected-low="238.51329974" expected-high="245.35195226" extended-info="false" result="OK" side="product">AIN3: R1 Measured reference resistance by product (ohm) (238.51329974 &gt; 241.8 &lt; 245.35195226)  241.932626+-1%+-1</check>
+          <value name="R2 DMM measured reference resistance (in UniTester): " type="Double" value="999.428952" extended-info="False">R2 DMM measured reference resistance (in UniTester) = 999.428952</value>
+          <check name="AIN3: R2 Measured reference resistance by product (ohm)" value="996.7" value-type="double" expected="999.428952+-1%+-1" expected-type="intervalwithnominal" expected-low="988.43466248" expected-high="1010.42324152" extended-info="false" result="OK" side="product">AIN3: R2 Measured reference resistance by product (ohm) (988.43466248 &gt; 996.7 &lt; 1010.42324152)  999.428952+-1%+-1</check>
+          <value name="R1 DMM measured reference resistance (in UniTester): " type="Double" value="241.932626" extended-info="False">R1 DMM measured reference resistance (in UniTester) = 241.932626</value>
+          <check name="AIN4: R1 Measured reference resistance by product (ohm)" value="241.8" value-type="double" expected="241.932626+-1%+-1" expected-type="intervalwithnominal" expected-low="238.51329974" expected-high="245.35195226" extended-info="false" result="OK" side="product">AIN4: R1 Measured reference resistance by product (ohm) (238.51329974 &gt; 241.8 &lt; 245.35195226)  241.932626+-1%+-1</check>
+          <value name="R2 DMM measured reference resistance (in UniTester): " type="Double" value="999.428952" extended-info="False">R2 DMM measured reference resistance (in UniTester) = 999.428952</value>
+          <check name="AIN4: R2 Measured reference resistance by product (ohm)" value="998.1" value-type="double" expected="999.428952+-1%+-1" expected-type="intervalwithnominal" expected-low="988.43466248" expected-high="1010.42324152" extended-info="false" result="OK" side="product">AIN4: R2 Measured reference resistance by product (ohm) (988.43466248 &gt; 998.1 &lt; 1010.42324152)  999.428952+-1%+-1</check>
+        </operations>
+      </test>
+      <test title="U-AIN TEST" checked="true" test-class="DcAinVoltageTest" test-id="6" retest="false" test-sequence-number="47" test-group-sequence-number="6" result="PASS">
+        <config>
+          <value name="IGNORE_DELAY">1000</value>
+          <value name="EXTRA_DELAY">200</value>
+          <value name="AVERAGE_MEAS_COUNT">5</value>
+          <value name="VOLTAGE_DIFF_MAX_2">+-0.5%+-0.05</value>
+          <value name="VOLTAGE_2">10+-0.05</value>
+          <value name="VOLTAGE_DIFF_MAX_1">+-0.5%+-0.05</value>
+          <value name="VOLTAGE_1">1+-0.05</value>
+          <value name="VERBOSE">FALSE</value>
+          <value name="U_BAT">24+-1</value>
+          <value name="MEAS_COUNT">2</value>
+          <value name="IGNORE_MEAS_COUNT">0</value>
+          <value name="UNITESTER_AIN_PINS">5/3/1,5/3/3,5/3/5,5/3/7</value>
+          <value name="PRODUCT_AINS">AIN1,AIN2,AIN3,AIN4</value>
+        </config>
+        <operations>
+          <check name="Set voltage UBat" extended-info="true" result="OK" side="unitester">Set voltage UBat</check>
+          <check name="Set voltage UBat" value="24.02" value-type="double" expected="24+-1" expected-type="intervalwithnominal" expected-low="23" expected-high="25" extended-info="false" result="OK" side="unitester">Set voltage UBat (23 &gt; 24.02 &lt; 25)  24+-1</check>
+          <check name="Set voltage U1 (V)" value="0.99849674" value-type="double" expected="1+-0.05" expected-type="intervalwithnominal" expected-low="0.95" expected-high="1.05" extended-info="false" result="OK" side="product">Set voltage U1 (V) (0.95 &gt; 0.99849674 &lt; 1.05)  1+-0.05</check>
+          <check name="AIN1: Voltage measured by product U1 (V)" value="0.9979" value-type="double" expected="0.99849674+-0.5%+-0.05" expected-type="intervalwithnominal" expected-low="0.9435042563" expected-high="1.0534892237" extended-info="false" result="OK" side="product">AIN1: Voltage measured by product U1 (V) (0.9435042563 &gt; 0.9979 &lt; 1.0534892237) 0.99849674+-0.5%+-0.05</check>
+          <check name="Set voltage U2 (V)" value="9.98530815" value-type="double" expected="10+-0.05" expected-type="intervalwithnominal" expected-low="9.95" expected-high="10.05" extended-info="false" result="OK" side="product">Set voltage U2 (V) (9.95 &gt; 9.98530815 &lt; 10.05)  10+-0.05</check>
+          <check name="AIN1: Voltage measured by product U2 (V)" value="9.981" value-type="double" expected="9.98530815+-0.5%+-0.05" expected-type="intervalwithnominal" expected-low="9.88538160925" expected-high="10.08523469075" extended-info="false" result="OK" side="product">AIN1: Voltage measured by product U2 (V) (9.88538160925 &gt; 9.981 &lt; 10.08523469075) 9.98530815+-0.5%+-0.05</check>
+          <check name="Set voltage U1 (V)" value="0.996815971" value-type="double" expected="1+-0.05" expected-type="intervalwithnominal" expected-low="0.95" expected-high="1.05" extended-info="false" result="OK" side="product">Set voltage U1 (V) (0.95 &gt; 0.996815971 &lt; 1.05)  1+-0.05</check>
+          <check name="AIN2: Voltage measured by product U1 (V)" value="1" value-type="double" expected="0.996815971+-0.5%+-0.05" expected-type="intervalwithnominal" expected-low="0.941831891145" expected-high="1.051800050855" extended-info="false" result="OK" side="product">AIN2: Voltage measured by product U1 (V) (0.941831891145 &gt; 1 &lt; 1.051800050855) 0.996815971+-0.5%+-0.05</check>
+          <check name="Set voltage U2 (V)" value="9.98335399" value-type="double" expected="10+-0.05" expected-type="intervalwithnominal" expected-low="9.95" expected-high="10.05" extended-info="false" result="OK" side="product">Set voltage U2 (V) (9.95 &gt; 9.98335399 &lt; 10.05)  10+-0.05</check>
+          <check name="AIN2: Voltage measured by product U2 (V)" value="9.979" value-type="double" expected="9.98335399+-0.5%+-0.05" expected-type="intervalwithnominal" expected-low="9.88343722005" expected-high="10.08327075995" extended-info="false" result="OK" side="product">AIN2: Voltage measured by product U2 (V) (9.88343722005 &gt; 9.979 &lt; 10.08327075995) 9.98335399+-0.5%+-0.05</check>
+          <check name="Set voltage U1 (V)" value="0.997948539" value-type="double" expected="1+-0.05" expected-type="intervalwithnominal" expected-low="0.95" expected-high="1.05" extended-info="false" result="OK" side="product">Set voltage U1 (V) (0.95 &gt; 0.997948539 &lt; 1.05)  1+-0.05</check>
+          <check name="AIN3: Voltage measured by product U1 (V)" value="0.9993" value-type="double" expected="0.997948539+-0.5%+-0.05" expected-type="intervalwithnominal" expected-low="0.942958796305" expected-high="1.052938281695" extended-info="false" result="OK" side="product">AIN3: Voltage measured by product U1 (V) (0.942958796305 &gt; 0.9993 &lt; 1.052938281695) 0.997948539+-0.5%+-0.05</check>
+          <check name="Set voltage U2 (V)" value="9.98454863" value-type="double" expected="10+-0.05" expected-type="intervalwithnominal" expected-low="9.95" expected-high="10.05" extended-info="false" result="OK" side="product">Set voltage U2 (V) (9.95 &gt; 9.98454863 &lt; 10.05)  10+-0.05</check>
+          <check name="AIN3: Voltage measured by product U2 (V)" value="9.982" value-type="double" expected="9.98454863+-0.5%+-0.05" expected-type="intervalwithnominal" expected-low="9.88462588685" expected-high="10.08447137315" extended-info="false" result="OK" side="product">AIN3: Voltage measured by product U2 (V) (9.88462588685 &gt; 9.982 &lt; 10.08447137315) 9.98454863+-0.5%+-0.05</check>
+          <check name="Set voltage U1 (V)" value="0.998458559" value-type="double" expected="1+-0.05" expected-type="intervalwithnominal" expected-low="0.95" expected-high="1.05" extended-info="false" result="OK" side="product">Set voltage U1 (V) (0.95 &gt; 0.998458559 &lt; 1.05)  1+-0.05</check>
+          <check name="AIN4: Voltage measured by product U1 (V)" value="0.9968" value-type="double" expected="0.998458559+-0.5%+-0.05" expected-type="intervalwithnominal" expected-low="0.943466266205" expected-high="1.053450851795" extended-info="false" result="OK" side="product">AIN4: Voltage measured by product U1 (V) (0.943466266205 &gt; 0.9968 &lt; 1.053450851795) 0.998458559+-0.5%+-0.05</check>
+          <check name="Set voltage U2 (V)" value="9.9763083" value-type="double" expected="10+-0.05" expected-type="intervalwithnominal" expected-low="9.95" expected-high="10.05" extended-info="false" result="OK" side="product">Set voltage U2 (V) (9.95 &gt; 9.9763083 &lt; 10.05)  10+-0.05</check>
+          <check name="AIN4: Voltage measured by product U2 (V)" value="9.985" value-type="double" expected="9.9763083+-0.5%+-0.05" expected-type="intervalwithnominal" expected-low="9.8764267585" expected-high="10.0761898415" extended-info="false" result="OK" side="product">AIN4: Voltage measured by product U2 (V) (9.8764267585 &gt; 9.985 &lt; 10.0761898415) 9.9763083+-0.5%+-0.05</check>
+        </operations>
+      </test>
+      <test title="I-AIN TEST" checked="true" test-class="DcAinCurrentTest" test-id="7" retest="false" test-sequence-number="48" test-group-sequence-number="7" result="PASS">
+        <config>
+          <value name="VERBOSE">FALSE</value>
+          <value name="U_BAT">24+-1</value>
+          <value name="MEAS_COUNT">2</value>
+          <value name="IGNORE_MEAS_COUNT">0</value>
+          <value name="IGNORE_DELAY">1000</value>
+          <value name="EXTRA_DELAY">200</value>
+          <value name="CURRENT_DIFF_MAX_2">+-0.5%+-0.1</value>
+          <value name="CURRENT_DIFF_MAX_1">+-0.5%+-0.1</value>
+          <value name="CURRENT_1">2+-0.2</value>
+          <value name="CURRENT_2">20+-0.2</value>
+          <value name="AVERAGE_MEAS_COUNT">5</value>
+          <value name="UNITESTER_AIN_PINS">5/3/1,5/3/3,5/3/5,5/3/7</value>
+          <value name="PRODUCT_AINS">AIN1,AIN2,AIN3,AIN4</value>
+        </config>
+        <operations>
+          <check name="Set voltage UBat" extended-info="true" result="OK" side="unitester">Set voltage UBat</check>
+          <check name="Set voltage UBat" value="23.99" value-type="double" expected="24+-1" expected-type="intervalwithnominal" expected-low="23" expected-high="25" extended-info="false" result="OK" side="unitester">Set voltage UBat (23 &gt; 23.99 &lt; 25)  24+-1</check>
+          <check name="Current set I1 (mA)" value="1.95507471" value-type="double" expected="2+-0.2" expected-type="intervalwithnominal" expected-low="1.8" expected-high="2.2" extended-info="false" result="OK" side="product">Current set I1 (mA) (1.8 &gt; 1.95507471 &lt; 2.2)  2+-0.2</check>
+          <check name="AIN1 Current measured by product I1 (mA)" value="1.949" value-type="double" expected="1.95507471+-0.5%+-0.1" expected-type="intervalwithnominal" expected-low="1.84529933645" expected-high="2.06485008355" extended-info="false" result="OK" side="product">AIN1 Current measured by product I1 (mA) (1.84529933645 &gt; 1.949 &lt; 2.06485008355) 1.95507471+-0.5%+-0.1</check>
+          <check name="Current set I2 (mA)" value="19.9357584" value-type="double" expected="20+-0.2" expected-type="intervalwithnominal" expected-low="19.8" expected-high="20.2" extended-info="false" result="OK" side="product">Current set I2 (mA) (19.8 &gt; 19.9357584 &lt; 20.2)  20+-0.2</check>
+          <check name="AIN1 Current measured by product I2 (mA)" value="19.94" value-type="double" expected="19.9357584+-0.5%+-0.1" expected-type="intervalwithnominal" expected-low="19.736079608" expected-high="20.135437192" extended-info="false" result="OK" side="product">AIN1 Current measured by product I2 (mA) (19.736079608 &gt; 19.94 &lt; 20.135437192) 19.9357584+-0.5%+-0.1</check>
+          <check name="Current set I1 (mA)" value="1.94559987" value-type="double" expected="2+-0.2" expected-type="intervalwithnominal" expected-low="1.8" expected-high="2.2" extended-info="false" result="OK" side="product">Current set I1 (mA) (1.8 &gt; 1.94559987 &lt; 2.2)  2+-0.2</check>
+          <check name="AIN2 Current measured by product I1 (mA)" value="1.938" value-type="double" expected="1.94559987+-0.5%+-0.1" expected-type="intervalwithnominal" expected-low="1.83587187065" expected-high="2.05532786935" extended-info="false" result="OK" side="product">AIN2 Current measured by product I1 (mA) (1.83587187065 &gt; 1.938 &lt; 2.05532786935) 1.94559987+-0.5%+-0.1</check>
+          <check name="Current set I2 (mA)" value="19.9437543" value-type="double" expected="20+-0.2" expected-type="intervalwithnominal" expected-low="19.8" expected-high="20.2" extended-info="false" result="OK" side="product">Current set I2 (mA) (19.8 &gt; 19.9437543 &lt; 20.2)  20+-0.2</check>
+          <check name="AIN2 Current measured by product I2 (mA)" value="19.94" value-type="double" expected="19.9437543+-0.5%+-0.1" expected-type="intervalwithnominal" expected-low="19.7440355285" expected-high="20.1434730715" extended-info="false" result="OK" side="product">AIN2 Current measured by product I2 (mA) (19.7440355285 &gt; 19.94 &lt; 20.1434730715) 19.9437543+-0.5%+-0.1</check>
+          <check name="Current set I1 (mA)" value="1.94763164" value-type="double" expected="2+-0.2" expected-type="intervalwithnominal" expected-low="1.8" expected-high="2.2" extended-info="false" result="OK" side="product">Current set I1 (mA) (1.8 &gt; 1.94763164 &lt; 2.2)  2+-0.2</check>
+          <check name="AIN3 Current measured by product I1 (mA)" value="1.937" value-type="double" expected="1.94763164+-0.5%+-0.1" expected-type="intervalwithnominal" expected-low="1.8378934818" expected-high="2.0573697982" extended-info="false" result="OK" side="product">AIN3 Current measured by product I1 (mA) (1.8378934818 &gt; 1.937 &lt; 2.0573697982) 1.94763164+-0.5%+-0.1</check>
+          <check name="Current set I2 (mA)" value="19.9404493" value-type="double" expected="20+-0.2" expected-type="intervalwithnominal" expected-low="19.8" expected-high="20.2" extended-info="false" result="OK" side="product">Current set I2 (mA) (19.8 &gt; 19.9404493 &lt; 20.2)  20+-0.2</check>
+          <check name="AIN3 Current measured by product I2 (mA)" value="19.95" value-type="double" expected="19.9404493+-0.5%+-0.1" expected-type="intervalwithnominal" expected-low="19.7407470535" expected-high="20.1401515465" extended-info="false" result="OK" side="product">AIN3 Current measured by product I2 (mA) (19.7407470535 &gt; 19.95 &lt; 20.1401515465) 19.9404493+-0.5%+-0.1</check>
+          <check name="Current set I1 (mA)" value="1.95467709" value-type="double" expected="2+-0.2" expected-type="intervalwithnominal" expected-low="1.8" expected-high="2.2" extended-info="false" result="OK" side="product">Current set I1 (mA) (1.8 &gt; 1.95467709 &lt; 2.2)  2+-0.2</check>
+          <check name="AIN4 Current measured by product I1 (mA)" value="1.945" value-type="double" expected="1.95467709+-0.5%+-0.1" expected-type="intervalwithnominal" expected-low="1.84490370455" expected-high="2.06445047545" extended-info="false" result="OK" side="product">AIN4 Current measured by product I1 (mA) (1.84490370455 &gt; 1.945 &lt; 2.06445047545) 1.95467709+-0.5%+-0.1</check>
+          <check name="Current set I2 (mA)" value="19.9474646" value-type="double" expected="20+-0.2" expected-type="intervalwithnominal" expected-low="19.8" expected-high="20.2" extended-info="false" result="OK" side="product">Current set I2 (mA) (19.8 &gt; 19.9474646 &lt; 20.2)  20+-0.2</check>
+          <check name="AIN4 Current measured by product I2 (mA)" value="19.95" value-type="double" expected="19.9474646+-0.5%+-0.1" expected-type="intervalwithnominal" expected-low="19.747727277" expected-high="20.147201923" extended-info="false" result="OK" side="product">AIN4 Current measured by product I2 (mA) (19.747727277 &gt; 19.95 &lt; 20.147201923) 19.9474646+-0.5%+-0.1</check>
+        </operations>
+      </test>
+    </group>
+    <group title="Memory self test" group-id="11" group-sequence-number="12" retest="false" result="PASS">
+      <test title="EEPROM test" checked="true" test-class="SerialMemorySelfTest" test-id="1" retest="false" test-sequence-number="49" test-group-sequence-number="1" result="PASS">
+        <config>
+          <value name="MEM_TYPE">SPI_EEPROM</value>
+        </config>
+        <operations>
+          <check name="Select SPI_EEPROM memory" extended-info="false" result="OK" side="product">Select SPI_EEPROM memory</check>
+          <check name="Start self test" extended-info="false" result="OK" side="product">Start self test</check>
+          <check name="Status of test" value="1" value-type="byte" expected="1" expected-type="byte" extended-info="false" result="OK" side="product">Status of test 1==1</check>
+        </operations>
+      </test>
+      <test title="Flash test" checked="true" test-class="SerialMemorySelfTest" test-id="2" retest="false" test-sequence-number="50" test-group-sequence-number="2" result="PASS">
+        <config>
+          <value name="MEM_TYPE">SPI_FLASH</value>
+        </config>
+        <operations>
+          <check name="Select SPI_FLASH memory" extended-info="false" result="OK" side="product">Select SPI_FLASH memory</check>
+          <check name="Start self test" extended-info="false" result="OK" side="product">Start self test</check>
+          <check name="Status of test" value="1" value-type="byte" expected="1" expected-type="byte" extended-info="false" result="OK" side="product">Status of test 1==1</check>
+        </operations>
+      </test>
+    </group>
+    <group title="MemoryEraseStart" group-id="12" group-sequence-number="13" retest="false" result="PASS">
+      <test title="Flash erase start" checked="true" test-class="StartExternalMemoryErase" test-id="1" retest="false" test-sequence-number="51" test-group-sequence-number="1" result="PASS">
+        <config>
+          <value name="MEM_TYPE">SPI_FLASH</value>
+        </config>
+        <operations>
+          <info text="Starting external memory erasing..." extended-info="False">Starting external memory erasing...</info>
+          <check name="Reading memory status" extended-info="false" result="OK" side="product">Reading memory status</check>
+          <check name="Memory erasing started" extended-info="false" result="OK" side="product">Memory erasing started</check>
+        </operations>
+      </test>
+    </group>
+    <group title="AC230Volt" group-id="13" group-sequence-number="14" retest="false" result="PASS">
+      <test title="Calibration Mains" checked="true" test-class="Voltage230Calibration" test-id="1" retest="false" test-sequence-number="52" test-group-sequence-number="1" result="PASS">
+        <config>
+          <value name="RANGE1_REQUIRED_NOMINAL_VOLTAGE">230+-10</value>
+          <value name="RANGE1">PhToPh400V</value>
+          <value name="PROD_MEAS_RANGES_COUNT">1</value>
+          <value name="VOLTAGE_ID">Mains</value>
+          <value name="PRODUCT_MEASUREMENT_NUMBER">50</value>
+          <value name="CALIBRATION_CONSTANT_INTERVAL">1+-5%</value>
+          <value name="CORRECTED_NOMINAL_VOLTAGE_PERCENT">103</value>
+          <value name="U_BAT">24</value>
+        </config>
+        <operations>
+          <check name="Select controller's AC set: Mains" extended-info="false" result="OK" side="product">Select controller's AC set: Mains</check>
+          <check name="Check AC generator voltage (DMM) (V)" value="230.924347" value-type="double" expected="230+-10" expected-type="intervalwithnominal" expected-low="220" expected-high="240" extended-info="false" result="OK" side="unitester">Check AC generator voltage (DMM) (V) (220 &gt; 230.924347 &lt; 240)  230+-10</check>
+          <check name="Select controller's AC set: Mains" extended-info="false" result="OK" side="product">Select controller's AC set: Mains</check>
+          <value name="Average measured voltage (DMM) (V): " type="Double" value="230.9618524" extended-info="False">Average measured voltage (DMM) (V) = 230.9618524</value>
+          <value name="Average measured voltage (product) L1 (V): " type="Single" value="231.0093" extended-info="False">Average measured voltage (product) L1 (V) = 231.0093</value>
+          <value name="Average measured voltage (product) L2 (V): " type="Single" value="230.9102" extended-info="False">Average measured voltage (product) L2 (V) = 230.9102</value>
+          <value name="Average measured voltage (product) L3 (V): " type="Single" value="230.5968" extended-info="False">Average measured voltage (product) L3 (V) = 230.5968</value>
+          <check name="L1 Calculated calibration constant" value="0.999794781208038" value-type="double" expected="1+-5%" expected-type="intervalwithnominal" expected-low="0.95" expected-high="1.05" extended-info="false" result="OK" side="product">L1 Calculated calibration constant (0.95 &gt; 0.999794781208038 &lt; 1.05)  1+-5%</check>
+          <check name="L2 Calculated calibration constant" value="1.0002236366272" value-type="double" expected="1+-5%" expected-type="intervalwithnominal" expected-low="0.95" expected-high="1.05" extended-info="false" result="OK" side="product">L2 Calculated calibration constant (0.95 &gt; 1.0002236366272 &lt; 1.05)  1+-5%</check>
+          <check name="L3 Calculated calibration constant" value="1.00158298015594" value-type="double" expected="1+-5%" expected-type="intervalwithnominal" expected-low="0.95" expected-high="1.05" extended-info="false" result="OK" side="product">L3 Calculated calibration constant (0.95 &gt; 1.00158298015594 &lt; 1.05)  1+-5%</check>
+        </operations>
+      </test>
+      <test title="Calibration Gen" checked="true" test-class="Voltage230Calibration" test-id="2" retest="false" test-sequence-number="53" test-group-sequence-number="2" result="PASS">
+        <config>
+          <value name="RANGE1_REQUIRED_NOMINAL_VOLTAGE">230+-10</value>
+          <value name="RANGE1">PhToPh400V</value>
+          <value name="PROD_MEAS_RANGES_COUNT">1</value>
+          <value name="VOLTAGE_ID">Gen</value>
+          <value name="PRODUCT_MEASUREMENT_NUMBER">50</value>
+          <value name="CORRECTED_NOMINAL_VOLTAGE_PERCENT">103</value>
+          <value name="CALIBRATION_CONSTANT_INTERVAL">1+-5%</value>
+          <value name="U_BAT">24</value>
+        </config>
+        <operations>
+          <check name="Select controller's AC set: Gen" extended-info="false" result="OK" side="product">Select controller's AC set: Gen</check>
+          <check name="Check AC generator voltage (DMM) (V)" value="230.986447" value-type="double" expected="230+-10" expected-type="intervalwithnominal" expected-low="220" expected-high="240" extended-info="false" result="OK" side="unitester">Check AC generator voltage (DMM) (V) (220 &gt; 230.986447 &lt; 240)  230+-10</check>
+          <check name="Select controller's AC set: Gen" extended-info="false" result="OK" side="product">Select controller's AC set: Gen</check>
+          <value name="Average measured voltage (DMM) (V): " type="Double" value="230.97810794" extended-info="False">Average measured voltage (DMM) (V) = 230.97810794</value>
+          <value name="Average measured voltage (product) L1 (V): " type="Single" value="230.4693" extended-info="False">Average measured voltage (product) L1 (V) = 230.4693</value>
+          <value name="Average measured voltage (product) L2 (V): " type="Single" value="230.3857" extended-info="False">Average measured voltage (product) L2 (V) = 230.3857</value>
+          <value name="Average measured voltage (product) L3 (V): " type="Single" value="230.2782" extended-info="False">Average measured voltage (product) L3 (V) = 230.2782</value>
+          <check name="L1 Calculated calibration constant" value="1.00220775604248" value-type="double" expected="1+-5%" expected-type="intervalwithnominal" expected-low="0.95" expected-high="1.05" extended-info="false" result="OK" side="product">L1 Calculated calibration constant (0.95 &gt; 1.00220775604248 &lt; 1.05)  1+-5%</check>
+          <check name="L2 Calculated calibration constant" value="1.00257158279419" value-type="double" expected="1+-5%" expected-type="intervalwithnominal" expected-low="0.95" expected-high="1.05" extended-info="false" result="OK" side="product">L2 Calculated calibration constant (0.95 &gt; 1.00257158279419 &lt; 1.05)  1+-5%</check>
+          <check name="L3 Calculated calibration constant" value="1.0030392408371" value-type="double" expected="1+-5%" expected-type="intervalwithnominal" expected-low="0.95" expected-high="1.05" extended-info="false" result="OK" side="product">L3 Calculated calibration constant (0.95 &gt; 1.0030392408371 &lt; 1.05)  1+-5%</check>
+        </operations>
+      </test>
+      <test title="Mains test" checked="true" test-class="Voltage230Test" test-id="3" retest="false" test-sequence-number="54" test-group-sequence-number="3" result="PASS">
+        <config>
+          <value name="RANGE1_TEST2_NOMINAL_VOLTAGE">230+-7</value>
+          <value name="RANGE1_TEST2_MAX_DEVIATION_PERCENT">0.5</value>
+          <value name="RANGE1_TEST1_NOMINAL_VOLTAGE">120+-5</value>
+          <value name="PRODUCT_MEASUREMENT_NUMBER">5</value>
+          <value name="RANGE1_TEST1_MAX_DEVIATION_PERCENT">0.5</value>
+          <value name="PROD_MEAS_RANGES_COUNT">1</value>
+          <value name="FREQUENCY">50+-0.02</value>
+          <value name="CORRECTED_NOMINAL_VOLTAGE_PERCENT">102</value>
+          <value name="VOLTAGE_RANGE_WHEN_DISCONNECTED">PhToPh400V</value>
+          <value name="VOLTAGE_WHEN_DISCONNECTED">(0,20)</value>
+          <value name="VOLTAGE_ID">Mains</value>
+          <value name="TEST_VOLTAGE_WHEN_DISCONNECTED">230+-10</value>
+          <value name="RANGE1">PhToPh400V</value>
+          <value name="RANGE1_TESTS_COUNT">2</value>
+          <value name="U_BAT">24</value>
+        </config>
+        <operations>
+          <check name="Select controller's AC set: Mains" extended-info="false" result="OK" side="product">Select controller's AC set: Mains</check>
+          <check name="Check AC generator voltage for phase disconnect test (DMM) (V)" value="230.440369" value-type="double" expected="230+-10" expected-type="intervalwithnominal" expected-low="220" expected-high="240" extended-info="false" result="OK" side="product">Check AC generator voltage for phase disconnect test (DMM) (V) (220 &gt; 230.440369 &lt; 240)  230+-10</check>
+          <check name="L1 Voltage when output disconnected (V)" value="10.7781829833984" value-type="double" expected="(0,20)" expected-type="interval" expected-low="0" expected-high="20" extended-info="false" result="OK" side="product">L1 Voltage when output disconnected (V) (0 &gt; 10.7781829833984 &lt; 20)  (0,20)</check>
+          <check name="Check AC generator voltage for phase disconnect test (DMM) (V)" value="230.363846" value-type="double" expected="230+-10" expected-type="intervalwithnominal" expected-low="220" expected-high="240" extended-info="false" result="OK" side="product">Check AC generator voltage for phase disconnect test (DMM) (V) (220 &gt; 230.363846 &lt; 240)  230+-10</check>
+          <check name="L2 Voltage when output disconnected (V)" value="11.0389471054077" value-type="double" expected="(0,20)" expected-type="interval" expected-low="0" expected-high="20" extended-info="false" result="OK" side="product">L2 Voltage when output disconnected (V) (0 &gt; 11.0389471054077 &lt; 20)  (0,20)</check>
+          <check name="Check AC generator voltage for phase disconnect test (DMM) (V)" value="230.415558" value-type="double" expected="230+-10" expected-type="intervalwithnominal" expected-low="220" expected-high="240" extended-info="false" result="OK" side="product">Check AC generator voltage for phase disconnect test (DMM) (V) (220 &gt; 230.415558 &lt; 240)  230+-10</check>
+          <check name="L3 Voltage when output disconnected (V)" value="10.8509578704834" value-type="double" expected="(0,20)" expected-type="interval" expected-low="0" expected-high="20" extended-info="false" result="OK" side="product">L3 Voltage when output disconnected (V) (0 &gt; 10.8509578704834 &lt; 20)  (0,20)</check>
+          <check name="Check AC generator voltage (DMM) (V)" value="118.8254668" value-type="double" expected="120+-5" expected-type="intervalwithnominal" expected-low="115" expected-high="125" extended-info="false" result="OK" side="unitester">Check AC generator voltage (DMM) (V) (115 &gt; 118.8254668 &lt; 125)  120+-5</check>
+          <check name="L1 voltage measured by product (V)" value="118.76001739502" value-type="double" expected="118.8254668+-0.5%" expected-type="intervalwithnominal" expected-low="118.231339466" expected-high="119.419594134" extended-info="false" result="OK" side="product">L1 voltage measured by product (V) (118.231339466 &gt; 118.76001739502 &lt; 119.419594134)  118.8254668+-0.5%</check>
+          <check name="L2 voltage measured by product (V)" value="118.795768737793" value-type="double" expected="118.8254668+-0.5%" expected-type="intervalwithnominal" expected-low="118.231339466" expected-high="119.419594134" extended-info="false" result="OK" side="product">L2 voltage measured by product (V) (118.231339466 &gt; 118.795768737793 &lt; 119.419594134)  118.8254668+-0.5%</check>
+          <check name="L3 voltage measured by product (V)" value="118.822563171387" value-type="double" expected="118.8254668+-0.5%" expected-type="intervalwithnominal" expected-low="118.231339466" expected-high="119.419594134" extended-info="false" result="OK" side="product">L3 voltage measured by product (V) (118.231339466 &gt; 118.822563171387 &lt; 119.419594134)  118.8254668+-0.5%</check>
+          <check name="Check AC generator voltage (DMM) (V)" value="228.7246122" value-type="double" expected="230+-7" expected-type="intervalwithnominal" expected-low="223" expected-high="237" extended-info="false" result="OK" side="unitester">Check AC generator voltage (DMM) (V) (223 &gt; 228.7246122 &lt; 237)  230+-7</check>
+          <check name="L1 voltage measured by product (V)" value="228.747680664063" value-type="double" expected="228.7246122+-0.5%" expected-type="intervalwithnominal" expected-low="227.580989139" expected-high="229.868235261" extended-info="false" result="OK" side="product">L1 voltage measured by product (V) (227.580989139 &gt; 228.747680664063 &lt; 229.868235261)  228.7246122+-0.5%</check>
+          <check name="L2 voltage measured by product (V)" value="228.743270874023" value-type="double" expected="228.7246122+-0.5%" expected-type="intervalwithnominal" expected-low="227.580989139" expected-high="229.868235261" extended-info="false" result="OK" side="product">L2 voltage measured by product (V) (227.580989139 &gt; 228.743270874023 &lt; 229.868235261)  228.7246122+-0.5%</check>
+          <check name="L3 voltage measured by product (V)" value="228.776062011719" value-type="double" expected="228.7246122+-0.5%" expected-type="intervalwithnominal" expected-low="227.580989139" expected-high="229.868235261" extended-info="false" result="OK" side="product">L3 voltage measured by product (V) (227.580989139 &gt; 228.776062011719 &lt; 229.868235261)  228.7246122+-0.5%</check>
+          <check name="Read product AC voltage frequency" extended-info="false" result="OK" side="product">Read product AC voltage frequency</check>
+          <check name="Frequency measured by product (Hz)" value="50" value-type="double" expected="50+-0.02" expected-type="intervalwithnominal" expected-low="49.98" expected-high="50.02" extended-info="false" result="OK" side="product">Frequency measured by product (Hz) (49.98 &gt; 50 &lt; 50.02)  50+-0.02</check>
+        </operations>
+      </test>
+      <test title="Gen test" checked="true" test-class="Voltage230Test" test-id="4" retest="false" test-sequence-number="55" test-group-sequence-number="4" result="PASS">
+        <config>
+          <value name="CORRECTED_NOMINAL_VOLTAGE_PERCENT">102</value>
+          <value name="VOLTAGE_WHEN_DISCONNECTED">(0,20)</value>
+          <value name="VOLTAGE_ID">Gen</value>
+          <value name="VOLTAGE_RANGE_WHEN_DISCONNECTED">PhToPh400V</value>
+          <value name="TEST_VOLTAGE_WHEN_DISCONNECTED">230+-10</value>
+          <value name="RANGE1">PhToPh400V</value>
+          <value name="RANGE1_TESTS_COUNT">2</value>
+          <value name="RANGE1_TEST2_NOMINAL_VOLTAGE">230+-7</value>
+          <value name="RANGE1_TEST2_MAX_DEVIATION_PERCENT">0.5</value>
+          <value name="RANGE1_TEST1_NOMINAL_VOLTAGE">120+-7</value>
+          <value name="RANGE1_TEST1_MAX_DEVIATION_PERCENT">0.5</value>
+          <value name="PROD_MEAS_RANGES_COUNT">1</value>
+          <value name="PRODUCT_MEASUREMENT_NUMBER">5</value>
+          <value name="FREQUENCY">50+-0.02</value>
+          <value name="U_BAT">24</value>
+        </config>
+        <operations>
+          <check name="Select controller's AC set: Gen" extended-info="false" result="OK" side="product">Select controller's AC set: Gen</check>
+          <check name="Check AC generator voltage for phase disconnect test (DMM) (V)" value="230.368851" value-type="double" expected="230+-10" expected-type="intervalwithnominal" expected-low="220" expected-high="240" extended-info="false" result="OK" side="product">Check AC generator voltage for phase disconnect test (DMM) (V) (220 &gt; 230.368851 &lt; 240)  230+-10</check>
+          <check name="L1 Voltage when output disconnected (V)" value="10.2509460449219" value-type="double" expected="(0,20)" expected-type="interval" expected-low="0" expected-high="20" extended-info="false" result="OK" side="product">L1 Voltage when output disconnected (V) (0 &gt; 10.2509460449219 &lt; 20)  (0,20)</check>
+          <check name="Check AC generator voltage for phase disconnect test (DMM) (V)" value="230.364243" value-type="double" expected="230+-10" expected-type="intervalwithnominal" expected-low="220" expected-high="240" extended-info="false" result="OK" side="product">Check AC generator voltage for phase disconnect test (DMM) (V) (220 &gt; 230.364243 &lt; 240)  230+-10</check>
+          <check name="L2 Voltage when output disconnected (V)" value="10.6145696640015" value-type="double" expected="(0,20)" expected-type="interval" expected-low="0" expected-high="20" extended-info="false" result="OK" side="product">L2 Voltage when output disconnected (V) (0 &gt; 10.6145696640015 &lt; 20)  (0,20)</check>
+          <check name="Check AC generator voltage for phase disconnect test (DMM) (V)" value="230.424484" value-type="double" expected="230+-10" expected-type="intervalwithnominal" expected-low="220" expected-high="240" extended-info="false" result="OK" side="product">Check AC generator voltage for phase disconnect test (DMM) (V) (220 &gt; 230.424484 &lt; 240)  230+-10</check>
+          <check name="L3 Voltage when output disconnected (V)" value="10.689546585083" value-type="double" expected="(0,20)" expected-type="interval" expected-low="0" expected-high="20" extended-info="false" result="OK" side="product">L3 Voltage when output disconnected (V) (0 &gt; 10.689546585083 &lt; 20)  (0,20)</check>
+          <check name="Check AC generator voltage (DMM) (V)" value="118.8345748" value-type="double" expected="120+-7" expected-type="intervalwithnominal" expected-low="113" expected-high="127" extended-info="false" result="OK" side="unitester">Check AC generator voltage (DMM) (V) (113 &gt; 118.8345748 &lt; 127)  120+-7</check>
+          <check name="L1 voltage measured by product (V)" value="118.79175567627" value-type="double" expected="118.8345748+-0.5%" expected-type="intervalwithnominal" expected-low="118.240401926" expected-high="119.428747674" extended-info="false" result="OK" side="product">L1 voltage measured by product (V) (118.240401926 &gt; 118.79175567627 &lt; 119.428747674)  118.8345748+-0.5%</check>
+          <check name="L2 voltage measured by product (V)" value="118.738952636719" value-type="double" expected="118.8345748+-0.5%" expected-type="intervalwithnominal" expected-low="118.240401926" expected-high="119.428747674" extended-info="false" result="OK" side="product">L2 voltage measured by product (V) (118.240401926 &gt; 118.738952636719 &lt; 119.428747674)  118.8345748+-0.5%</check>
+          <check name="L3 voltage measured by product (V)" value="118.765510559082" value-type="double" expected="118.8345748+-0.5%" expected-type="intervalwithnominal" expected-low="118.240401926" expected-high="119.428747674" extended-info="false" result="OK" side="product">L3 voltage measured by product (V) (118.240401926 &gt; 118.765510559082 &lt; 119.428747674)  118.8345748+-0.5%</check>
+          <check name="Check AC generator voltage (DMM) (V)" value="228.7275208" value-type="double" expected="230+-7" expected-type="intervalwithnominal" expected-low="223" expected-high="237" extended-info="false" result="OK" side="unitester">Check AC generator voltage (DMM) (V) (223 &gt; 228.7275208 &lt; 237)  230+-7</check>
+          <check name="L1 voltage measured by product (V)" value="228.747756958008" value-type="double" expected="228.7275208+-0.5%" expected-type="intervalwithnominal" expected-low="227.583883196" expected-high="229.871158404" extended-info="false" result="OK" side="product">L1 voltage measured by product (V) (227.583883196 &gt; 228.747756958008 &lt; 229.871158404)  228.7275208+-0.5%</check>
+          <check name="L2 voltage measured by product (V)" value="228.726104736328" value-type="double" expected="228.7275208+-0.5%" expected-type="intervalwithnominal" expected-low="227.583883196" expected-high="229.871158404" extended-info="false" result="OK" side="product">L2 voltage measured by product (V) (227.583883196 &gt; 228.726104736328 &lt; 229.871158404)  228.7275208+-0.5%</check>
+          <check name="L3 voltage measured by product (V)" value="228.661041259766" value-type="double" expected="228.7275208+-0.5%" expected-type="intervalwithnominal" expected-low="227.583883196" expected-high="229.871158404" extended-info="false" result="OK" side="product">L3 voltage measured by product (V) (227.583883196 &gt; 228.661041259766 &lt; 229.871158404)  228.7275208+-0.5%</check>
+          <check name="Read product AC voltage frequency" extended-info="false" result="OK" side="product">Read product AC voltage frequency</check>
+          <check name="Frequency measured by product (Hz)" value="50" value-type="double" expected="50+-0.02" expected-type="intervalwithnominal" expected-low="49.98" expected-high="50.02" extended-info="false" result="OK" side="product">Frequency measured by product (Hz) (49.98 &gt; 50 &lt; 50.02)  50+-0.02</check>
+        </operations>
+      </test>
+    </group>
+    <group title="AC230Curr" group-id="14" group-sequence-number="15" retest="false" result="PASS">
+      <test title="Calibration I Gen" checked="true" test-class="AcCurrentCalibration" test-id="1" retest="false" test-sequence-number="56" test-group-sequence-number="1" result="PASS">
+        <config>
+          <value name="CALIBRATION_CONSTANT_INTERVAL">1+-5%</value>
+          <value name="AVAILABLE_PHASES">I1,I2,I3</value>
+          <value name="AC_SET_ID">Gen</value>
+          <value name="RANGE1_REQUIRED_NOMINAL_CURRENT">2.9+-0.1</value>
+          <value name="RANGE1">Range5A</value>
+          <value name="RANGE_SWITCH_ACSET_DEPENDENCIES"></value>
+          <value name="PRODUCT_MEASUREMENT_NUMBER">10</value>
+          <value name="PROD_MEAS_RANGES_COUNT">1</value>
+          <value name="U_BAT">24</value>
+        </config>
+        <operations>
+          <check name="Select controller's AC set: Gen" extended-info="false" result="OK" side="product">Select controller's AC set: Gen</check>
+          <info text="Calibration constants set to default. Gain = 1." extended-info="False">Calibration constants set to default. Gain = 1.</info>
+          <check name="Current set (A)" value="2.94743586" value-type="double" expected="2.9+-0.1" expected-type="intervalwithnominal" expected-low="2.8" expected-high="3" extended-info="false" result="OK" side="unitester">Current set (A) (2.8 &gt; 2.94743586 &lt; 3)  2.9+-0.1</check>
+          <check name="I1 DMM current (A)" value="2.94160604" value-type="double" expected="2.9+-0.1" expected-type="intervalwithnominal" expected-low="2.8" expected-high="3" extended-info="false" result="OK" side="unitester">I1 DMM current (A) (2.8 &gt; 2.94160604 &lt; 3)  2.9+-0.1</check>
+          <value name="I1 Average measured current (DMM) (A): " type="Double" value="2.943222357" extended-info="False">I1 Average measured current (DMM) (A) = 2.943222357</value>
+          <value name="I1 Average measured current (product) (A): " type="Double" value="2.92159485816956" extended-info="False">I1 Average measured current (product) (A) = 2.92159485816956</value>
+          <check name="I1 Calibration constant (calculated)" value="1.00740265846252" value-type="double" expected="1+-5%" expected-type="intervalwithnominal" expected-low="0.95" expected-high="1.05" extended-info="false" result="OK" side="product">I1 Calibration constant (calculated) (0.95 &gt; 1.00740265846252 &lt; 1.05)  1+-5%</check>
+          <check name="I2 DMM current (A)" value="2.94563198" value-type="double" expected="2.9+-0.1" expected-type="intervalwithnominal" expected-low="2.8" expected-high="3" extended-info="false" result="OK" side="unitester">I2 DMM current (A) (2.8 &gt; 2.94563198 &lt; 3)  2.9+-0.1</check>
+          <value name="I2 Average measured current (DMM) (A): " type="Double" value="2.947835898" extended-info="False">I2 Average measured current (DMM) (A) = 2.947835898</value>
+          <value name="I2 Average measured current (product) (A): " type="Double" value="2.89244389533997" extended-info="False">I2 Average measured current (product) (A) = 2.89244389533997</value>
+          <check name="I2 Calibration constant (calculated)" value="1.01915061473846" value-type="double" expected="1+-5%" expected-type="intervalwithnominal" expected-low="0.95" expected-high="1.05" extended-info="false" result="OK" side="product">I2 Calibration constant (calculated) (0.95 &gt; 1.01915061473846 &lt; 1.05)  1+-5%</check>
+          <check name="I3 DMM current (A)" value="2.95015645" value-type="double" expected="2.9+-0.1" expected-type="intervalwithnominal" expected-low="2.8" expected-high="3" extended-info="false" result="OK" side="unitester">I3 DMM current (A) (2.8 &gt; 2.95015645 &lt; 3)  2.9+-0.1</check>
+          <value name="I3 Average measured current (DMM) (A): " type="Double" value="2.952084421" extended-info="False">I3 Average measured current (DMM) (A) = 2.952084421</value>
+          <value name="I3 Average measured current (product) (A): " type="Double" value="2.93648624420166" extended-info="False">I3 Average measured current (product) (A) = 2.93648624420166</value>
+          <check name="I3 Calibration constant (calculated)" value="1.00531184673309" value-type="double" expected="1+-5%" expected-type="intervalwithnominal" expected-low="0.95" expected-high="1.05" extended-info="false" result="OK" side="product">I3 Calibration constant (calculated) (0.95 &gt; 1.00531184673309 &lt; 1.05)  1+-5%</check>
+          <value name="I1 calibration constant: " type="Single" value="1.007403" extended-info="False">I1 calibration constant = 1.007403</value>
+          <value name="I2 calibration constant: " type="Single" value="1.019151" extended-info="False">I2 calibration constant = 1.019151</value>
+          <value name="I3 calibration constant: " type="Single" value="1.005312" extended-info="False">I3 calibration constant = 1.005312</value>
+        </operations>
+      </test>
+      <test title="Test I Gen" checked="true" test-class="AcCurrentTest" test-id="3" retest="false" test-sequence-number="57" test-group-sequence-number="2" result="PASS">
+        <config>
+          <value name="RANGE_SWITCH_ACSET_DEPENDENCIES"></value>
+          <value name="RANGE1_TEST1_NOMINAL_CURRENT">1+-0.1</value>
+          <value name="RANGE1_TEST1_PRODUCT_TOLERANCE">+-0.75%</value>
+          <value name="RANGE1_TEST2_NOMINAL_CURRENT">2.9+-0.1</value>
+          <value name="AC_SET_ID">Gen</value>
+          <value name="RANGE1_TEST2_PRODUCT_TOLERANCE">+-0.5%</value>
+          <value name="AVAILABLE_PHASES">I1,I2,I3</value>
+          <value name="RANGE1_TESTS_COUNT">2</value>
+          <value name="CURRENT_OFF_REQUIRED">(0,0.06)</value>
+          <value name="RANGE1">Range5A</value>
+          <value name="PROD_MEAS_RANGES_COUNT">1</value>
+          <value name="PRODUCT_MEASUREMENT_NUMBER">10</value>
+          <value name="U_BAT">24</value>
+        </config>
+        <operations>
+          <check name="Select controller's AC set: Gen" extended-info="false" result="OK" side="product">Select controller's AC set: Gen</check>
+          <check name="Select controller's AC set: Gen" extended-info="false" result="OK" side="product">Select controller's AC set: Gen</check>
+          <check name="Current set (A)" value="1.00592756" value-type="double" expected="1+-0.1" expected-type="intervalwithnominal" expected-low="0.9" expected-high="1.1" extended-info="false" result="OK" side="unitester">Current set (A) (0.9 &gt; 1.00592756 &lt; 1.1)  1+-0.1</check>
+          <check name="I1 DMM current (A)" value="1.00403416" value-type="double" expected="1+-0.1" expected-type="intervalwithnominal" expected-low="0.9" expected-high="1.1" extended-info="false" result="OK" side="unitester">I1 DMM current (A) (0.9 &gt; 1.00403416 &lt; 1.1)  1+-0.1</check>
+          <check name="I1 DMM current average (A)" value="1.003589189" value-type="double" expected="1+-0.1" expected-type="intervalwithnominal" expected-low="0.9" expected-high="1.1" extended-info="false" result="OK" side="unitester">I1 DMM current average (A) (0.9 &gt; 1.003589189 &lt; 1.1)  1+-0.1</check>
+          <check name="I1 Measured current by product (A)" value="1.00829470157623" value-type="double" expected="1.003589189+-0.75%+-0" expected-type="intervalwithnominal" expected-low="0.9960622700825" expected-high="1.0111161079175" extended-info="false" result="OK" side="product">I1 Measured current by product (A) (0.9960622700825 &gt; 1.00829470157623 &lt; 1.0111161079175) 1.003589189+-0.75%+-0</check>
+          <check name="I2 DMM current (A)" value="1.00295079" value-type="double" expected="1+-0.1" expected-type="intervalwithnominal" expected-low="0.9" expected-high="1.1" extended-info="false" result="OK" side="unitester">I2 DMM current (A) (0.9 &gt; 1.00295079 &lt; 1.1)  1+-0.1</check>
+          <check name="I2 DMM current average (A)" value="1.002631224" value-type="double" expected="1+-0.1" expected-type="intervalwithnominal" expected-low="0.9" expected-high="1.1" extended-info="false" result="OK" side="unitester">I2 DMM current average (A) (0.9 &gt; 1.002631224 &lt; 1.1)  1+-0.1</check>
+          <check name="I2 Measured current by product (A)" value="0.997246563434601" value-type="double" expected="1.002631224+-0.75%+-0" expected-type="intervalwithnominal" expected-low="0.99511148982" expected-high="1.01015095818" extended-info="false" result="OK" side="product">I2 Measured current by product (A) (0.99511148982 &gt; 0.997246563434601 &lt; 1.01015095818) 1.002631224+-0.75%+-0</check>
+          <check name="I3 DMM current (A)" value="1.00231981" value-type="double" expected="1+-0.1" expected-type="intervalwithnominal" expected-low="0.9" expected-high="1.1" extended-info="false" result="OK" side="unitester">I3 DMM current (A) (0.9 &gt; 1.00231981 &lt; 1.1)  1+-0.1</check>
+          <check name="I3 DMM current average (A)" value="1.002082146" value-type="double" expected="1+-0.1" expected-type="intervalwithnominal" expected-low="0.9" expected-high="1.1" extended-info="false" result="OK" side="unitester">I3 DMM current average (A) (0.9 &gt; 1.002082146 &lt; 1.1)  1+-0.1</check>
+          <check name="I3 Measured current by product (A)" value="1.00653958320618" value-type="double" expected="1.002082146+-0.75%+-0" expected-type="intervalwithnominal" expected-low="0.994566529905" expected-high="1.009597762095" extended-info="false" result="OK" side="product">I3 Measured current by product (A) (0.994566529905 &gt; 1.00653958320618 &lt; 1.009597762095) 1.002082146+-0.75%+-0</check>
+          <check name="Current set (A)" value="2.95316958" value-type="double" expected="2.9+-0.1" expected-type="intervalwithnominal" expected-low="2.8" expected-high="3" extended-info="false" result="OK" side="unitester">Current set (A) (2.8 &gt; 2.95316958 &lt; 3)  2.9+-0.1</check>
+          <check name="I1 DMM current (A)" value="2.94696832" value-type="double" expected="2.9+-0.1" expected-type="intervalwithnominal" expected-low="2.8" expected-high="3" extended-info="false" result="OK" side="unitester">I1 DMM current (A) (2.8 &gt; 2.94696832 &lt; 3)  2.9+-0.1</check>
+          <check name="I1 DMM current average (A)" value="2.949131202" value-type="double" expected="2.9+-0.1" expected-type="intervalwithnominal" expected-low="2.8" expected-high="3" extended-info="false" result="OK" side="unitester">I1 DMM current average (A) (2.8 &gt; 2.949131202 &lt; 3)  2.9+-0.1</check>
+          <check name="I1 Measured current by product (A)" value="2.95425295829773" value-type="double" expected="2.949131202+-0.5%+-0" expected-type="intervalwithnominal" expected-low="2.93438554599" expected-high="2.96387685801" extended-info="false" result="OK" side="product">I1 Measured current by product (A) (2.93438554599 &gt; 2.95425295829773 &lt; 2.96387685801) 2.949131202+-0.5%+-0</check>
+          <check name="I2 DMM current (A)" value="2.9474318" value-type="double" expected="2.9+-0.1" expected-type="intervalwithnominal" expected-low="2.8" expected-high="3" extended-info="false" result="OK" side="unitester">I2 DMM current (A) (2.8 &gt; 2.9474318 &lt; 3)  2.9+-0.1</check>
+          <check name="I2 DMM current average (A)" value="2.952500297" value-type="double" expected="2.9+-0.1" expected-type="intervalwithnominal" expected-low="2.8" expected-high="3" extended-info="false" result="OK" side="unitester">I2 DMM current average (A) (2.8 &gt; 2.952500297 &lt; 3)  2.9+-0.1</check>
+          <check name="I2 Measured current by product (A)" value="2.94762897491455" value-type="double" expected="2.952500297+-0.5%+-0" expected-type="intervalwithnominal" expected-low="2.937737795515" expected-high="2.967262798485" extended-info="false" result="OK" side="product">I2 Measured current by product (A) (2.937737795515 &gt; 2.94762897491455 &lt; 2.967262798485) 2.952500297+-0.5%+-0</check>
+          <check name="I3 DMM current (A)" value="2.95598602" value-type="double" expected="2.9+-0.1" expected-type="intervalwithnominal" expected-low="2.8" expected-high="3" extended-info="false" result="OK" side="unitester">I3 DMM current (A) (2.8 &gt; 2.95598602 &lt; 3)  2.9+-0.1</check>
+          <check name="I3 DMM current average (A)" value="2.957310176" value-type="double" expected="2.9+-0.1" expected-type="intervalwithnominal" expected-low="2.8" expected-high="3" extended-info="false" result="OK" side="unitester">I3 DMM current average (A) (2.8 &gt; 2.957310176 &lt; 3)  2.9+-0.1</check>
+          <check name="I3 Measured current by product (A)" value="2.96189260482788" value-type="double" expected="2.957310176+-0.5%+-0" expected-type="intervalwithnominal" expected-low="2.94252362512" expected-high="2.97209672688" extended-info="false" result="OK" side="product">I3 Measured current by product (A) (2.94252362512 &gt; 2.96189260482788 &lt; 2.97209672688) 2.957310176+-0.5%+-0</check>
+        </operations>
+      </test>
+    </group>
+    <group title="AC230Power" group-id="15" group-sequence-number="16" retest="false" result="FAIL">
+      <test title="PowerGen L1" checked="true" test-class="Power230Test" test-id="1" retest="false" test-sequence-number="58" test-group-sequence-number="1" result="FAIL">
+        <config>
+          <value name="AVAILABLE_PHASES">L1</value>
+          <value name="PHASE_SHIFT_CALCULATION">313.63</value>
+          <value name="PHASE_SHIFT_SET">42</value>
+          <value name="U_BAT">24</value>
+          <value name="VOLTAGE_REQUIRED">230+-5</value>
+          <value name="VOLTAGE_SET">236.9</value>
+          <value name="PROD_I_RANGE">Range5A</value>
+          <value name="AC_SET_ID">Gen</value>
+          <value name="PROD_U_RANGE">PhToPh400V</value>
+          <value name="CURRENT">1.0+-0.1</value>
+          <value name="FREQUENCY">50+-0.2%</value>
+          <value name="POWER_ERROR_PERCENTAGE_REQUIRED">3</value>
+          <value name="POWER_FACTOR_TOLERANCE">+-0.025</value>
+        </config>
+        <operations>
+          <value name="Set phase shift: " type="Double" value="42" extended-info="False">Set phase shift = 42</value>
+          <value name="Phase shift for calculation: " type="Double" value="313.63" extended-info="False">Phase shift for calculation = 313.63</value>
+          <check name="DMM measured ACGen voltage" value="230.978439" value-type="double" expected="230+-5" expected-type="intervalwithnominal" expected-low="225" expected-high="235" extended-info="false" result="OK" side="unitester">DMM measured ACGen voltage (225 &gt; 230.978439 &lt; 235)  230+-5</check>
+          <check name="DMM measured ACGen frequency" value="49.9979001" value-type="double" expected="50+-0.2%" expected-type="intervalwithnominal" expected-low="49.9" expected-high="50.1" extended-info="false" result="OK" side="unitester">DMM measured ACGen frequency (49.9 &gt; 49.9979001 &lt; 50.1)  50+-0.2%</check>
+          <check name="Select controller's AC set: Gen" extended-info="false" result="OK" side="product">Select controller's AC set: Gen</check>
+          <check name="I1 DMM measured current" value="1.00561666" value-type="double" expected="1+-0.1" expected-type="intervalwithnominal" expected-low="0.9" expected-high="1.1" extended-info="false" result="OK" side="unitester">I1 DMM measured current (0.9 &gt; 1.00561666 &lt; 1.1)  1+-0.1</check>
+          <value name="L1 Measurements count before value stabilized (max. 10): " type="Int32" value="10" extended-info="False">L1 Measurements count before value stabilized (max. 10) = 10</value>
+          <check name="L1 Measured power P (true) [W]: " value="-163.016876220703" value-type="double" expected="160.269959335907+-3%" expected-type="intervalwithnominal" expected-low="155.46186055583" expected-high="165.078058115984" extended-info="false" result="ERROR" side="product">L1 Measured power P (true) [W]:  (155.46186055583 &gt; -163.016876220703 &lt; 165.078058115984)  160.269959335907+-3%</check>
+        </operations>
+        <error-info>
+          <error>L1 Measured power P (true) [W]:  (155.46186055583 &gt; -163.016876220703 &lt; 165.078058115984)  160.269959335907+-3%
+StackTrace:
+TestRun at offset 2051 in file:line:column &lt;filename unknown&gt;:0:0
+Run at offset 156 in file:line:column &lt;filename unknown&gt;:0:0
+RunTest at offset 57 in file:line:column &lt;filename unknown&gt;:0:0
+RunTestSequence at offset 822 in file:line:column &lt;filename unknown&gt;:0:0
+</error>
+          <error>Chyba testu - VYROBEK</error>
+        </error-info>
+      </test>
+      <test title="PowerGen L1" checked="true" test-class="Power230Test" test-id="1" retest="true" test-sequence-number="59" test-group-sequence-number="2" result="FAIL">
+        <config>
+          <value name="AVAILABLE_PHASES">L1</value>
+          <value name="PHASE_SHIFT_CALCULATION">313.63</value>
+          <value name="PHASE_SHIFT_SET">42</value>
+          <value name="U_BAT">24</value>
+          <value name="VOLTAGE_REQUIRED">230+-5</value>
+          <value name="VOLTAGE_SET">236.9</value>
+          <value name="PROD_I_RANGE">Range5A</value>
+          <value name="AC_SET_ID">Gen</value>
+          <value name="PROD_U_RANGE">PhToPh400V</value>
+          <value name="CURRENT">1.0+-0.1</value>
+          <value name="FREQUENCY">50+-0.2%</value>
+          <value name="POWER_ERROR_PERCENTAGE_REQUIRED">3</value>
+          <value name="POWER_FACTOR_TOLERANCE">+-0.025</value>
+        </config>
+        <operations>
+          <value name="Set phase shift: " type="Double" value="42" extended-info="False">Set phase shift = 42</value>
+          <value name="Phase shift for calculation: " type="Double" value="313.63" extended-info="False">Phase shift for calculation = 313.63</value>
+          <check name="DMM measured ACGen voltage" value="230.967087" value-type="double" expected="230+-5" expected-type="intervalwithnominal" expected-low="225" expected-high="235" extended-info="false" result="OK" side="unitester">DMM measured ACGen voltage (225 &gt; 230.967087 &lt; 235)  230+-5</check>
+          <check name="DMM measured ACGen frequency" value="49.9980668" value-type="double" expected="50+-0.2%" expected-type="intervalwithnominal" expected-low="49.9" expected-high="50.1" extended-info="false" result="OK" side="unitester">DMM measured ACGen frequency (49.9 &gt; 49.9980668 &lt; 50.1)  50+-0.2%</check>
+          <check name="Select controller's AC set: Gen" extended-info="false" result="OK" side="product">Select controller's AC set: Gen</check>
+          <check name="I1 DMM measured current" value="1.0033226" value-type="double" expected="1+-0.1" expected-type="intervalwithnominal" expected-low="0.9" expected-high="1.1" extended-info="false" result="OK" side="unitester">I1 DMM measured current (0.9 &gt; 1.0033226 &lt; 1.1)  1+-0.1</check>
+          <value name="L1 Measurements count before value stabilized (max. 10): " type="Int32" value="10" extended-info="False">L1 Measurements count before value stabilized (max. 10) = 10</value>
+          <check name="L1 Measured power P (true) [W]: " value="-162.790740966797" value-type="double" expected="159.89648508033+-3%" expected-type="intervalwithnominal" expected-low="155.09959052792" expected-high="164.69337963274" extended-info="false" result="ERROR" side="product">L1 Measured power P (true) [W]:  (155.09959052792 &gt; -162.790740966797 &lt; 164.69337963274)  159.89648508033+-3%</check>
+        </operations>
+        <error-info>
+          <error>L1 Measured power P (true) [W]:  (155.09959052792 &gt; -162.790740966797 &lt; 164.69337963274)  159.89648508033+-3%
+StackTrace:
+TestRun at offset 2051 in file:line:column &lt;filename unknown&gt;:0:0
+Run at offset 156 in file:line:column &lt;filename unknown&gt;:0:0
+RunTest at offset 57 in file:line:column &lt;filename unknown&gt;:0:0
+RunTestSequence at offset 822 in file:line:column &lt;filename unknown&gt;:0:0
+</error>
+          <error>Chyba testu - VYROBEK</error>
+        </error-info>
+      </test>
+      <test title="PowerGen L1" checked="true" test-class="Power230Test" test-id="1" retest="true" test-sequence-number="60" test-group-sequence-number="3" result="FAIL">
+        <config>
+          <value name="AVAILABLE_PHASES">L1</value>
+          <value name="PHASE_SHIFT_CALCULATION">313.63</value>
+          <value name="PHASE_SHIFT_SET">42</value>
+          <value name="U_BAT">24</value>
+          <value name="VOLTAGE_REQUIRED">230+-5</value>
+          <value name="VOLTAGE_SET">236.9</value>
+          <value name="PROD_I_RANGE">Range5A</value>
+          <value name="AC_SET_ID">Gen</value>
+          <value name="PROD_U_RANGE">PhToPh400V</value>
+          <value name="CURRENT">1.0+-0.1</value>
+          <value name="FREQUENCY">50+-0.2%</value>
+          <value name="POWER_ERROR_PERCENTAGE_REQUIRED">3</value>
+          <value name="POWER_FACTOR_TOLERANCE">+-0.025</value>
+        </config>
+        <operations>
+          <value name="Set phase shift: " type="Double" value="42" extended-info="False">Set phase shift = 42</value>
+          <value name="Phase shift for calculation: " type="Double" value="313.63" extended-info="False">Phase shift for calculation = 313.63</value>
+          <check name="DMM measured ACGen voltage" value="230.971313" value-type="double" expected="230+-5" expected-type="intervalwithnominal" expected-low="225" expected-high="235" extended-info="false" result="OK" side="unitester">DMM measured ACGen voltage (225 &gt; 230.971313 &lt; 235)  230+-5</check>
+          <check name="DMM measured ACGen frequency" value="49.9954504" value-type="double" expected="50+-0.2%" expected-type="intervalwithnominal" expected-low="49.9" expected-high="50.1" extended-info="false" result="OK" side="unitester">DMM measured ACGen frequency (49.9 &gt; 49.9954504 &lt; 50.1)  50+-0.2%</check>
+          <check name="Select controller's AC set: Gen" extended-info="false" result="OK" side="product">Select controller's AC set: Gen</check>
+          <check name="I1 DMM measured current" value="1.00206971" value-type="double" expected="1+-0.1" expected-type="intervalwithnominal" expected-low="0.9" expected-high="1.1" extended-info="false" result="OK" side="unitester">I1 DMM measured current (0.9 &gt; 1.00206971 &lt; 1.1)  1+-0.1</check>
+          <value name="L1 Measurements count before value stabilized (max. 10): " type="Int32" value="10" extended-info="False">L1 Measurements count before value stabilized (max. 10) = 10</value>
+          <check name="L1 Measured power P (true) [W]: " value="-162.745498657227" value-type="double" expected="159.699737763634+-3%" expected-type="intervalwithnominal" expected-low="154.908745630725" expected-high="164.490729896543" extended-info="false" result="ERROR" side="product">L1 Measured power P (true) [W]:  (154.908745630725 &gt; -162.745498657227 &lt; 164.490729896543)  159.699737763634+-3%</check>
+        </operations>
+        <error-info>
+          <error>L1 Measured power P (true) [W]:  (154.908745630725 &gt; -162.745498657227 &lt; 164.490729896543)  159.699737763634+-3%
+StackTrace:
+TestRun at offset 2051 in file:line:column &lt;filename unknown&gt;:0:0
+Run at offset 156 in file:line:column &lt;filename unknown&gt;:0:0
+RunTest at offset 57 in file:line:column &lt;filename unknown&gt;:0:0
+RunTestSequence at offset 822 in file:line:column &lt;filename unknown&gt;:0:0
+</error>
+          <error>Chyba testu - VYROBEK</error>
+        </error-info>
+      </test>
+      <test title="PowerGen L1" checked="true" test-class="Power230Test" test-id="1" retest="true" test-sequence-number="61" test-group-sequence-number="4" result="FAIL">
+        <config>
+          <value name="AVAILABLE_PHASES">L1</value>
+          <value name="PHASE_SHIFT_CALCULATION">313.63</value>
+          <value name="PHASE_SHIFT_SET">42</value>
+          <value name="U_BAT">24</value>
+          <value name="VOLTAGE_REQUIRED">230+-5</value>
+          <value name="VOLTAGE_SET">236.9</value>
+          <value name="PROD_I_RANGE">Range5A</value>
+          <value name="AC_SET_ID">Gen</value>
+          <value name="PROD_U_RANGE">PhToPh400V</value>
+          <value name="CURRENT">1.0+-0.1</value>
+          <value name="FREQUENCY">50+-0.2%</value>
+          <value name="POWER_ERROR_PERCENTAGE_REQUIRED">3</value>
+          <value name="POWER_FACTOR_TOLERANCE">+-0.025</value>
+        </config>
+        <operations>
+          <value name="Set phase shift: " type="Double" value="42" extended-info="False">Set phase shift = 42</value>
+          <value name="Phase shift for calculation: " type="Double" value="313.63" extended-info="False">Phase shift for calculation = 313.63</value>
+          <check name="DMM measured ACGen voltage" value="231.025345" value-type="double" expected="230+-5" expected-type="intervalwithnominal" expected-low="225" expected-high="235" extended-info="false" result="OK" side="unitester">DMM measured ACGen voltage (225 &gt; 231.025345 &lt; 235)  230+-5</check>
+          <check name="DMM measured ACGen frequency" value="49.9975168" value-type="double" expected="50+-0.2%" expected-type="intervalwithnominal" expected-low="49.9" expected-high="50.1" extended-info="false" result="OK" side="unitester">DMM measured ACGen frequency (49.9 &gt; 49.9975168 &lt; 50.1)  50+-0.2%</check>
+          <check name="Select controller's AC set: Gen" extended-info="false" result="OK" side="product">Select controller's AC set: Gen</check>
+          <check name="I1 DMM measured current" value="1.00203884" value-type="double" expected="1+-0.1" expected-type="intervalwithnominal" expected-low="0.9" expected-high="1.1" extended-info="false" result="OK" side="unitester">I1 DMM measured current (0.9 &gt; 1.00203884 &lt; 1.1)  1+-0.1</check>
+          <value name="L1 Measurements count before value stabilized (max. 10): " type="Int32" value="10" extended-info="False">L1 Measurements count before value stabilized (max. 10) = 10</value>
+          <check name="L1 Measured power P (true) [W]: " value="-162.537216186523" value-type="double" expected="159.732176032915+-3%" expected-type="intervalwithnominal" expected-low="154.940210751928" expected-high="164.524141313903" extended-info="false" result="ERROR" side="product">L1 Measured power P (true) [W]:  (154.940210751928 &gt; -162.537216186523 &lt; 164.524141313903)  159.732176032915+-3%</check>
+        </operations>
+        <error-info>
+          <error>L1 Measured power P (true) [W]:  (154.940210751928 &gt; -162.537216186523 &lt; 164.524141313903)  159.732176032915+-3%
+StackTrace:
+TestRun at offset 2051 in file:line:column &lt;filename unknown&gt;:0:0
+Run at offset 156 in file:line:column &lt;filename unknown&gt;:0:0
+RunTest at offset 57 in file:line:column &lt;filename unknown&gt;:0:0
+RunTestSequence at offset 822 in file:line:column &lt;filename unknown&gt;:0:0
+</error>
+          <error>Chyba testu - VYROBEK</error>
+        </error-info>
+      </test>
+    </group>
+  </test_set>
+  <id_chip_spc />
+  <id_chip_icd />
+</test_report>

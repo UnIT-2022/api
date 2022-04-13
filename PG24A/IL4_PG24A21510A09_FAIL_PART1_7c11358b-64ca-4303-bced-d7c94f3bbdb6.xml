@@ -1,0 +1,572 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type='text/xsl' href='report-stylesheet-2parts.xsl'?>
+<test_report format-version="1">
+  <head>
+    <product name="IL4 PG24A" code="N/A" sf-code="PG24A" family="IL4" sn="N/A" sf-sn="21510A09" sf-id-string="PG24ANV21510A09" hw-version="N/A" />
+    <result value="FAIL" fail-test-name="Consumption" fail-group-name="START" />
+    <upload-state value="none" />
+    <test-total-time value="597.38" />
+    <security-check value="PASS" />
+    <tester-info value="UniTesterApp_IL4-part1 1.0.0.20" />
+    <user-name value="10" />
+    <dmm-info value="KEITHLEY INSTRUMENTS INC.,MODEL 2000,1331863,A20  /A02  " />
+    <timestamp value="2022-03-01 10:09:52.4" />
+    <ini-security value="506EFA56F147FB8C6FD0EBB6E0C13E4F" />
+    <component-versions>
+      <version name="IL4-AMF9-RX65-HWTEST" version-number="1.0.0.2" />
+      <version name="IL4-AMF25-RX65-HWTEST" version-number="1.0.0.5" />
+      <version name="InteliATS2-HWTEST" version-number="1.0.0.2" />
+      <version name="IG200-HWTEST" version-number="1.0.0.9" />
+    </component-versions>
+  </head>
+  <test_set>
+    <group title="NA" group-id="0" group-sequence-number="1" retest="false" result="PASS" />
+    <group title="FW" group-id="1" group-sequence-number="2" retest="false" result="PASS">
+      <test title="ResId" checked="true" test-class="AOutResistanceTest" test-id="1" retest="false" test-sequence-number="1" test-group-sequence-number="1" result="PASS">
+        <config>
+          <value name="ROUTE_SWITCH_EN">FALSE</value>
+          <value name="RESISTANCE_1">10300+-5%</value>
+          <value name="CHANNEL_1">6/3/3</value>
+          <value name="MEASUREMENTS_COUNT">1</value>
+          <value name="U_BAT">24</value>
+        </config>
+        <operations>
+          <check name="Analog value Ch1 (ohm)" value="10330.2442" value-type="double" expected="10300+-5%" expected-type="intervalwithnominal" expected-low="9785" expected-high="10815" extended-info="false" result="OK" side="product">Analog value Ch1 (ohm) (9785 &gt; 10330.2442 &lt; 10815)  10300+-5%</check>
+        </operations>
+      </test>
+      <test title="Flash FW w/ key" checked="true" test-class="WriteHwTestPreserveFwKey" test-id="2" retest="false" test-sequence-number="2" test-group-sequence-number="2" result="PASS">
+        <config>
+          <value name="CONTROLLER_PID">0x011F</value>
+          <value name="FW_NAME">HWTest_il4amf25.bin</value>
+          <value name="FW_PATH">FW\HWTest</value>
+        </config>
+        <operations>
+          <info text="No HID device found" extended-info="False">No HID device found</info>
+          <info text="Product does not contain FW key, continuing with normal procedure." extended-info="False">Product does not contain FW key, continuing with normal procedure.</info>
+        </operations>
+      </test>
+      <test title="Flash FW" checked="true" test-class="FlashRenesas" test-id="3" retest="false" test-sequence-number="3" test-group-sequence-number="3" result="PASS">
+        <config>
+          <value name="DEL_FW_AFTER_DOWNLOAD">FALSE</value>
+          <value name="SHOW_FLASHING_SPLASH">TRUE</value>
+          <value name="LOG_PATH">FW\HWTest\RFPProject-CD\log.txt</value>
+          <value name="FW_PATH">FW\HWTest\HWTest_il4amf25_all_in_one.mot</value>
+          <value name="FW_NAME_SHOW">FALSE</value>
+          <value name="RFP_PROJECT_PATH">FW\HWTest\RFPProject-CD\RX651.rpj</value>
+        </config>
+        <operations>
+          <info text="Format processor" extended-info="False">Format processor</info>
+          <info text="Renesas Flash Programmer CLI V1.01" extended-info="False">Renesas Flash Programmer CLI V1.01</info>
+          <info text="Module Version: V3.08.02.000" extended-info="False">Module Version: V3.08.02.000</info>
+          <info text="" extended-info="False"></info>
+          <info text="Connecting the tool (COM port)" extended-info="False">Connecting the tool (COM port)</info>
+          <info text="Tool: COM25" extended-info="False">Tool: COM25</info>
+          <info text="Interface: 2 wire UART" extended-info="False">Interface: 2 wire UART</info>
+          <info text="" extended-info="False"></info>
+          <info text="Connecting the target device" extended-info="False">Connecting the target device</info>
+          <info text="Main Clock: 12 MHz" extended-info="False">Main Clock: 12 MHz</info>
+          <info text="Speed: 115,200 bps" extended-info="False">Speed: 115,200 bps</info>
+          <info text="" extended-info="False"></info>
+          <info text="   0% [                                                            ]" extended-info="False">   0% [                                                            ]</info>
+          <info text="                                                                                " extended-info="False"></info>
+          <info text="" extended-info="False"></info>
+          <info text="   0% [                                                            ]" extended-info="False">   0% [                                                            ]</info>
+          <info text="                                                                                " extended-info="False"></info>
+          <info text="" extended-info="False"></info>
+          <info text="   0% [                                                            ]" extended-info="False">   0% [                                                            ]</info>
+          <info text="                                                                                " extended-info="False"></info>
+          <info text="" extended-info="False"></info>
+          <info text="   0% [                                                            ]" extended-info="False">   0% [                                                            ]</info>
+          <info text="                                                                                " extended-info="False"></info>
+          <info text="" extended-info="False"></info>
+          <info text="   0% [                                                            ]" extended-info="False">   0% [                                                            ]</info>
+          <info text="                                                                                " extended-info="False"></info>
+          <info text="" extended-info="False"></info>
+          <info text="   0% [                                                            ]" extended-info="False">   0% [                                                            ]</info>
+          <info text="                                                                                " extended-info="False"></info>
+          <info text="" extended-info="False"></info>
+          <info text="   0% [                                                            ]" extended-info="False">   0% [                                                            ]</info>
+          <info text="                                                                                " extended-info="False"></info>
+          <info text="" extended-info="False"></info>
+          <info text="   0% [                                                            ]" extended-info="False">   0% [                                                            ]</info>
+          <info text="                                                                                " extended-info="False"></info>
+          <info text="" extended-info="False"></info>
+          <info text="   0% [                                                            ]" extended-info="False">   0% [                                                            ]</info>
+          <info text="                                                                                " extended-info="False"></info>
+          <info text="" extended-info="False"></info>
+          <info text="   0% [                                                            ]" extended-info="False">   0% [                                                            ]</info>
+          <info text="                                                                                " extended-info="False"></info>
+          <info text="" extended-info="False"></info>
+          <info text="MCU Formatted" extended-info="False">MCU Formatted</info>
+          <info text="Disconnecting the tool" extended-info="False">Disconnecting the tool</info>
+          <info text="" extended-info="False"></info>
+          <info text="" extended-info="False"></info>
+          <info text="Processor formatted" extended-info="False">Processor formatted</info>
+          <info text="======================================================================" extended-info="False">======================================================================</info>
+          <info text="[01.03.2022 10:10:09.183] Log Start" extended-info="False">[01.03.2022 10:10:09.183] Log Start</info>
+          <info text="Renesas Flash Programmer V3.08.02 [1 Apr 2021]  (Free-of-charge Edition)" extended-info="False">Renesas Flash Programmer V3.08.02 [1 Apr 2021]  (Free-of-charge Edition)</info>
+          <info text="Loading Project (C:\Comap\015465_1_0_0_20_UniTesterApp_IL4_PG24A_PFP_1_0_0_20\FW\HWTest\RFPProject-CD\RX651.rpj)" extended-info="False">Loading Project (C:\Comap\015465_1_0_0_20_UniTesterApp_IL4_PG24A_PFP_1_0_0_20\FW\HWTest\RFPProject-CD\RX651.rpj)</info>
+          <info text="Loading File (C:\Comap\015465_1_0_0_20_UniTesterApp_IL4_PG24A_PFP_1_0_0_20\FW\HWTest\HWTest_il4amf25_all_in_one.mot) CRC-32 : ECA01DA1" extended-info="False">Loading File (C:\Comap\015465_1_0_0_20_UniTesterApp_IL4_PG24A_PFP_1_0_0_20\FW\HWTest\HWTest_il4amf25_all_in_one.mot) CRC-32 : ECA01DA1</info>
+          <info text="" extended-info="False"></info>
+          <info text="Target device : RX Group" extended-info="False">Target device : RX Group</info>
+          <info text="" extended-info="False"></info>
+          <info text="Connecting the tool" extended-info="False">Connecting the tool</info>
+          <info text="Tool : COM port (COM25), Interface : 2 wire UART" extended-info="False">Tool : COM port (COM25), Interface : 2 wire UART</info>
+          <info text="Connecting to the target device" extended-info="False">Connecting to the target device</info>
+          <info text="Main Clock : 12,000000MHz" extended-info="False">Main Clock : 12,000000MHz</info>
+          <info text="Setting the target device" extended-info="False">Setting the target device</info>
+          <info text="Communication speed : 115200bps" extended-info="False">Communication speed : 115200bps</info>
+          <info text="Setting the target device" extended-info="False">Setting the target device</info>
+          <info text="" extended-info="False"></info>
+          <info text="Erasing the selected blocks" extended-info="False">Erasing the selected blocks</info>
+          <info text="  [Data Flash 1] 0x00100000 - 0x00107FFF     size : 32 K" extended-info="False">  [Data Flash 1] 0x00100000 - 0x00107FFF     size : 32 K</info>
+          <info text="  [Code Flash 1] 0xFFE00000 - 0xFFFFFFFF     size : 2,0 M" extended-info="False">  [Code Flash 1] 0xFFE00000 - 0xFFFFFFFF     size : 2,0 M</info>
+          <info text="" extended-info="False"></info>
+          <info text="Erasing the selected blocks" extended-info="False">Erasing the selected blocks</info>
+          <info text="  [Config Area] " extended-info="False">  [Config Area] </info>
+          <info text="" extended-info="False"></info>
+          <info text="Writing data to the target device" extended-info="False">Writing data to the target device</info>
+          <info text="  [Code Flash 1] 0xFFE00000 - 0xFFE41E7F     size : 263,6 K" extended-info="False">  [Code Flash 1] 0xFFE00000 - 0xFFE41E7F     size : 263,6 K</info>
+          <info text="  [Code Flash 1] 0xFFFF8000 - 0xFFFFF4FF     size : 29,3 K" extended-info="False">  [Code Flash 1] 0xFFFF8000 - 0xFFFFF4FF     size : 29,3 K</info>
+          <info text="  [Code Flash 1] 0xFFFFFF80 - 0xFFFFFFFF     size : 128" extended-info="False">  [Code Flash 1] 0xFFFFFF80 - 0xFFFFFFFF     size : 128</info>
+          <info text="" extended-info="False"></info>
+          <info text="Verifying data" extended-info="False">Verifying data</info>
+          <info text="  [Code Flash 1] 0xFFE00000 - 0xFFE41E7F     size : 263,6 K" extended-info="False">  [Code Flash 1] 0xFFE00000 - 0xFFE41E7F     size : 263,6 K</info>
+          <info text="  [Code Flash 1] 0xFFFF8000 - 0xFFFFF4FF     size : 29,3 K" extended-info="False">  [Code Flash 1] 0xFFFF8000 - 0xFFFFF4FF     size : 29,3 K</info>
+          <info text="  [Code Flash 1] 0xFFFFFF80 - 0xFFFFFFFF     size : 128" extended-info="False">  [Code Flash 1] 0xFFFFFF80 - 0xFFFFFFFF     size : 128</info>
+          <info text="" extended-info="False"></info>
+          <info text="Writing data to the target device" extended-info="False">Writing data to the target device</info>
+          <info text="  [Config Area] 0xFE7F5D00 - 0xFE7F5D0F     size : 16" extended-info="False">  [Config Area] 0xFE7F5D00 - 0xFE7F5D0F     size : 16</info>
+          <info text="" extended-info="False"></info>
+          <info text="Verifying data" extended-info="False">Verifying data</info>
+          <info text="  [Config Area] 0xFE7F5D00 - 0xFE7F5D0F     size : 16" extended-info="False">  [Config Area] 0xFE7F5D00 - 0xFE7F5D0F     size : 16</info>
+          <info text="" extended-info="False"></info>
+          <info text="Disconnecting the tool" extended-info="False">Disconnecting the tool</info>
+          <info text="Operation completed." extended-info="False">Operation completed.</info>
+          <info text="" extended-info="False"></info>
+          <check name="Flashing HW test" extended-info="false" result="OK" side="product">Flashing HW test</check>
+        </operations>
+      </test>
+    </group>
+    <group title="START" group-id="2" group-sequence-number="3" retest="false" result="FAIL">
+      <test title="Start" checked="true" test-class="StartSequenceTest" test-id="1" retest="false" test-sequence-number="4" test-group-sequence-number="1" result="PASS">
+        <config />
+        <operations>
+          <info text="COM port open" extended-info="False">COM port open</info>
+          <check name="Communication with product ok." extended-info="false" result="OK" side="product">Communication with product ok.</check>
+          <check name="Set controller's RTC time: 10:10:18" extended-info="false" result="OK" side="product">Set controller's RTC time: 10:10:18</check>
+          <check name="Set controller's RTC date: 01.03.2022" extended-info="false" result="OK" side="product">Set controller's RTC date: 01.03.2022</check>
+          <info text="Bootloader FW ID: 49" extended-info="False">Bootloader FW ID: 49</info>
+          <info text="Bootloader FW Version: 1.0.0.2" extended-info="False">Bootloader FW Version: 1.0.0.2</info>
+          <info text="HW Test ID: 50" extended-info="False">HW Test ID: 50</info>
+          <info text="HW Test Version: 1.0.0.5" extended-info="False">HW Test Version: 1.0.0.5</info>
+        </operations>
+      </test>
+      <test title="Consumption" checked="true" test-class="PowerDrawTest" test-id="2" retest="false" test-sequence-number="5" test-group-sequence-number="2" result="FAIL">
+        <config>
+          <value name="U_INTERVAL_1">8+-10%</value>
+          <value name="I_INTERVAL_1">90+-30</value>
+          <value name="U_INTERVAL_3">30+-10%</value>
+          <value name="LCD_BACKLIGHT_ENABLED">false</value>
+          <value name="I_INTERVAL_2">30+-20</value>
+          <value name="TEST_NUM">3</value>
+          <value name="USB_HOST_ENABLED">false</value>
+          <value name="U_INTERVAL_2">24+-10%</value>
+          <value name="I_INTERVAL_3">30+-20</value>
+        </config>
+        <operations>
+          <check name="Set LCD backlight to OFF" extended-info="false" result="OK" side="product">Set LCD backlight to OFF</check>
+          <check name="Voltage1 set" value="7.90632136" value-type="double" expected="8+-10%" expected-type="intervalwithnominal" expected-low="7.2" expected-high="8.8" extended-info="false" result="OK" side="unitester">Voltage1 set (7.2 &gt; 7.90632136 &lt; 8.8)  8+-10%</check>
+          <check name="Current1 consumption (mA)" value="98" value-type="double" expected="90+-30" expected-type="intervalwithnominal" expected-low="60" expected-high="120" extended-info="false" result="OK" side="product">Current1 consumption (mA) (60 &gt; 98 &lt; 120)  90+-30</check>
+          <check name="Voltage2 set" value="23.9360764" value-type="double" expected="24+-10%" expected-type="intervalwithnominal" expected-low="21.6" expected-high="26.4" extended-info="false" result="OK" side="unitester">Voltage2 set (21.6 &gt; 23.9360764 &lt; 26.4)  24+-10%</check>
+          <check name="Current2 consumption (mA)" value="54" value-type="double" expected="30+-20" expected-type="intervalwithnominal" expected-low="10" expected-high="50" extended-info="false" result="ERROR" side="product">Current2 consumption (mA) (10 &gt; 54 &lt; 50)  30+-20</check>
+          <check name="Set LCD backlight to ON" extended-info="false" result="OK" side="product">Set LCD backlight to ON</check>
+        </operations>
+        <error-info>
+          <error>Current2 consumption (mA) (10 &gt; 54 &lt; 50)  30+-20
+StackTrace:
+TestRun at offset 696 in file:line:column &lt;filename unknown&gt;:0:0
+Run at offset 156 in file:line:column &lt;filename unknown&gt;:0:0
+RunTest at offset 57 in file:line:column &lt;filename unknown&gt;:0:0
+RunTestSequence at offset 822 in file:line:column &lt;filename unknown&gt;:0:0
+</error>
+          <error>Chyba testu - VYROBEK</error>
+        </error-info>
+      </test>
+      <test title="Consumption" checked="true" test-class="PowerDrawTest" test-id="2" retest="true" test-sequence-number="6" test-group-sequence-number="3" result="FAIL">
+        <config>
+          <value name="U_INTERVAL_1">8+-10%</value>
+          <value name="I_INTERVAL_1">90+-30</value>
+          <value name="U_INTERVAL_3">30+-10%</value>
+          <value name="LCD_BACKLIGHT_ENABLED">false</value>
+          <value name="I_INTERVAL_2">30+-20</value>
+          <value name="TEST_NUM">3</value>
+          <value name="USB_HOST_ENABLED">false</value>
+          <value name="U_INTERVAL_2">24+-10%</value>
+          <value name="I_INTERVAL_3">30+-20</value>
+        </config>
+        <operations>
+          <check name="Set LCD backlight to OFF" extended-info="false" result="OK" side="product">Set LCD backlight to OFF</check>
+          <check name="Voltage1 set" value="7.93176716" value-type="double" expected="8+-10%" expected-type="intervalwithnominal" expected-low="7.2" expected-high="8.8" extended-info="false" result="OK" side="unitester">Voltage1 set (7.2 &gt; 7.93176716 &lt; 8.8)  8+-10%</check>
+          <check name="Current1 consumption (mA)" value="83" value-type="double" expected="90+-30" expected-type="intervalwithnominal" expected-low="60" expected-high="120" extended-info="false" result="OK" side="product">Current1 consumption (mA) (60 &gt; 83 &lt; 120)  90+-30</check>
+          <check name="Voltage2 set" value="23.9374578" value-type="double" expected="24+-10%" expected-type="intervalwithnominal" expected-low="21.6" expected-high="26.4" extended-info="false" result="OK" side="unitester">Voltage2 set (21.6 &gt; 23.9374578 &lt; 26.4)  24+-10%</check>
+          <check name="Current2 consumption (mA)" value="53" value-type="double" expected="30+-20" expected-type="intervalwithnominal" expected-low="10" expected-high="50" extended-info="false" result="ERROR" side="product">Current2 consumption (mA) (10 &gt; 53 &lt; 50)  30+-20</check>
+          <check name="Set LCD backlight to ON" extended-info="false" result="OK" side="product">Set LCD backlight to ON</check>
+        </operations>
+        <error-info>
+          <error>Current2 consumption (mA) (10 &gt; 53 &lt; 50)  30+-20
+StackTrace:
+TestRun at offset 696 in file:line:column &lt;filename unknown&gt;:0:0
+Run at offset 156 in file:line:column &lt;filename unknown&gt;:0:0
+RunTest at offset 57 in file:line:column &lt;filename unknown&gt;:0:0
+RunTestSequence at offset 822 in file:line:column &lt;filename unknown&gt;:0:0
+</error>
+          <error>Chyba testu - VYROBEK</error>
+        </error-info>
+      </test>
+      <test title="Consumption" checked="true" test-class="PowerDrawTest" test-id="2" retest="true" test-sequence-number="7" test-group-sequence-number="4" result="FAIL">
+        <config>
+          <value name="U_INTERVAL_1">8+-10%</value>
+          <value name="I_INTERVAL_1">90+-30</value>
+          <value name="U_INTERVAL_3">30+-10%</value>
+          <value name="LCD_BACKLIGHT_ENABLED">false</value>
+          <value name="I_INTERVAL_2">30+-20</value>
+          <value name="TEST_NUM">3</value>
+          <value name="USB_HOST_ENABLED">false</value>
+          <value name="U_INTERVAL_2">24+-10%</value>
+          <value name="I_INTERVAL_3">30+-20</value>
+        </config>
+        <operations>
+          <check name="Set LCD backlight to OFF" extended-info="false" result="OK" side="product">Set LCD backlight to OFF</check>
+          <check name="Voltage1 set" value="7.93029135" value-type="double" expected="8+-10%" expected-type="intervalwithnominal" expected-low="7.2" expected-high="8.8" extended-info="false" result="OK" side="unitester">Voltage1 set (7.2 &gt; 7.93029135 &lt; 8.8)  8+-10%</check>
+          <check name="Current1 consumption (mA)" value="81" value-type="double" expected="90+-30" expected-type="intervalwithnominal" expected-low="60" expected-high="120" extended-info="false" result="OK" side="product">Current1 consumption (mA) (60 &gt; 81 &lt; 120)  90+-30</check>
+          <check name="Voltage2 set" value="23.9430539" value-type="double" expected="24+-10%" expected-type="intervalwithnominal" expected-low="21.6" expected-high="26.4" extended-info="false" result="OK" side="unitester">Voltage2 set (21.6 &gt; 23.9430539 &lt; 26.4)  24+-10%</check>
+          <check name="Current2 consumption (mA)" value="52" value-type="double" expected="30+-20" expected-type="intervalwithnominal" expected-low="10" expected-high="50" extended-info="false" result="ERROR" side="product">Current2 consumption (mA) (10 &gt; 52 &lt; 50)  30+-20</check>
+          <check name="Set LCD backlight to ON" extended-info="false" result="OK" side="product">Set LCD backlight to ON</check>
+        </operations>
+        <error-info>
+          <error>Current2 consumption (mA) (10 &gt; 52 &lt; 50)  30+-20
+StackTrace:
+TestRun at offset 696 in file:line:column &lt;filename unknown&gt;:0:0
+Run at offset 156 in file:line:column &lt;filename unknown&gt;:0:0
+RunTest at offset 57 in file:line:column &lt;filename unknown&gt;:0:0
+RunTestSequence at offset 822 in file:line:column &lt;filename unknown&gt;:0:0
+</error>
+          <error>Chyba testu - VYROBEK</error>
+        </error-info>
+      </test>
+      <test title="Consumption" checked="true" test-class="PowerDrawTest" test-id="2" retest="true" test-sequence-number="8" test-group-sequence-number="5" result="FAIL">
+        <config>
+          <value name="U_INTERVAL_1">8+-10%</value>
+          <value name="I_INTERVAL_1">90+-30</value>
+          <value name="U_INTERVAL_3">30+-10%</value>
+          <value name="LCD_BACKLIGHT_ENABLED">false</value>
+          <value name="I_INTERVAL_2">30+-20</value>
+          <value name="TEST_NUM">3</value>
+          <value name="USB_HOST_ENABLED">false</value>
+          <value name="U_INTERVAL_2">24+-10%</value>
+          <value name="I_INTERVAL_3">30+-20</value>
+        </config>
+        <operations>
+          <check name="Set LCD backlight to OFF" extended-info="false" result="OK" side="product">Set LCD backlight to OFF</check>
+          <check name="Voltage1 set" value="7.93014949" value-type="double" expected="8+-10%" expected-type="intervalwithnominal" expected-low="7.2" expected-high="8.8" extended-info="false" result="OK" side="unitester">Voltage1 set (7.2 &gt; 7.93014949 &lt; 8.8)  8+-10%</check>
+          <check name="Current1 consumption (mA)" value="82" value-type="double" expected="90+-30" expected-type="intervalwithnominal" expected-low="60" expected-high="120" extended-info="false" result="OK" side="product">Current1 consumption (mA) (60 &gt; 82 &lt; 120)  90+-30</check>
+          <check name="Voltage2 set" value="23.9338475" value-type="double" expected="24+-10%" expected-type="intervalwithnominal" expected-low="21.6" expected-high="26.4" extended-info="false" result="OK" side="unitester">Voltage2 set (21.6 &gt; 23.9338475 &lt; 26.4)  24+-10%</check>
+          <check name="Current2 consumption (mA)" value="53" value-type="double" expected="30+-20" expected-type="intervalwithnominal" expected-low="10" expected-high="50" extended-info="false" result="ERROR" side="product">Current2 consumption (mA) (10 &gt; 53 &lt; 50)  30+-20</check>
+          <check name="Set LCD backlight to ON" extended-info="false" result="OK" side="product">Set LCD backlight to ON</check>
+        </operations>
+        <error-info>
+          <error>Current2 consumption (mA) (10 &gt; 53 &lt; 50)  30+-20
+StackTrace:
+TestRun at offset 696 in file:line:column &lt;filename unknown&gt;:0:0
+Run at offset 156 in file:line:column &lt;filename unknown&gt;:0:0
+RunTest at offset 57 in file:line:column &lt;filename unknown&gt;:0:0
+RunTestSequence at offset 822 in file:line:column &lt;filename unknown&gt;:0:0
+</error>
+          <error>Chyba testu - VYROBEK</error>
+        </error-info>
+      </test>
+      <test title="Consumption" checked="true" test-class="PowerDrawTest" test-id="2" retest="true" test-sequence-number="9" test-group-sequence-number="6" result="FAIL">
+        <config>
+          <value name="U_INTERVAL_1">8+-10%</value>
+          <value name="I_INTERVAL_1">90+-30</value>
+          <value name="U_INTERVAL_3">30+-10%</value>
+          <value name="LCD_BACKLIGHT_ENABLED">false</value>
+          <value name="I_INTERVAL_2">30+-20</value>
+          <value name="TEST_NUM">3</value>
+          <value name="USB_HOST_ENABLED">false</value>
+          <value name="U_INTERVAL_2">24+-10%</value>
+          <value name="I_INTERVAL_3">30+-20</value>
+        </config>
+        <operations>
+          <check name="Set LCD backlight to OFF" extended-info="false" result="OK" side="product">Set LCD backlight to OFF</check>
+          <check name="Voltage1 set" value="7.93457373" value-type="double" expected="8+-10%" expected-type="intervalwithnominal" expected-low="7.2" expected-high="8.8" extended-info="false" result="OK" side="unitester">Voltage1 set (7.2 &gt; 7.93457373 &lt; 8.8)  8+-10%</check>
+          <check name="Current1 consumption (mA)" value="82" value-type="double" expected="90+-30" expected-type="intervalwithnominal" expected-low="60" expected-high="120" extended-info="false" result="OK" side="product">Current1 consumption (mA) (60 &gt; 82 &lt; 120)  90+-30</check>
+          <check name="Voltage2 set" value="23.941587" value-type="double" expected="24+-10%" expected-type="intervalwithnominal" expected-low="21.6" expected-high="26.4" extended-info="false" result="OK" side="unitester">Voltage2 set (21.6 &gt; 23.941587 &lt; 26.4)  24+-10%</check>
+          <check name="Current2 consumption (mA)" value="52" value-type="double" expected="30+-20" expected-type="intervalwithnominal" expected-low="10" expected-high="50" extended-info="false" result="ERROR" side="product">Current2 consumption (mA) (10 &gt; 52 &lt; 50)  30+-20</check>
+          <check name="Set LCD backlight to ON" extended-info="false" result="OK" side="product">Set LCD backlight to ON</check>
+        </operations>
+        <error-info>
+          <error>Current2 consumption (mA) (10 &gt; 52 &lt; 50)  30+-20
+StackTrace:
+TestRun at offset 696 in file:line:column &lt;filename unknown&gt;:0:0
+Run at offset 156 in file:line:column &lt;filename unknown&gt;:0:0
+RunTest at offset 57 in file:line:column &lt;filename unknown&gt;:0:0
+RunTestSequence at offset 822 in file:line:column &lt;filename unknown&gt;:0:0
+</error>
+          <error>Chyba testu - VYROBEK</error>
+        </error-info>
+      </test>
+      <test title="Consumption" checked="true" test-class="PowerDrawTest" test-id="2" retest="true" test-sequence-number="10" test-group-sequence-number="7" result="FAIL">
+        <config>
+          <value name="U_INTERVAL_1">8+-10%</value>
+          <value name="I_INTERVAL_1">90+-30</value>
+          <value name="U_INTERVAL_3">30+-10%</value>
+          <value name="LCD_BACKLIGHT_ENABLED">false</value>
+          <value name="I_INTERVAL_2">30+-20</value>
+          <value name="TEST_NUM">3</value>
+          <value name="USB_HOST_ENABLED">false</value>
+          <value name="U_INTERVAL_2">24+-10%</value>
+          <value name="I_INTERVAL_3">30+-20</value>
+        </config>
+        <operations>
+          <check name="Set LCD backlight to OFF" extended-info="false" result="OK" side="product">Set LCD backlight to OFF</check>
+          <check name="Voltage1 set" value="7.90902244" value-type="double" expected="8+-10%" expected-type="intervalwithnominal" expected-low="7.2" expected-high="8.8" extended-info="false" result="OK" side="unitester">Voltage1 set (7.2 &gt; 7.90902244 &lt; 8.8)  8+-10%</check>
+          <check name="Current1 consumption (mA)" value="95" value-type="double" expected="90+-30" expected-type="intervalwithnominal" expected-low="60" expected-high="120" extended-info="false" result="OK" side="product">Current1 consumption (mA) (60 &gt; 95 &lt; 120)  90+-30</check>
+          <check name="Voltage2 set" value="23.9370698" value-type="double" expected="24+-10%" expected-type="intervalwithnominal" expected-low="21.6" expected-high="26.4" extended-info="false" result="OK" side="unitester">Voltage2 set (21.6 &gt; 23.9370698 &lt; 26.4)  24+-10%</check>
+          <check name="Current2 consumption (mA)" value="53" value-type="double" expected="30+-20" expected-type="intervalwithnominal" expected-low="10" expected-high="50" extended-info="false" result="ERROR" side="product">Current2 consumption (mA) (10 &gt; 53 &lt; 50)  30+-20</check>
+          <check name="Set LCD backlight to ON" extended-info="false" result="OK" side="product">Set LCD backlight to ON</check>
+        </operations>
+        <error-info>
+          <error>Current2 consumption (mA) (10 &gt; 53 &lt; 50)  30+-20
+StackTrace:
+TestRun at offset 696 in file:line:column &lt;filename unknown&gt;:0:0
+Run at offset 156 in file:line:column &lt;filename unknown&gt;:0:0
+RunTest at offset 57 in file:line:column &lt;filename unknown&gt;:0:0
+RunTestSequence at offset 822 in file:line:column &lt;filename unknown&gt;:0:0
+</error>
+          <error>Chyba testu - VYROBEK</error>
+        </error-info>
+      </test>
+      <test title="Consumption" checked="true" test-class="PowerDrawTest" test-id="2" retest="true" test-sequence-number="11" test-group-sequence-number="8" result="FAIL">
+        <config>
+          <value name="U_INTERVAL_1">8+-10%</value>
+          <value name="I_INTERVAL_1">90+-30</value>
+          <value name="U_INTERVAL_3">30+-10%</value>
+          <value name="LCD_BACKLIGHT_ENABLED">false</value>
+          <value name="I_INTERVAL_2">30+-20</value>
+          <value name="TEST_NUM">3</value>
+          <value name="USB_HOST_ENABLED">false</value>
+          <value name="U_INTERVAL_2">24+-10%</value>
+          <value name="I_INTERVAL_3">30+-20</value>
+        </config>
+        <operations>
+          <check name="Set LCD backlight to OFF" extended-info="false" result="OK" side="product">Set LCD backlight to OFF</check>
+          <check name="Voltage1 set" value="7.93429731" value-type="double" expected="8+-10%" expected-type="intervalwithnominal" expected-low="7.2" expected-high="8.8" extended-info="false" result="OK" side="unitester">Voltage1 set (7.2 &gt; 7.93429731 &lt; 8.8)  8+-10%</check>
+          <check name="Current1 consumption (mA)" value="82" value-type="double" expected="90+-30" expected-type="intervalwithnominal" expected-low="60" expected-high="120" extended-info="false" result="OK" side="product">Current1 consumption (mA) (60 &gt; 82 &lt; 120)  90+-30</check>
+          <check name="Voltage2 set" value="23.941966" value-type="double" expected="24+-10%" expected-type="intervalwithnominal" expected-low="21.6" expected-high="26.4" extended-info="false" result="OK" side="unitester">Voltage2 set (21.6 &gt; 23.941966 &lt; 26.4)  24+-10%</check>
+          <check name="Current2 consumption (mA)" value="53" value-type="double" expected="30+-20" expected-type="intervalwithnominal" expected-low="10" expected-high="50" extended-info="false" result="ERROR" side="product">Current2 consumption (mA) (10 &gt; 53 &lt; 50)  30+-20</check>
+          <check name="Set LCD backlight to ON" extended-info="false" result="OK" side="product">Set LCD backlight to ON</check>
+        </operations>
+        <error-info>
+          <error>Current2 consumption (mA) (10 &gt; 53 &lt; 50)  30+-20
+StackTrace:
+TestRun at offset 696 in file:line:column &lt;filename unknown&gt;:0:0
+Run at offset 156 in file:line:column &lt;filename unknown&gt;:0:0
+RunTest at offset 57 in file:line:column &lt;filename unknown&gt;:0:0
+RunTestSequence at offset 822 in file:line:column &lt;filename unknown&gt;:0:0
+</error>
+          <error>Chyba testu - VYROBEK</error>
+        </error-info>
+      </test>
+      <test title="Consumption" checked="true" test-class="PowerDrawTest" test-id="2" retest="true" test-sequence-number="12" test-group-sequence-number="9" result="FAIL">
+        <config>
+          <value name="U_INTERVAL_1">8+-10%</value>
+          <value name="I_INTERVAL_1">90+-30</value>
+          <value name="U_INTERVAL_3">30+-10%</value>
+          <value name="LCD_BACKLIGHT_ENABLED">false</value>
+          <value name="I_INTERVAL_2">30+-20</value>
+          <value name="TEST_NUM">3</value>
+          <value name="USB_HOST_ENABLED">false</value>
+          <value name="U_INTERVAL_2">24+-10%</value>
+          <value name="I_INTERVAL_3">30+-20</value>
+        </config>
+        <operations>
+          <check name="Set LCD backlight to OFF" extended-info="false" result="OK" side="product">Set LCD backlight to OFF</check>
+          <check name="Voltage1 set" value="7.94318867" value-type="double" expected="8+-10%" expected-type="intervalwithnominal" expected-low="7.2" expected-high="8.8" extended-info="false" result="OK" side="unitester">Voltage1 set (7.2 &gt; 7.94318867 &lt; 8.8)  8+-10%</check>
+          <check name="Current1 consumption (mA)" value="84" value-type="double" expected="90+-30" expected-type="intervalwithnominal" expected-low="60" expected-high="120" extended-info="false" result="OK" side="product">Current1 consumption (mA) (60 &gt; 84 &lt; 120)  90+-30</check>
+          <check name="Voltage2 set" value="23.9462247" value-type="double" expected="24+-10%" expected-type="intervalwithnominal" expected-low="21.6" expected-high="26.4" extended-info="false" result="OK" side="unitester">Voltage2 set (21.6 &gt; 23.9462247 &lt; 26.4)  24+-10%</check>
+          <check name="Current2 consumption (mA)" value="53" value-type="double" expected="30+-20" expected-type="intervalwithnominal" expected-low="10" expected-high="50" extended-info="false" result="ERROR" side="product">Current2 consumption (mA) (10 &gt; 53 &lt; 50)  30+-20</check>
+          <check name="Set LCD backlight to ON" extended-info="false" result="OK" side="product">Set LCD backlight to ON</check>
+        </operations>
+        <error-info>
+          <error>Current2 consumption (mA) (10 &gt; 53 &lt; 50)  30+-20
+StackTrace:
+TestRun at offset 696 in file:line:column &lt;filename unknown&gt;:0:0
+Run at offset 156 in file:line:column &lt;filename unknown&gt;:0:0
+RunTest at offset 57 in file:line:column &lt;filename unknown&gt;:0:0
+RunTestSequence at offset 822 in file:line:column &lt;filename unknown&gt;:0:0
+</error>
+          <error>Chyba testu - VYROBEK</error>
+        </error-info>
+      </test>
+      <test title="Consumption" checked="true" test-class="PowerDrawTest" test-id="2" retest="true" test-sequence-number="13" test-group-sequence-number="10" result="FAIL">
+        <config>
+          <value name="U_INTERVAL_1">8+-10%</value>
+          <value name="I_INTERVAL_1">90+-30</value>
+          <value name="U_INTERVAL_3">30+-10%</value>
+          <value name="LCD_BACKLIGHT_ENABLED">false</value>
+          <value name="I_INTERVAL_2">30+-20</value>
+          <value name="TEST_NUM">3</value>
+          <value name="USB_HOST_ENABLED">false</value>
+          <value name="U_INTERVAL_2">24+-10%</value>
+          <value name="I_INTERVAL_3">30+-20</value>
+        </config>
+        <operations>
+          <check name="Set LCD backlight to OFF" extended-info="false" result="OK" side="product">Set LCD backlight to OFF</check>
+          <check name="Voltage1 set" value="7.91607272" value-type="double" expected="8+-10%" expected-type="intervalwithnominal" expected-low="7.2" expected-high="8.8" extended-info="false" result="OK" side="unitester">Voltage1 set (7.2 &gt; 7.91607272 &lt; 8.8)  8+-10%</check>
+          <check name="Current1 consumption (mA)" value="95" value-type="double" expected="90+-30" expected-type="intervalwithnominal" expected-low="60" expected-high="120" extended-info="false" result="OK" side="product">Current1 consumption (mA) (60 &gt; 95 &lt; 120)  90+-30</check>
+          <check name="Voltage2 set" value="23.9418347" value-type="double" expected="24+-10%" expected-type="intervalwithnominal" expected-low="21.6" expected-high="26.4" extended-info="false" result="OK" side="unitester">Voltage2 set (21.6 &gt; 23.9418347 &lt; 26.4)  24+-10%</check>
+          <check name="Current2 consumption (mA)" value="52" value-type="double" expected="30+-20" expected-type="intervalwithnominal" expected-low="10" expected-high="50" extended-info="false" result="ERROR" side="product">Current2 consumption (mA) (10 &gt; 52 &lt; 50)  30+-20</check>
+          <check name="Set LCD backlight to ON" extended-info="false" result="OK" side="product">Set LCD backlight to ON</check>
+        </operations>
+        <error-info>
+          <error>Current2 consumption (mA) (10 &gt; 52 &lt; 50)  30+-20
+StackTrace:
+TestRun at offset 696 in file:line:column &lt;filename unknown&gt;:0:0
+Run at offset 156 in file:line:column &lt;filename unknown&gt;:0:0
+RunTest at offset 57 in file:line:column &lt;filename unknown&gt;:0:0
+RunTestSequence at offset 822 in file:line:column &lt;filename unknown&gt;:0:0
+</error>
+          <error>Chyba testu - VYROBEK</error>
+        </error-info>
+      </test>
+      <test title="Consumption" checked="true" test-class="PowerDrawTest" test-id="2" retest="true" test-sequence-number="14" test-group-sequence-number="11" result="FAIL">
+        <config>
+          <value name="U_INTERVAL_1">8+-10%</value>
+          <value name="I_INTERVAL_1">90+-30</value>
+          <value name="U_INTERVAL_3">30+-10%</value>
+          <value name="LCD_BACKLIGHT_ENABLED">false</value>
+          <value name="I_INTERVAL_2">30+-20</value>
+          <value name="TEST_NUM">3</value>
+          <value name="USB_HOST_ENABLED">false</value>
+          <value name="U_INTERVAL_2">24+-10%</value>
+          <value name="I_INTERVAL_3">30+-20</value>
+        </config>
+        <operations>
+          <check name="Set LCD backlight to OFF" extended-info="false" result="OK" side="product">Set LCD backlight to OFF</check>
+          <check name="Voltage1 set" value="7.93064654" value-type="double" expected="8+-10%" expected-type="intervalwithnominal" expected-low="7.2" expected-high="8.8" extended-info="false" result="OK" side="unitester">Voltage1 set (7.2 &gt; 7.93064654 &lt; 8.8)  8+-10%</check>
+          <check name="Current1 consumption (mA)" value="82" value-type="double" expected="90+-30" expected-type="intervalwithnominal" expected-low="60" expected-high="120" extended-info="false" result="OK" side="product">Current1 consumption (mA) (60 &gt; 82 &lt; 120)  90+-30</check>
+          <check name="Voltage2 set" value="23.9402126" value-type="double" expected="24+-10%" expected-type="intervalwithnominal" expected-low="21.6" expected-high="26.4" extended-info="false" result="OK" side="unitester">Voltage2 set (21.6 &gt; 23.9402126 &lt; 26.4)  24+-10%</check>
+          <check name="Current2 consumption (mA)" value="53" value-type="double" expected="30+-20" expected-type="intervalwithnominal" expected-low="10" expected-high="50" extended-info="false" result="ERROR" side="product">Current2 consumption (mA) (10 &gt; 53 &lt; 50)  30+-20</check>
+          <check name="Set LCD backlight to ON" extended-info="false" result="OK" side="product">Set LCD backlight to ON</check>
+        </operations>
+        <error-info>
+          <error>Current2 consumption (mA) (10 &gt; 53 &lt; 50)  30+-20
+StackTrace:
+TestRun at offset 696 in file:line:column &lt;filename unknown&gt;:0:0
+Run at offset 156 in file:line:column &lt;filename unknown&gt;:0:0
+RunTest at offset 57 in file:line:column &lt;filename unknown&gt;:0:0
+RunTestSequence at offset 822 in file:line:column &lt;filename unknown&gt;:0:0
+</error>
+          <error>Chyba testu - VYROBEK</error>
+        </error-info>
+      </test>
+      <test title="Consumption" checked="true" test-class="PowerDrawTest" test-id="2" retest="true" test-sequence-number="15" test-group-sequence-number="12" result="FAIL">
+        <config>
+          <value name="U_INTERVAL_1">8+-10%</value>
+          <value name="I_INTERVAL_1">90+-30</value>
+          <value name="U_INTERVAL_3">30+-10%</value>
+          <value name="LCD_BACKLIGHT_ENABLED">false</value>
+          <value name="I_INTERVAL_2">30+-20</value>
+          <value name="TEST_NUM">3</value>
+          <value name="USB_HOST_ENABLED">false</value>
+          <value name="U_INTERVAL_2">24+-10%</value>
+          <value name="I_INTERVAL_3">30+-20</value>
+        </config>
+        <operations>
+          <check name="Set LCD backlight to OFF" extended-info="false" result="OK" side="product">Set LCD backlight to OFF</check>
+          <check name="Voltage1 set" value="7.9312041" value-type="double" expected="8+-10%" expected-type="intervalwithnominal" expected-low="7.2" expected-high="8.8" extended-info="false" result="OK" side="unitester">Voltage1 set (7.2 &gt; 7.9312041 &lt; 8.8)  8+-10%</check>
+          <check name="Current1 consumption (mA)" value="82" value-type="double" expected="90+-30" expected-type="intervalwithnominal" expected-low="60" expected-high="120" extended-info="false" result="OK" side="product">Current1 consumption (mA) (60 &gt; 82 &lt; 120)  90+-30</check>
+          <check name="Voltage2 set" value="23.9402721" value-type="double" expected="24+-10%" expected-type="intervalwithnominal" expected-low="21.6" expected-high="26.4" extended-info="false" result="OK" side="unitester">Voltage2 set (21.6 &gt; 23.9402721 &lt; 26.4)  24+-10%</check>
+          <check name="Current2 consumption (mA)" value="53" value-type="double" expected="30+-20" expected-type="intervalwithnominal" expected-low="10" expected-high="50" extended-info="false" result="ERROR" side="product">Current2 consumption (mA) (10 &gt; 53 &lt; 50)  30+-20</check>
+          <check name="Set LCD backlight to ON" extended-info="false" result="OK" side="product">Set LCD backlight to ON</check>
+        </operations>
+        <error-info>
+          <error>Current2 consumption (mA) (10 &gt; 53 &lt; 50)  30+-20
+StackTrace:
+TestRun at offset 696 in file:line:column &lt;filename unknown&gt;:0:0
+Run at offset 156 in file:line:column &lt;filename unknown&gt;:0:0
+RunTest at offset 57 in file:line:column &lt;filename unknown&gt;:0:0
+RunTestSequence at offset 822 in file:line:column &lt;filename unknown&gt;:0:0
+</error>
+          <error>Chyba testu - VYROBEK</error>
+        </error-info>
+      </test>
+      <test title="Consumption" checked="true" test-class="PowerDrawTest" test-id="2" retest="true" test-sequence-number="16" test-group-sequence-number="13" result="FAIL">
+        <config>
+          <value name="U_INTERVAL_1">8+-10%</value>
+          <value name="I_INTERVAL_1">90+-30</value>
+          <value name="U_INTERVAL_3">30+-10%</value>
+          <value name="LCD_BACKLIGHT_ENABLED">false</value>
+          <value name="I_INTERVAL_2">30+-20</value>
+          <value name="TEST_NUM">3</value>
+          <value name="USB_HOST_ENABLED">false</value>
+          <value name="U_INTERVAL_2">24+-10%</value>
+          <value name="I_INTERVAL_3">30+-20</value>
+        </config>
+        <operations>
+          <check name="Set LCD backlight to OFF" extended-info="false" result="OK" side="product">Set LCD backlight to OFF</check>
+          <check name="Voltage1 set" value="7.93495472" value-type="double" expected="8+-10%" expected-type="intervalwithnominal" expected-low="7.2" expected-high="8.8" extended-info="false" result="OK" side="unitester">Voltage1 set (7.2 &gt; 7.93495472 &lt; 8.8)  8+-10%</check>
+          <check name="Current1 consumption (mA)" value="82" value-type="double" expected="90+-30" expected-type="intervalwithnominal" expected-low="60" expected-high="120" extended-info="false" result="OK" side="product">Current1 consumption (mA) (60 &gt; 82 &lt; 120)  90+-30</check>
+          <check name="Voltage2 set" value="23.9474913" value-type="double" expected="24+-10%" expected-type="intervalwithnominal" expected-low="21.6" expected-high="26.4" extended-info="false" result="OK" side="unitester">Voltage2 set (21.6 &gt; 23.9474913 &lt; 26.4)  24+-10%</check>
+          <check name="Current2 consumption (mA)" value="52" value-type="double" expected="30+-20" expected-type="intervalwithnominal" expected-low="10" expected-high="50" extended-info="false" result="ERROR" side="product">Current2 consumption (mA) (10 &gt; 52 &lt; 50)  30+-20</check>
+          <check name="Set LCD backlight to ON" extended-info="false" result="OK" side="product">Set LCD backlight to ON</check>
+        </operations>
+        <error-info>
+          <error>Current2 consumption (mA) (10 &gt; 52 &lt; 50)  30+-20
+StackTrace:
+TestRun at offset 696 in file:line:column &lt;filename unknown&gt;:0:0
+Run at offset 156 in file:line:column &lt;filename unknown&gt;:0:0
+RunTest at offset 57 in file:line:column &lt;filename unknown&gt;:0:0
+RunTestSequence at offset 822 in file:line:column &lt;filename unknown&gt;:0:0
+</error>
+          <error>Chyba testu - VYROBEK</error>
+        </error-info>
+      </test>
+      <test title="Consumption" checked="true" test-class="PowerDrawTest" test-id="2" retest="true" test-sequence-number="17" test-group-sequence-number="14" result="FAIL">
+        <config>
+          <value name="U_INTERVAL_1">8+-10%</value>
+          <value name="I_INTERVAL_1">90+-30</value>
+          <value name="U_INTERVAL_3">30+-10%</value>
+          <value name="LCD_BACKLIGHT_ENABLED">false</value>
+          <value name="I_INTERVAL_2">30+-20</value>
+          <value name="TEST_NUM">3</value>
+          <value name="USB_HOST_ENABLED">false</value>
+          <value name="U_INTERVAL_2">24+-10%</value>
+          <value name="I_INTERVAL_3">30+-20</value>
+        </config>
+        <operations>
+          <check name="Set LCD backlight to OFF" extended-info="false" result="OK" side="product">Set LCD backlight to OFF</check>
+          <check name="Voltage1 set" value="7.91317304" value-type="double" expected="8+-10%" expected-type="intervalwithnominal" expected-low="7.2" expected-high="8.8" extended-info="false" result="OK" side="unitester">Voltage1 set (7.2 &gt; 7.91317304 &lt; 8.8)  8+-10%</check>
+          <check name="Current1 consumption (mA)" value="96" value-type="double" expected="90+-30" expected-type="intervalwithnominal" expected-low="60" expected-high="120" extended-info="false" result="OK" side="product">Current1 consumption (mA) (60 &gt; 96 &lt; 120)  90+-30</check>
+          <check name="Voltage2 set" value="23.9398563" value-type="double" expected="24+-10%" expected-type="intervalwithnominal" expected-low="21.6" expected-high="26.4" extended-info="false" result="OK" side="unitester">Voltage2 set (21.6 &gt; 23.9398563 &lt; 26.4)  24+-10%</check>
+          <check name="Current2 consumption (mA)" value="52" value-type="double" expected="30+-20" expected-type="intervalwithnominal" expected-low="10" expected-high="50" extended-info="false" result="ERROR" side="product">Current2 consumption (mA) (10 &gt; 52 &lt; 50)  30+-20</check>
+          <check name="Set LCD backlight to ON" extended-info="false" result="OK" side="product">Set LCD backlight to ON</check>
+        </operations>
+        <error-info>
+          <error>Current2 consumption (mA) (10 &gt; 52 &lt; 50)  30+-20
+StackTrace:
+TestRun at offset 696 in file:line:column &lt;filename unknown&gt;:0:0
+Run at offset 156 in file:line:column &lt;filename unknown&gt;:0:0
+RunTest at offset 57 in file:line:column &lt;filename unknown&gt;:0:0
+RunTestSequence at offset 822 in file:line:column &lt;filename unknown&gt;:0:0
+</error>
+          <error>Chyba testu - VYROBEK</error>
+        </error-info>
+      </test>
+    </group>
+  </test_set>
+  <id_chip_spc />
+  <id_chip_icd />
+</test_report>

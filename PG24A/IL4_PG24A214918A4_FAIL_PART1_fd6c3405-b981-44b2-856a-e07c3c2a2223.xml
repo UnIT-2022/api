@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type='text/xsl' href='report-stylesheet-2parts.xsl'?>
+<test_report format-version="1">
+  <head>
+    <product name="IL4 PG24A" code="N/A" sf-code="PG24A" family="IL4" sn="N/A" sf-sn="214918A4" sf-id-string="PG24ANV214918A4" hw-version="N/A" />
+    <result value="FAIL" fail-test-name="Flash FW" fail-group-name="FW" />
+    <upload-state value="none" />
+    <test-total-time value="228.96" />
+    <security-check value="PASS" />
+    <tester-info value="UniTesterApp_IL4-part1 1.0.0.20" />
+    <user-name value="9" />
+    <dmm-info value="KEITHLEY INSTRUMENTS INC.,MODEL 2000,1368273,A20  /A02  " />
+    <timestamp value="2022-02-10 06:28:34.9" />
+    <ini-security value="506EFA56F147FB8C6FD0EBB6E0C13E4F" />
+    <component-versions>
+      <version name="IL4-AMF9-RX65-HWTEST" version-number="1.0.0.2" />
+      <version name="IL4-AMF25-RX65-HWTEST" version-number="1.0.0.5" />
+      <version name="InteliATS2-HWTEST" version-number="1.0.0.2" />
+      <version name="IG200-HWTEST" version-number="1.0.0.9" />
+    </component-versions>
+  </head>
+  <test_set>
+    <group title="NA" group-id="0" group-sequence-number="1" retest="false" result="PASS" />
+    <group title="FW" group-id="1" group-sequence-number="2" retest="false" result="FAIL">
+      <test title="ResId" checked="true" test-class="AOutResistanceTest" test-id="1" retest="false" test-sequence-number="1" test-group-sequence-number="1" result="PASS">
+        <config>
+          <value name="ROUTE_SWITCH_EN">FALSE</value>
+          <value name="RESISTANCE_1">10300+-5%</value>
+          <value name="CHANNEL_1">6/3/3</value>
+          <value name="MEASUREMENTS_COUNT">1</value>
+          <value name="U_BAT">24</value>
+        </config>
+        <operations>
+          <check name="Analog value Ch1 (ohm)" value="10328.1725" value-type="double" expected="10300+-5%" expected-type="intervalwithnominal" expected-low="9785" expected-high="10815" extended-info="false" result="OK" side="product">Analog value Ch1 (ohm) (9785 &gt; 10328.1725 &lt; 10815)  10300+-5%</check>
+        </operations>
+      </test>
+      <test title="Flash FW w/ key" checked="true" test-class="WriteHwTestPreserveFwKey" test-id="2" retest="false" test-sequence-number="2" test-group-sequence-number="2" result="PASS">
+        <config>
+          <value name="CONTROLLER_PID">0x011F</value>
+          <value name="FW_NAME">HWTest_il4amf25.bin</value>
+          <value name="FW_PATH">FW\HWTest</value>
+        </config>
+        <operations>
+          <info text="No HID device found" extended-info="False">No HID device found</info>
+          <info text="Product not communicating, continuing with normal procedure." extended-info="False">Product not communicating, continuing with normal procedure.</info>
+        </operations>
+      </test>
+      <test title="Flash FW" checked="true" test-class="FlashRenesas" test-id="3" retest="false" test-sequence-number="3" test-group-sequence-number="3" result="FAIL">
+        <config>
+          <value name="DEL_FW_AFTER_DOWNLOAD">FALSE</value>
+          <value name="SHOW_FLASHING_SPLASH">TRUE</value>
+          <value name="LOG_PATH">FW\HWTest\RFPProject-CD\log.txt</value>
+          <value name="FW_PATH">FW\HWTest\HWTest_il4amf25_all_in_one.mot</value>
+          <value name="FW_NAME_SHOW">FALSE</value>
+          <value name="RFP_PROJECT_PATH">FW\HWTest\RFPProject-CD\RX651.rpj</value>
+        </config>
+        <operations>
+          <check name="Odkaz na objekt není nastaven na instanci objektu." extended-info="false" result="ERROR" side="product">Odkaz na objekt není nastaven na instanci objektu.</check>
+        </operations>
+        <error-info>
+          <error>System.NullReferenceException: Odkaz na objekt není nastaven na instanci objektu.
+   v UniTester.Tests.FlashRenesas.TestRun()
+   v UniTester.Tests.BaseTest.Run(TestReportTestResult trtr, Object[] parameters)</error>
+          <error>Odkaz na objekt není nastaven na instanci objektu.
+StackTrace:
+Run at offset 323 in file:line:column &lt;filename unknown&gt;:0:0
+RunTest at offset 57 in file:line:column &lt;filename unknown&gt;:0:0
+RunTestSequence at offset 822 in file:line:column &lt;filename unknown&gt;:0:0
+test_start at offset 1653 in file:line:column &lt;filename unknown&gt;:0:0
+</error>
+          <error>Chyba testu - VYROBEK</error>
+        </error-info>
+      </test>
+      <test title="Flash FW" checked="true" test-class="FlashRenesas" test-id="3" retest="true" test-sequence-number="4" test-group-sequence-number="4" result="FAIL">
+        <config>
+          <value name="DEL_FW_AFTER_DOWNLOAD">FALSE</value>
+          <value name="SHOW_FLASHING_SPLASH">TRUE</value>
+          <value name="LOG_PATH">FW\HWTest\RFPProject-CD\log.txt</value>
+          <value name="FW_PATH">FW\HWTest\HWTest_il4amf25_all_in_one.mot</value>
+          <value name="FW_NAME_SHOW">FALSE</value>
+          <value name="RFP_PROJECT_PATH">FW\HWTest\RFPProject-CD\RX651.rpj</value>
+        </config>
+        <operations>
+          <check name="Odkaz na objekt není nastaven na instanci objektu." extended-info="false" result="ERROR" side="product">Odkaz na objekt není nastaven na instanci objektu.</check>
+        </operations>
+        <error-info>
+          <error>System.NullReferenceException: Odkaz na objekt není nastaven na instanci objektu.
+   v UniTester.Tests.FlashRenesas.TestRun()
+   v UniTester.Tests.BaseTest.Run(TestReportTestResult trtr, Object[] parameters)</error>
+          <error>Odkaz na objekt není nastaven na instanci objektu.
+StackTrace:
+Run at offset 323 in file:line:column &lt;filename unknown&gt;:0:0
+RunTest at offset 57 in file:line:column &lt;filename unknown&gt;:0:0
+RunTestSequence at offset 822 in file:line:column &lt;filename unknown&gt;:0:0
+test_start at offset 1653 in file:line:column &lt;filename unknown&gt;:0:0
+</error>
+          <error>Chyba testu - VYROBEK</error>
+        </error-info>
+      </test>
+      <test title="Flash FW" checked="true" test-class="FlashRenesas" test-id="3" retest="true" test-sequence-number="5" test-group-sequence-number="5" result="FAIL">
+        <config>
+          <value name="DEL_FW_AFTER_DOWNLOAD">FALSE</value>
+          <value name="SHOW_FLASHING_SPLASH">TRUE</value>
+          <value name="LOG_PATH">FW\HWTest\RFPProject-CD\log.txt</value>
+          <value name="FW_PATH">FW\HWTest\HWTest_il4amf25_all_in_one.mot</value>
+          <value name="FW_NAME_SHOW">FALSE</value>
+          <value name="RFP_PROJECT_PATH">FW\HWTest\RFPProject-CD\RX651.rpj</value>
+        </config>
+        <operations>
+          <check name="Odkaz na objekt není nastaven na instanci objektu." extended-info="false" result="ERROR" side="product">Odkaz na objekt není nastaven na instanci objektu.</check>
+        </operations>
+        <error-info>
+          <error>System.NullReferenceException: Odkaz na objekt není nastaven na instanci objektu.
+   v UniTester.Tests.FlashRenesas.TestRun()
+   v UniTester.Tests.BaseTest.Run(TestReportTestResult trtr, Object[] parameters)</error>
+          <error>Odkaz na objekt není nastaven na instanci objektu.
+StackTrace:
+Run at offset 323 in file:line:column &lt;filename unknown&gt;:0:0
+RunTest at offset 57 in file:line:column &lt;filename unknown&gt;:0:0
+RunTestSequence at offset 822 in file:line:column &lt;filename unknown&gt;:0:0
+test_start at offset 1653 in file:line:column &lt;filename unknown&gt;:0:0
+</error>
+          <error>Chyba testu - VYROBEK</error>
+        </error-info>
+      </test>
+      <test title="Flash FW" checked="true" test-class="FlashRenesas" test-id="3" retest="true" test-sequence-number="6" test-group-sequence-number="6" result="FAIL">
+        <config>
+          <value name="DEL_FW_AFTER_DOWNLOAD">FALSE</value>
+          <value name="SHOW_FLASHING_SPLASH">TRUE</value>
+          <value name="LOG_PATH">FW\HWTest\RFPProject-CD\log.txt</value>
+          <value name="FW_PATH">FW\HWTest\HWTest_il4amf25_all_in_one.mot</value>
+          <value name="FW_NAME_SHOW">FALSE</value>
+          <value name="RFP_PROJECT_PATH">FW\HWTest\RFPProject-CD\RX651.rpj</value>
+        </config>
+        <operations>
+          <check name="Odkaz na objekt není nastaven na instanci objektu." extended-info="false" result="ERROR" side="product">Odkaz na objekt není nastaven na instanci objektu.</check>
+        </operations>
+        <error-info>
+          <error>System.NullReferenceException: Odkaz na objekt není nastaven na instanci objektu.
+   v UniTester.Tests.FlashRenesas.TestRun()
+   v UniTester.Tests.BaseTest.Run(TestReportTestResult trtr, Object[] parameters)</error>
+          <error>Odkaz na objekt není nastaven na instanci objektu.
+StackTrace:
+Run at offset 323 in file:line:column &lt;filename unknown&gt;:0:0
+RunTest at offset 57 in file:line:column &lt;filename unknown&gt;:0:0
+RunTestSequence at offset 822 in file:line:column &lt;filename unknown&gt;:0:0
+test_start at offset 1653 in file:line:column &lt;filename unknown&gt;:0:0
+</error>
+          <error>Chyba testu - VYROBEK</error>
+        </error-info>
+      </test>
+      <test title="Flash FW" checked="true" test-class="FlashRenesas" test-id="3" retest="true" test-sequence-number="7" test-group-sequence-number="7" result="FAIL">
+        <config>
+          <value name="DEL_FW_AFTER_DOWNLOAD">FALSE</value>
+          <value name="SHOW_FLASHING_SPLASH">TRUE</value>
+          <value name="LOG_PATH">FW\HWTest\RFPProject-CD\log.txt</value>
+          <value name="FW_PATH">FW\HWTest\HWTest_il4amf25_all_in_one.mot</value>
+          <value name="FW_NAME_SHOW">FALSE</value>
+          <value name="RFP_PROJECT_PATH">FW\HWTest\RFPProject-CD\RX651.rpj</value>
+        </config>
+        <operations>
+          <check name="Odkaz na objekt není nastaven na instanci objektu." extended-info="false" result="ERROR" side="product">Odkaz na objekt není nastaven na instanci objektu.</check>
+        </operations>
+        <error-info>
+          <error>System.NullReferenceException: Odkaz na objekt není nastaven na instanci objektu.
+   v UniTester.Tests.FlashRenesas.TestRun()
+   v UniTester.Tests.BaseTest.Run(TestReportTestResult trtr, Object[] parameters)</error>
+          <error>Odkaz na objekt není nastaven na instanci objektu.
+StackTrace:
+Run at offset 323 in file:line:column &lt;filename unknown&gt;:0:0
+RunTest at offset 57 in file:line:column &lt;filename unknown&gt;:0:0
+RunTestSequence at offset 822 in file:line:column &lt;filename unknown&gt;:0:0
+test_start at offset 1653 in file:line:column &lt;filename unknown&gt;:0:0
+</error>
+          <error>Chyba testu - VYROBEK</error>
+        </error-info>
+      </test>
+    </group>
+  </test_set>
+  <id_chip_spc />
+  <id_chip_icd />
+</test_report>
