@@ -1,0 +1,13 @@
+[Unit]
+Description= API service
+Wants=network.target
+Before=network.target
+
+[Service]
+WorkingDirectory=/home/vpetras/unit/api
+User=root
+ExecStart=/bin/python3 app.py
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
